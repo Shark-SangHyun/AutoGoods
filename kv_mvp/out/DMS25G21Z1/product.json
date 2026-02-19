@@ -1,0 +1,303 @@
+{
+  "mode": "requests",
+  "source_url": "https://www.k-village.co.kr/goods/DMS25G21Z1",
+  "code": "DMS25G21Z1",
+  "title": "[와이드핏] 더블 리액트 W (Z1) (Black)",
+  "sale_price": 139000,
+  "list_price": 259000,
+  "pd_photo_image_urls": [
+    "https://contents.k-village.co.kr/Prod/2025/D/DMS25G21Z1/DMS25G21Z1_DF_01.jpg/k2dims/optimize?t=20250806141750",
+    "https://contents.k-village.co.kr/Prod/2025/D/DMS25G21Z1/DMS25G21Z1_DF_02.jpg/k2dims/optimize?t=20250806141750",
+    "https://contents.k-village.co.kr/Prod/2025/D/DMS25G21Z1/DMS25G21Z1_DF_03.jpg/k2dims/optimize?t=20250806141750",
+    "https://contents.k-village.co.kr/Prod/2025/D/DMS25G21Z1/DMS25G21Z1_DF_04.jpg/k2dims/optimize?t=20250806141750",
+    "https://contents.k-village.co.kr/Prod/2025/D/DMS25G21Z1/DMS25G21Z1_DF_05.jpg/k2dims/optimize?t=20250806141750",
+    "https://contents.k-village.co.kr/Prod/2025/D/DMS25G21Z1/DMS25G21Z1_DF_06.jpg/k2dims/optimize?t=20250806141750",
+    "https://contents.k-village.co.kr/Prod/2025/D/DMS25G21Z1/DMS25G21Z1_DF_07.jpg/k2dims/optimize?t=20250806141750",
+    "https://contents.k-village.co.kr/Prod/2025/D/DMS25G21Z1/DMS25G21Z1_DF_08.jpg/k2dims/optimize?t=20250806141750",
+    "https://contents.k-village.co.kr/Prod/2025/D/DMS25G21Z1/DMS25G21Z1_DF_09.jpg/k2dims/optimize?t=20250806141750",
+    "https://contents.k-village.co.kr/PUBL_con/etc/rfid/eider.jpg"
+  ],
+  "gvnt_info": {
+    "모델명": "[와이드핏] 더블 리액트 W (Z1) (Black)",
+    "제품 주소재": "갑피:겉감1-폴리에스터 100%, 겉감2:합성피혁, 안감1-폴리에스터 100%, 안감2-GORE-TEX(나일론 100%) / 창소재:X-GRIP(부틸30%) +PHYLON +TPU",
+    "색상": "Black",
+    "사이즈": "255,260,265,270,275,280,285,290",
+    "크기, 중량": "중량:316g (260mm)",
+    "제조사": "(주)아이더",
+    "제조국": "베트남",
+    "품질보증기준": "관련법 및 소비자 분쟁 해결 규정에 따름",
+    "A/S 책임자와 전화번호": "본사 고객상담실 / 1533-1631"
+  },
+  "제조사": "(주)아이더",
+  "제조연월(수입연월)": null,
+  "제조국": "베트남",
+  "mode_gvnt": "playwright_click",
+  "input_code": "DMS25G21Z1",
+  "saved_images_each": [
+    "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DMS25G21Z1\\images\\pd_001.jpg",
+    "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DMS25G21Z1\\images\\pd_002.jpg",
+    "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DMS25G21Z1\\images\\pd_003.jpg",
+    "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DMS25G21Z1\\images\\pd_004.jpg",
+    "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DMS25G21Z1\\images\\pd_005.jpg",
+    "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DMS25G21Z1\\images\\pd_006.jpg",
+    "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DMS25G21Z1\\images\\pd_007.jpg",
+    "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DMS25G21Z1\\images\\pd_008.jpg",
+    "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DMS25G21Z1\\images\\pd_009.jpg",
+    "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DMS25G21Z1\\images\\pd_010.jpg"
+  ],
+  "saved_images_merged": "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DMS25G21Z1\\images\\pd_photo_merged.jpg",
+  "saved_size_table_jpg": "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DMS25G21Z1\\images\\size_table.jpg",
+  "saved_accordion_renders": [
+    {
+      "ok": true,
+      "title": "상품정보제공고시",
+      "mode": "replay",
+      "html": "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DMS25G21Z1\\renders\\html\\상품정보제공고시.html",
+      "png": "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DMS25G21Z1\\renders\\png\\상품정보제공고시.png",
+      "jpg": "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DMS25G21Z1\\renders\\jpg\\상품정보제공고시.jpg"
+    },
+    {
+      "ok": true,
+      "title": "소재 및 관리방법",
+      "mode": "inline",
+      "html": "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DMS25G21Z1\\renders\\html\\소재_및_관리방법.html",
+      "png": "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DMS25G21Z1\\renders\\png\\소재_및_관리방법.png",
+      "jpg": "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DMS25G21Z1\\renders\\jpg\\소재_및_관리방법.jpg"
+    },
+    {
+      "ok": true,
+      "title": "MD_COMMENT",
+      "mode": "inline",
+      "html": "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DMS25G21Z1\\renders\\html\\MD_COMMENT.html",
+      "png": "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DMS25G21Z1\\renders\\png\\MD_COMMENT.png",
+      "jpg": "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DMS25G21Z1\\renders\\jpg\\MD_COMMENT.jpg"
+    }
+  ],
+  "size_options": [
+    {
+      "label": "Black / 255",
+      "href": "javascript:addOrder('255', '139,000', 'Black', '4', '06','21','25', '10');",
+      "addOrder_args": [
+        "255",
+        "139,000",
+        "Black",
+        "4",
+        "06",
+        "21",
+        "25",
+        "10"
+      ]
+    },
+    {
+      "label": "Black / 260",
+      "href": "javascript:addOrder('260', '139,000', 'Black', '0', '07','15','15', '10');",
+      "addOrder_args": [
+        "260",
+        "139,000",
+        "Black",
+        "0",
+        "07",
+        "15",
+        "15",
+        "10"
+      ]
+    },
+    {
+      "label": "Black / 265",
+      "href": "javascript:addOrder('265', '139,000', 'Black', '0', '08','14','14', '10');",
+      "addOrder_args": [
+        "265",
+        "139,000",
+        "Black",
+        "0",
+        "08",
+        "14",
+        "14",
+        "10"
+      ]
+    },
+    {
+      "label": "Black / 270",
+      "href": "javascript:addOrder('270', '139,000', 'Black', '0', '09','8','8', '10');",
+      "addOrder_args": [
+        "270",
+        "139,000",
+        "Black",
+        "0",
+        "09",
+        "8",
+        "8",
+        "10"
+      ]
+    },
+    {
+      "label": "Black / 275",
+      "href": "javascript:addOrder('275', '139,000', 'Black', '0', '10','5','5', '10');",
+      "addOrder_args": [
+        "275",
+        "139,000",
+        "Black",
+        "0",
+        "10",
+        "5",
+        "5",
+        "10"
+      ]
+    },
+    {
+      "label": "Black / 280",
+      "href": "javascript:addOrder('280', '139,000', 'Black', '0', '11','9','9', '10');",
+      "addOrder_args": [
+        "280",
+        "139,000",
+        "Black",
+        "0",
+        "11",
+        "9",
+        "9",
+        "10"
+      ]
+    },
+    {
+      "label": "Black / 285",
+      "href": "javascript:addOrder('285', '139,000', 'Black', '0', '12','4','4', '10');",
+      "addOrder_args": [
+        "285",
+        "139,000",
+        "Black",
+        "0",
+        "12",
+        "4",
+        "4",
+        "10"
+      ]
+    },
+    {
+      "label": "Black / 290",
+      "href": "javascript:addOrder('290', '139,000', 'Black', '0', '13','5','5', '10');",
+      "addOrder_args": [
+        "290",
+        "139,000",
+        "Black",
+        "0",
+        "13",
+        "5",
+        "5",
+        "10"
+      ]
+    },
+    {
+      "label": "Black / 255",
+      "href": "javascript:addOrder('255', '139,000', 'Black', '4', '06','21','25', '10');",
+      "addOrder_args": [
+        "255",
+        "139,000",
+        "Black",
+        "4",
+        "06",
+        "21",
+        "25",
+        "10"
+      ]
+    },
+    {
+      "label": "Black / 260",
+      "href": "javascript:addOrder('260', '139,000', 'Black', '0', '07','15','15', '10');",
+      "addOrder_args": [
+        "260",
+        "139,000",
+        "Black",
+        "0",
+        "07",
+        "15",
+        "15",
+        "10"
+      ]
+    },
+    {
+      "label": "Black / 265",
+      "href": "javascript:addOrder('265', '139,000', 'Black', '0', '08','14','14', '10');",
+      "addOrder_args": [
+        "265",
+        "139,000",
+        "Black",
+        "0",
+        "08",
+        "14",
+        "14",
+        "10"
+      ]
+    },
+    {
+      "label": "Black / 270",
+      "href": "javascript:addOrder('270', '139,000', 'Black', '0', '09','8','8', '10');",
+      "addOrder_args": [
+        "270",
+        "139,000",
+        "Black",
+        "0",
+        "09",
+        "8",
+        "8",
+        "10"
+      ]
+    },
+    {
+      "label": "Black / 275",
+      "href": "javascript:addOrder('275', '139,000', 'Black', '0', '10','5','5', '10');",
+      "addOrder_args": [
+        "275",
+        "139,000",
+        "Black",
+        "0",
+        "10",
+        "5",
+        "5",
+        "10"
+      ]
+    },
+    {
+      "label": "Black / 280",
+      "href": "javascript:addOrder('280', '139,000', 'Black', '0', '11','9','9', '10');",
+      "addOrder_args": [
+        "280",
+        "139,000",
+        "Black",
+        "0",
+        "11",
+        "9",
+        "9",
+        "10"
+      ]
+    },
+    {
+      "label": "Black / 285",
+      "href": "javascript:addOrder('285', '139,000', 'Black', '0', '12','4','4', '10');",
+      "addOrder_args": [
+        "285",
+        "139,000",
+        "Black",
+        "0",
+        "12",
+        "4",
+        "4",
+        "10"
+      ]
+    },
+    {
+      "label": "Black / 290",
+      "href": "javascript:addOrder('290', '139,000', 'Black', '0', '13','5','5', '10');",
+      "addOrder_args": [
+        "290",
+        "139,000",
+        "Black",
+        "0",
+        "13",
+        "5",
+        "5",
+        "10"
+      ]
+    }
+  ],
+  "saved_at": "2026-02-18T11:53:04"
+}

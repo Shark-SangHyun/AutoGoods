@@ -1,0 +1,153 @@
+{
+  "mode": "requests",
+  "source_url": "https://www.k-village.co.kr/goods/DUW22572C2",
+  "code": "DUW22572C2",
+  "title": "CORDURA BASIC (코듀라 베이직) 남여공용 다운 자켓 (L/Grey)",
+  "sale_price": 107100,
+  "list_price": 379000,
+  "pd_photo_image_urls": [
+    "https://contents.k-village.co.kr/Prod/2022/D/DUW22572C2/DUW22572C2_DM_02.jpg/k2dims/optimize?t=20250902141652",
+    "https://contents.k-village.co.kr/Prod/2022/D/DUW22572C2/DUW22572C2_DM_03.jpg/k2dims/optimize?t=20250902141652",
+    "https://contents.k-village.co.kr/Prod/2022/D/DUW22572C2/DUW22572C2_DF_01.JPG/k2dims/optimize?t=20250902141652",
+    "https://contents.k-village.co.kr/Prod/2022/D/DUW22572C2/DUW22572C2_DF_02.JPG/k2dims/optimize?t=20250902141652",
+    "https://contents.k-village.co.kr/Prod/2022/D/DUW22572C2/DUW22572C2_DF_03.JPG/k2dims/optimize?t=20250902141652",
+    "https://contents.k-village.co.kr/Prod/2022/D/DUW22572C2/DUW22572C2_DF_04.JPG/k2dims/optimize?t=20250902141652",
+    "https://contents.k-village.co.kr/Prod/2022/D/DUW22572C2/DUW22572C2_DF_05.JPG/k2dims/optimize?t=20250902141652",
+    "https://contents.k-village.co.kr/Prod/2022/D/DUW22572C2/DUW22572C2_DF_06.JPG/k2dims/optimize?t=20250902141652",
+    "https://contents.k-village.co.kr/Prod/2022/D/DUW22572C2/DUW22572C2_DF_07.JPG/k2dims/optimize?t=20250902141652",
+    "https://contents.k-village.co.kr/Prod/2022/D/DUW22572C2/DUW22572C2_DF_08.JPG/k2dims/optimize?t=20250902141652",
+    "https://contents.k-village.co.kr/Prod/2022/D/DUW22572C2/DUW22572C2_DF_09.JPG/k2dims/optimize?t=20250902141652",
+    "https://contents.k-village.co.kr/Prod/2022/D/DUW22572C2/DUW22572C2_DF_10.JPG/k2dims/optimize?t=20250902141652",
+    "https://contents.k-village.co.kr/PUBL_con/etc/rfid/eider.jpg"
+  ],
+  "gvnt_info": {
+    "모델명": "CORDURA BASIC (코듀라 베이직) 남여공용 다운 자켓 (L/Grey)",
+    "제품소재": "겉감 : 나일론 100%, \"안감1 나일론 100%, 안감2 : 폴리에스터 100%, 안감3 : 폴리에스터 100%, 충전재 : 우모 (거위) 솜털 80% 깃털 20%",
+    "색상": "Light Grey",
+    "사이즈": "S,M,L,XL,XXL",
+    "제조사": "(주)아이더",
+    "제조국": "베트남",
+    "제조연월(수입연월)": "2022년 7월",
+    "품질보증기준": "관련법 및 소비자 분쟁 해결 규정에 따름",
+    "A/S 책임자와 전화번호": "본사 고객상담실 / 1533-1631"
+  },
+  "제조사": "(주)아이더",
+  "제조연월(수입연월)": "2022년 7월",
+  "제조국": "베트남",
+  "mode_gvnt": "playwright_click",
+  "input_code": "DUW22572C2",
+  "saved_images_each": [
+    "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DUW22572C2\\images\\pd_001.jpg",
+    "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DUW22572C2\\images\\pd_002.jpg",
+    "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DUW22572C2\\images\\pd_003.jpg",
+    "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DUW22572C2\\images\\pd_004.jpg",
+    "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DUW22572C2\\images\\pd_005.jpg",
+    "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DUW22572C2\\images\\pd_006.jpg",
+    "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DUW22572C2\\images\\pd_007.jpg",
+    "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DUW22572C2\\images\\pd_008.jpg",
+    "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DUW22572C2\\images\\pd_009.jpg",
+    "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DUW22572C2\\images\\pd_010.jpg",
+    "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DUW22572C2\\images\\pd_011.jpg",
+    "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DUW22572C2\\images\\pd_012.jpg",
+    "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DUW22572C2\\images\\pd_013.jpg"
+  ],
+  "saved_images_merged": "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DUW22572C2\\images\\pd_photo_merged.jpg",
+  "saved_size_table_jpg": null,
+  "saved_accordion_renders": [
+    {
+      "ok": true,
+      "title": "상품정보제공고시",
+      "mode": "replay",
+      "html": "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DUW22572C2\\renders\\html\\상품정보제공고시.html",
+      "png": "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DUW22572C2\\renders\\png\\상품정보제공고시.png",
+      "jpg": "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DUW22572C2\\renders\\jpg\\상품정보제공고시.jpg"
+    },
+    {
+      "ok": true,
+      "title": "소재 및 관리방법",
+      "mode": "inline",
+      "html": "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DUW22572C2\\renders\\html\\소재_및_관리방법.html",
+      "png": "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DUW22572C2\\renders\\png\\소재_및_관리방법.png",
+      "jpg": "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DUW22572C2\\renders\\jpg\\소재_및_관리방법.jpg"
+    },
+    {
+      "ok": true,
+      "title": "MD_COMMENT",
+      "mode": "inline",
+      "html": "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DUW22572C2\\renders\\html\\MD_COMMENT.html",
+      "png": "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DUW22572C2\\renders\\png\\MD_COMMENT.png",
+      "jpg": "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DUW22572C2\\renders\\jpg\\MD_COMMENT.jpg"
+    }
+  ],
+  "size_options": [
+    {
+      "label": "Light Grey / S (품절)",
+      "href": "javascript:;",
+      "addOrder_args": []
+    },
+    {
+      "label": "Light Grey / M (품절)",
+      "href": "javascript:;",
+      "addOrder_args": []
+    },
+    {
+      "label": "Light Grey / L",
+      "href": "javascript:addOrder('L', '119,000', 'Light Grey', '27', '05','0','27', '10');",
+      "addOrder_args": [
+        "L",
+        "119,000",
+        "Light Grey",
+        "27",
+        "05",
+        "0",
+        "27",
+        "10"
+      ]
+    },
+    {
+      "label": "Light Grey / XL (품절)",
+      "href": "javascript:;",
+      "addOrder_args": []
+    },
+    {
+      "label": "Light Grey / XXL (품절)",
+      "href": "javascript:;",
+      "addOrder_args": []
+    },
+    {
+      "label": "Light Grey / S (품절)",
+      "href": "javascript:;",
+      "addOrder_args": []
+    },
+    {
+      "label": "Light Grey / M (품절)",
+      "href": "javascript:;",
+      "addOrder_args": []
+    },
+    {
+      "label": "Light Grey / L",
+      "href": "javascript:addOrder('L', '119,000', 'Light Grey', '27', '05','0','27', '10');",
+      "addOrder_args": [
+        "L",
+        "119,000",
+        "Light Grey",
+        "27",
+        "05",
+        "0",
+        "27",
+        "10"
+      ]
+    },
+    {
+      "label": "Light Grey / XL (품절)",
+      "href": "javascript:;",
+      "addOrder_args": []
+    },
+    {
+      "label": "Light Grey / XXL (품절)",
+      "href": "javascript:;",
+      "addOrder_args": []
+    }
+  ],
+  "saved_at": "2026-02-17T17:32:58"
+}

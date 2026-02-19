@@ -1,0 +1,209 @@
+{
+  "mode": "requests",
+  "source_url": "https://www.k-village.co.kr/goods/DUW24538Z1",
+  "code": "DUW24538Z1",
+  "title": "STELOL L (스테롤 L) UNI 윈드스타퍼 롱 다운 자켓 (Black)",
+  "sale_price": 279000,
+  "list_price": 459000,
+  "pd_photo_image_urls": [
+    "https://contents.k-village.co.kr/Prod/2024/D/DUW24538Z1/DUW24538Z1_DF_01.jpg/k2dims/optimize?t=20250806142638",
+    "https://contents.k-village.co.kr/Prod/2024/D/DUW24538Z1/DUW24538Z1_DF_02.jpg/k2dims/optimize?t=20250806142638",
+    "https://contents.k-village.co.kr/Prod/2024/D/DUW24538Z1/DUW24538Z1_DF_03.jpg/k2dims/optimize?t=20250806142638",
+    "https://contents.k-village.co.kr/Prod/2024/D/DUW24538Z1/DUW24538Z1_DF_04.jpg/k2dims/optimize?t=20250806142638",
+    "https://contents.k-village.co.kr/Prod/2024/D/DUW24538Z1/DUW24538Z1_DF_05.jpg/k2dims/optimize?t=20250806142638",
+    "https://contents.k-village.co.kr/Prod/2024/D/DUW24538Z1/DUW24538Z1_DF_06.jpg/k2dims/optimize?t=20250806142638",
+    "https://contents.k-village.co.kr/Prod/2024/D/DUW24538Z1/DUW24538Z1_DF_07.jpg/k2dims/optimize?t=20250806142638",
+    "https://contents.k-village.co.kr/Prod/2024/D/DUW24538Z1/DUW24538Z1_DF_08.jpg/k2dims/optimize?t=20250806142638",
+    "https://contents.k-village.co.kr/Prod/2024/D/DUW24538Z1/DUW24538Z1_DF_09.jpg/k2dims/optimize?t=20250806142638",
+    "https://contents.k-village.co.kr/Prod/2024/D/DUW24538Z1/DUW24538Z1_DF_10.jpg/k2dims/optimize?t=20250806142638",
+    "https://contents.k-village.co.kr/Prod/2024/D/DUW24538Z1/DUW24538Z1_DF_11.jpg/k2dims/optimize?t=20250806142638",
+    "https://contents.k-village.co.kr/Prod/2024/D/DUW24538Z1/DUW24538Z1_DF_12.jpg/k2dims/optimize?t=20250806142638",
+    "https://contents.k-village.co.kr/PUBL_con/etc/rfid/eider.jpg"
+  ],
+  "gvnt_info": {
+    "모델명": "STELOL L (스테롤 L) UNI 윈드스타퍼 롱 다운 자켓 (Black)",
+    "제품소재": "겉감:폴리에스터 100% / 안감1:폴리에스터 100% / 안감2:나일론 100% / 충전재:우모(거위)솜털 80% 깃털 20% / 충전재2:폴리에스터 100%",
+    "색상": "Black",
+    "사이즈": "상세페이지참조",
+    "제조사": "(주)아이더",
+    "제조국": "베트남",
+    "제조연월(수입연월)": "2024년 07월",
+    "품질보증기준": "관련법 및 소비자 분쟁 해결 규정에 따름",
+    "A/S 책임자와 전화번호": "본사 고객상담실 / 1533-1631"
+  },
+  "제조사": "(주)아이더",
+  "제조연월(수입연월)": "2024년 07월",
+  "제조국": "베트남",
+  "mode_gvnt": "playwright_click",
+  "input_code": "DUW24538Z1",
+  "saved_images_each": [
+    "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DUW24538Z1\\images\\pd_001.jpg",
+    "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DUW24538Z1\\images\\pd_002.jpg",
+    "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DUW24538Z1\\images\\pd_003.jpg",
+    "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DUW24538Z1\\images\\pd_004.jpg",
+    "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DUW24538Z1\\images\\pd_005.jpg",
+    "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DUW24538Z1\\images\\pd_006.jpg",
+    "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DUW24538Z1\\images\\pd_007.jpg",
+    "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DUW24538Z1\\images\\pd_008.jpg",
+    "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DUW24538Z1\\images\\pd_009.jpg",
+    "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DUW24538Z1\\images\\pd_010.jpg",
+    "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DUW24538Z1\\images\\pd_011.jpg",
+    "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DUW24538Z1\\images\\pd_012.jpg",
+    "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DUW24538Z1\\images\\pd_013.jpg"
+  ],
+  "saved_images_merged": "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DUW24538Z1\\images\\pd_photo_merged.jpg",
+  "saved_size_table_jpg": "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DUW24538Z1\\images\\size_table.jpg",
+  "saved_accordion_renders": [
+    {
+      "ok": true,
+      "title": "상품정보제공고시",
+      "mode": "replay",
+      "html": "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DUW24538Z1\\renders\\html\\상품정보제공고시.html",
+      "png": "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DUW24538Z1\\renders\\png\\상품정보제공고시.png",
+      "jpg": "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DUW24538Z1\\renders\\jpg\\상품정보제공고시.jpg"
+    },
+    {
+      "ok": true,
+      "title": "소재 및 관리방법",
+      "mode": "inline",
+      "html": "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DUW24538Z1\\renders\\html\\소재_및_관리방법.html",
+      "png": "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DUW24538Z1\\renders\\png\\소재_및_관리방법.png",
+      "jpg": "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DUW24538Z1\\renders\\jpg\\소재_및_관리방법.jpg"
+    },
+    {
+      "ok": true,
+      "title": "MD_COMMENT",
+      "mode": "inline",
+      "html": "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DUW24538Z1\\renders\\html\\MD_COMMENT.html",
+      "png": "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DUW24538Z1\\renders\\png\\MD_COMMENT.png",
+      "jpg": "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DUW24538Z1\\renders\\jpg\\MD_COMMENT.jpg"
+    }
+  ],
+  "size_options": [
+    {
+      "label": "Black / XXS",
+      "href": "javascript:addOrder('XXS', '279,000', 'Black', '1', '01','3','4', '10');",
+      "addOrder_args": [
+        "XXS",
+        "279,000",
+        "Black",
+        "1",
+        "01",
+        "3",
+        "4",
+        "10"
+      ]
+    },
+    {
+      "label": "Black / XS",
+      "href": "javascript:addOrder('XS', '279,000', 'Black', '0', '02','7','7', '10');",
+      "addOrder_args": [
+        "XS",
+        "279,000",
+        "Black",
+        "0",
+        "02",
+        "7",
+        "7",
+        "10"
+      ]
+    },
+    {
+      "label": "Black / S",
+      "href": "javascript:addOrder('S', '279,000', 'Black', '0', '03','23','23', '10');",
+      "addOrder_args": [
+        "S",
+        "279,000",
+        "Black",
+        "0",
+        "03",
+        "23",
+        "23",
+        "10"
+      ]
+    },
+    {
+      "label": "Black / M (품절)",
+      "href": "javascript:;",
+      "addOrder_args": []
+    },
+    {
+      "label": "Black / L (품절)",
+      "href": "javascript:;",
+      "addOrder_args": []
+    },
+    {
+      "label": "Black / XL (품절)",
+      "href": "javascript:;",
+      "addOrder_args": []
+    },
+    {
+      "label": "Black / XXL (품절)",
+      "href": "javascript:;",
+      "addOrder_args": []
+    },
+    {
+      "label": "Black / XXS",
+      "href": "javascript:addOrder('XXS', '279,000', 'Black', '1', '01','3','4', '10');",
+      "addOrder_args": [
+        "XXS",
+        "279,000",
+        "Black",
+        "1",
+        "01",
+        "3",
+        "4",
+        "10"
+      ]
+    },
+    {
+      "label": "Black / XS",
+      "href": "javascript:addOrder('XS', '279,000', 'Black', '0', '02','7','7', '10');",
+      "addOrder_args": [
+        "XS",
+        "279,000",
+        "Black",
+        "0",
+        "02",
+        "7",
+        "7",
+        "10"
+      ]
+    },
+    {
+      "label": "Black / S",
+      "href": "javascript:addOrder('S', '279,000', 'Black', '0', '03','23','23', '10');",
+      "addOrder_args": [
+        "S",
+        "279,000",
+        "Black",
+        "0",
+        "03",
+        "23",
+        "23",
+        "10"
+      ]
+    },
+    {
+      "label": "Black / M (품절)",
+      "href": "javascript:;",
+      "addOrder_args": []
+    },
+    {
+      "label": "Black / L (품절)",
+      "href": "javascript:;",
+      "addOrder_args": []
+    },
+    {
+      "label": "Black / XL (품절)",
+      "href": "javascript:;",
+      "addOrder_args": []
+    },
+    {
+      "label": "Black / XXL (품절)",
+      "href": "javascript:;",
+      "addOrder_args": []
+    }
+  ],
+  "saved_at": "2026-02-18T14:31:33"
+}

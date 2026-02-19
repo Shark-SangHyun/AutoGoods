@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>NaverGoods - Register</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <main class="wrap">
+      <div style="display:flex; justify-content:space-between; align-items:center; gap:12px; margin-bottom:8px;">
+        <a href="/collector" class="btn" style="width:auto; font-size:18px; padding:12px 16px;" target="_blank" rel="noopener noreferrer">
+          수집기로 이동
+        </a>
+        <a class="link" href="/static/index.html">← 처음으로</a>
+      </div>
+
+      <h1>상품등록</h1>
+      <p>품번 버튼으로 out 폴더 안의 상품 폴더를 선택하면 폴더명에서 품번(8자리)과 색상(2자리)을 추출하고, product.json을 읽어 폼을 자동 입력합니다.</p>
+
+      <label>
+        품번 입력 (예: DWW24559 / 색상: Z1)
+        <div style="display:flex; gap:10px; align-items:center;">
+          <input
+            id="sku"
+            type="text"
+            inputmode="text"
+            autocomplete="off"
+            placeholder="예) DWW24559"
+            maxlength="8"
+            style="flex:1;"
+          />
+
+          <input
+            id="skuColor"
+            type="text"
+            inputmode="text"
+            autocomplete="off"
+            placeholder="색상 (예: Z1)"
+            maxlength="2"
+            style="width:110px;"
+          />
+
+          <button id="btnPickSku" type="button" style="width:auto; padding:12px 16px;">
+            품번
+          </button>
+
+          <button id="btnDetect" type="button" style="width:auto; padding:12px 16px;">
+            식별
+          </button>
+        </div>
+
+        <input id="skuFolder" type="file" webkitdirectory directory multiple style="display:none;" />
+      </label>
+
+      <div class="input-with-counter">
+        <label>
+          상품명
+          <input
+            id="productName"
+            type="text"
+            maxlength="100"
+            autocomplete="off"
+            placeholder="product.json + 품번 규칙으로 자동 생성됩니다. (직접 수정 가능)"
+          />
+          <span id="productNameCounter" class="counter">0/100</span>
+          <span id="productNameWarning" class="name-warning"></span>
+
+          <style>
+            .counter { font-size:12px; opacity:.8; min-width:56px; text-align:right; }
+            .name-warning { display:block; font-size:12px; margin-top:4px; color:#ff4d4f; }
+          </style>
+        </label>
+      </div>
+
+      <label>
+        상품군
+        <input
+          id="productGroup"
+          type="text"
+          autocomplete="off"
+          placeholder="식별 후 자동 생성됩니다. (직접 수정 가능)"
+        />
+      </label>
+
+      <label>
+        카테고리(네이버)
+        <input
+          id="categoryQuery"
+          type="text"
+          autocomplete="off"
+          placeholder="예) 스포츠/레저>등산>등산의류>재킷"
+        />
+      </label>
+
+      <label id="teeTypeWrap" style="display:none;">
+        티셔츠 종류
+        <select id="teeType">
+          <option value="long">긴팔티셔츠</option>
+          <option value="short">반팔티셔츠</option>
+        </select>
+      </label>
+
+      <hr style="border:0; border-top:1px solid rgba(255,255,255,.12); margin:14px 0;" />
+
+      <label>
+        판매가
+        <input
+          id="priceOriginal"
+          type="text"
+          inputmode="numeric"
+          autocomplete="off"
+          placeholder="예) 479000"
+        />
+      </label>
+
+      <label>
+        할인가
+        <input
+          id="priceSale"
+          type="text"
+          inputmode="numeric"
+          autocomplete="off"
+          placeholder="예) 289000"
+        />
+      </label>
+
+      <label>
+        차액금액
+        <input
+          id="priceDiff"
+          type="text"
+          readonly
+          tabindex="-1"
+          placeholder="자동 계산됩니다."
+        />
+      </label>
+
+      <label>
+        원산지
+        <input
+          id="originCountry"
+          type="text"
+          autocomplete="off"
+          placeholder="예) 인도네시아"
+        />
+      </label>
+
+      <label>
+        제조연월(수입연월)
+        <input
+          id="manufactureDate"
+          type="text"
+          autocomplete="off"
+          placeholder="예) 2024.08.01"
+        />
+      </label>
+
+      <pre id="result" class="status" aria-live="polite">결과가 여기에 표시됩니다.</pre>
+
+      <button id="btnApplyCategory" class="btn" type="button">
+        상품입력하기
+      </button>
+
+      <a class="link" href="/static/next.html">← 로그인 확인으로</a>
+    </main>
+
+    <script defer src="/static/register.js"></script>
+  </body>
+</html>

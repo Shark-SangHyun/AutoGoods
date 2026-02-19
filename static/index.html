@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>NaverGoods</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <main class="wrap">
+      <h1>스마트스토어 자동화</h1>
+      <p>아래 버튼을 누르면 스마트스토어가 열리고 다음 단계로 이동합니다.</p>
+
+      <button id="openSmartstore" class="btn" type="button">
+        스마트스토어 열기
+      </button>
+
+      <pre id="status" class="status"></pre>
+    </main>
+
+    <script>
+      const btn = document.getElementById("openSmartstore");
+      const statusEl = document.getElementById("status");
+
+      btn.addEventListener("click", async () => {
+        btn.disabled = true;
+        statusEl.textContent = "스마트스토어 여는 중...";
+
+        try {
+          const res = await fetch("/api/open-smartstore", {
+            method: "POST",
+          });
+
+          if (!res.ok) {
+            throw new Error("서버 요청 실패");
+          }
+
+          statusEl.textContent =
+            "스마트스토어가 열렸습니다.\n로그인 후 다음 단계로 이동합니다.";
+
+          // 스마트스토어 창을 연 뒤, 내 페이지는 다음 화면으로 이동
+          window.location.href = "/static/next.html";
+        } catch (e) {
+          statusEl.textContent =
+            "실패: Python 서버가 실행 중인지 확인하세요.";
+          btn.disabled = false;
+        }
+      });
+    </script>
+  </body>
+</html>

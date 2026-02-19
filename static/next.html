@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>NaverGoods - Login Check</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <main class="wrap">
+      <h1>로그인 상태 확인</h1>
+      <p>스마트스토어 창에서 로그인 후, 아래 버튼으로 상태 확인하세요.</p>
+
+      <button id="checkLogin" class="btn" type="button">
+        로그인 상태 확인
+      </button>
+
+      <button id="goRegister" class="btn" type="button" disabled>
+        상품등록 페이지로 이동
+      </button>
+
+      <pre id="status" class="status" aria-live="polite"></pre>
+
+      <a class="link" href="/static/index.html">← 처음으로</a>
+    </main>
+
+ <script>
+  const $ = (id) => document.getElementById(id);
+
+  const checkBtn = $("checkLogin");
+  const goBtn = $("goRegister");
+  const statusEl = $("status");
+
+  let loggedIn = false;
+
+  function render() {
+    goBtn.disabled = !loggedIn;
+  }
+
+  checkBtn.addEventListener("click", async () => {
+    checkBtn.disabled = true;
+    statusEl.textContent = "확인 중...";
+
+    try {
+      const res = await fetch("/api/check-login", { method: "POST" });
+      const data = await res.json();
+
+      loggedIn = !!data.logged_in;
+      render();
+
+      statusEl.textContent = loggedIn
+        ? "✅ 로그인 확인됨. '상품등록 페이지로 이동'을 눌러 다음 단계로 진행하세요."
+        : "❌ 로그인 안됨. 스마트스토어 창에서 로그인 후 다시 확인하세요.";
+    } catch (e) {
+      statusEl.textContent = "실패: 서버 응답 오류. 서버가 실행 중인지 확인하세요.";
+    } finally {
+      checkBtn.disabled = false;
+    }
+  });
+
+  goBtn.addEventListener("click", async () => {
+    if (!loggedIn) return;
+
+    goBtn.disabled = true;
+    statusEl.textContent = "상품등록 페이지로 이동 중...";
+
+    try {
+      const res = await fetch("/api/go-register", { method: "POST" });
+      const data = await res.json().catch(() => ({}));
+
+      if (!res.ok) {
+        throw new Error(data?.detail || `HTTP ${res.status}`);
+      }
+
+      statusEl.textContent = "✅ 상품관리 > 상품등록 화면으로 이동했습니다.";
+
+      // 메시지 잠깐 보여준 다음 이동
+      setTimeout(() => {
+        window.location.href = "/static/register.html";
+      }, 600);
+    } catch (e) {
+      statusEl.textContent = `❌ 이동 실패: ${e.message}\n스마트스토어 창 상태를 확인하세요.`;
+      goBtn.disabled = false;
+    }
+  });
+
+  render();
+</script>
+  </body>
+</html>

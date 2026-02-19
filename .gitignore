@@ -1,0 +1,4 @@
+__pycache__/
+*.pyc
+chrome_profile*/
+kv_mvp/__pycache__/

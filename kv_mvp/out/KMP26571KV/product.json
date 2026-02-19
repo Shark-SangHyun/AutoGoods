@@ -1,0 +1,221 @@
+{
+  "mode": "requests",
+  "source_url": "https://www.k-village.co.kr/goods/KMP26571KV",
+  "code": "KMP26571KV",
+  "title": "시그니처 누에보(NUEVO) 구스 다운 자켓 (OATMEAL GREY)",
+  "sale_price": 239200,
+  "list_price": 299000,
+  "pd_photo_image_urls": [
+    "https://contents.k-village.co.kr/Prod/2026/K/KMP26571KV/KMP26571KV_DF_01.JPG/k2dims/optimize",
+    "https://contents.k-village.co.kr/Prod/2026/K/KMP26571KV/KMP26571KV_DF_02.JPG/k2dims/optimize",
+    "https://contents.k-village.co.kr/Prod/2026/K/KMP26571KV/KMP26571KV_DF_03.JPG/k2dims/optimize",
+    "https://contents.k-village.co.kr/Prod/2026/K/KMP26571KV/KMP26571KV_DF_04.JPG/k2dims/optimize",
+    "https://contents.k-village.co.kr/Prod/2026/K/KMP26571KV/KMP26571KV_DF_05.JPG/k2dims/optimize",
+    "https://contents.k-village.co.kr/Prod/2026/K/KMP26571KV/KMP26571KV_DF_06.JPG/k2dims/optimize",
+    "https://contents.k-village.co.kr/Prod/2026/K/KMP26571KV/KMP26571KV_DF_07.JPG/k2dims/optimize",
+    "https://contents.k-village.co.kr/Prod/2026/K/KMP26571KV/KMP26571KV_DF_08.JPG/k2dims/optimize",
+    "https://contents.k-village.co.kr/Prod/2026/K/KMP26571KV/KMP26571KV_DF_09.JPG/k2dims/optimize",
+    "https://contents.k-village.co.kr/Prod/2026/K/KMP26571KV/KMP26571KV_DF_10.JPG/k2dims/optimize",
+    "https://contents.k-village.co.kr/PUBL_con/etc/rfid/k2.jpg"
+  ],
+  "gvnt_info": {
+    "모델명": "시그니처 누에보(NUEVO) 구스 다운 자켓 (OATMEAL GREY)",
+    "제품소재": "겉감:나일론100% 안감1:나일론100% 안감2:폴리에스터100% 충전재:솜털(다운)90% 깃털(거위):10%",
+    "색상": "OATMEAL GREY",
+    "사이즈": "95[04],100[05],105[06],110[07],115[08]",
+    "제조사": "케이투코리아(주)",
+    "제조국": "베트남",
+    "제조연월(수입연월)": "2025년12월",
+    "품질보증기준": "관련법 및 소비자 분쟁 해결 규정에 따름",
+    "A/S 책임자와 전화번호": "본사 고객상담실 / 1533-1631"
+  },
+  "제조사": "케이투코리아(주)",
+  "제조연월(수입연월)": "2025년12월",
+  "제조국": "베트남",
+  "mode_gvnt": "playwright_click",
+  "input_code": "KMP26571KV",
+  "saved_images_each": [
+    "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\KMP26571KV\\images\\pd_001.jpg",
+    "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\KMP26571KV\\images\\pd_002.jpg",
+    "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\KMP26571KV\\images\\pd_003.jpg",
+    "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\KMP26571KV\\images\\pd_004.jpg",
+    "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\KMP26571KV\\images\\pd_005.jpg",
+    "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\KMP26571KV\\images\\pd_006.jpg",
+    "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\KMP26571KV\\images\\pd_007.jpg",
+    "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\KMP26571KV\\images\\pd_008.jpg",
+    "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\KMP26571KV\\images\\pd_009.jpg",
+    "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\KMP26571KV\\images\\pd_010.jpg",
+    "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\KMP26571KV\\images\\pd_011.jpg"
+  ],
+  "saved_images_merged": "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\KMP26571KV\\images\\pd_photo_merged.jpg",
+  "saved_size_table_jpg": "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\KMP26571KV\\images\\size_table.jpg",
+  "saved_accordion_renders": [
+    {
+      "ok": true,
+      "title": "상품정보제공고시",
+      "mode": "replay",
+      "html": "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\KMP26571KV\\renders\\html\\상품정보제공고시.html",
+      "png": "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\KMP26571KV\\renders\\png\\상품정보제공고시.png",
+      "jpg": "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\KMP26571KV\\renders\\jpg\\상품정보제공고시.jpg"
+    },
+    {
+      "ok": true,
+      "title": "소재 및 관리방법",
+      "mode": "inline",
+      "html": "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\KMP26571KV\\renders\\html\\소재_및_관리방법.html",
+      "png": "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\KMP26571KV\\renders\\png\\소재_및_관리방법.png",
+      "jpg": "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\KMP26571KV\\renders\\jpg\\소재_및_관리방법.jpg"
+    },
+    {
+      "ok": true,
+      "title": "MD_COMMENT",
+      "mode": "inline",
+      "html": "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\KMP26571KV\\renders\\html\\MD_COMMENT.html",
+      "png": "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\KMP26571KV\\renders\\png\\MD_COMMENT.png",
+      "jpg": "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\KMP26571KV\\renders\\jpg\\MD_COMMENT.jpg"
+    }
+  ],
+  "size_options": [
+    {
+      "label": "OATMEAL GREY / 95",
+      "href": "javascript:addOrder('95', '299,000', 'OATMEAL GREY', '2', '04','13','15', '10');",
+      "addOrder_args": [
+        "95",
+        "299,000",
+        "OATMEAL GREY",
+        "2",
+        "04",
+        "13",
+        "15",
+        "10"
+      ]
+    },
+    {
+      "label": "OATMEAL GREY / 100",
+      "href": "javascript:addOrder('100', '299,000', 'OATMEAL GREY', '2', '05','24','26', '10');",
+      "addOrder_args": [
+        "100",
+        "299,000",
+        "OATMEAL GREY",
+        "2",
+        "05",
+        "24",
+        "26",
+        "10"
+      ]
+    },
+    {
+      "label": "OATMEAL GREY / 105",
+      "href": "javascript:addOrder('105', '299,000', 'OATMEAL GREY', '2', '06','24','26', '10');",
+      "addOrder_args": [
+        "105",
+        "299,000",
+        "OATMEAL GREY",
+        "2",
+        "06",
+        "24",
+        "26",
+        "10"
+      ]
+    },
+    {
+      "label": "OATMEAL GREY / 110",
+      "href": "javascript:addOrder('110', '299,000', 'OATMEAL GREY', '1', '07','3','4', '10');",
+      "addOrder_args": [
+        "110",
+        "299,000",
+        "OATMEAL GREY",
+        "1",
+        "07",
+        "3",
+        "4",
+        "10"
+      ]
+    },
+    {
+      "label": "OATMEAL GREY / 115",
+      "href": "javascript:addOrder('115', '299,000', 'OATMEAL GREY', '1', '08','0','1', '10');",
+      "addOrder_args": [
+        "115",
+        "299,000",
+        "OATMEAL GREY",
+        "1",
+        "08",
+        "0",
+        "1",
+        "10"
+      ]
+    },
+    {
+      "label": "OATMEAL GREY / 95",
+      "href": "javascript:addOrder('95', '299,000', 'OATMEAL GREY', '2', '04','13','15', '10');",
+      "addOrder_args": [
+        "95",
+        "299,000",
+        "OATMEAL GREY",
+        "2",
+        "04",
+        "13",
+        "15",
+        "10"
+      ]
+    },
+    {
+      "label": "OATMEAL GREY / 100",
+      "href": "javascript:addOrder('100', '299,000', 'OATMEAL GREY', '2', '05','24','26', '10');",
+      "addOrder_args": [
+        "100",
+        "299,000",
+        "OATMEAL GREY",
+        "2",
+        "05",
+        "24",
+        "26",
+        "10"
+      ]
+    },
+    {
+      "label": "OATMEAL GREY / 105",
+      "href": "javascript:addOrder('105', '299,000', 'OATMEAL GREY', '2', '06','24','26', '10');",
+      "addOrder_args": [
+        "105",
+        "299,000",
+        "OATMEAL GREY",
+        "2",
+        "06",
+        "24",
+        "26",
+        "10"
+      ]
+    },
+    {
+      "label": "OATMEAL GREY / 110",
+      "href": "javascript:addOrder('110', '299,000', 'OATMEAL GREY', '1', '07','3','4', '10');",
+      "addOrder_args": [
+        "110",
+        "299,000",
+        "OATMEAL GREY",
+        "1",
+        "07",
+        "3",
+        "4",
+        "10"
+      ]
+    },
+    {
+      "label": "OATMEAL GREY / 115",
+      "href": "javascript:addOrder('115', '299,000', 'OATMEAL GREY', '1', '08','0','1', '10');",
+      "addOrder_args": [
+        "115",
+        "299,000",
+        "OATMEAL GREY",
+        "1",
+        "08",
+        "0",
+        "1",
+        "10"
+      ]
+    }
+  ],
+  "saved_at": "2026-02-17T17:41:34"
+}

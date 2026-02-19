@@ -1,0 +1,79 @@
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Noto Sans KR", Arial, sans-serif;
+  background: #0b0d12;
+  color: #e9eef7;
+}
+.wrap {
+  max-width: 520px;
+  margin: 40px auto;
+  padding: 20px;
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 14px;
+}
+label {
+  display: grid;
+  gap: 8px;
+  margin: 14px 0;
+}
+.btn {
+  margin-bottom: 10px;
+}
+input {
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,.18);
+  background: rgba(255,255,255,.06);
+  color: inherit;
+}
+button {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,.18);
+  background: #03c75a;
+  color: #04120a;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+/* anchors that should look like buttons */
+a.btn {
+  display: inline-block;
+  text-decoration: none;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,.18);
+  background: #03c75a;
+  color: #04120a;
+  font-weight: 700;
+}
+
+a.link {
+  color: rgba(233,238,247,.86);
+  text-decoration: none;
+}
+a.link:hover { text-decoration: underline; }
+
+.panel {
+  margin-top: 14px;
+  padding: 14px;
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 12px;
+  background: rgba(255,255,255,.04);
+}
+.status {
+  margin-top: 14px;
+  padding: 12px;
+  background: rgba(255,255,255,.06);
+  border-radius: 10px;
+  min-height: 44px;
+  white-space: pre-wrap;
+}
+
+/* ✅ 선택된 품번/색상 잠금 표시 */
+input.locked,
+input[readonly] {
+  opacity: 0.85;
+  cursor: not-allowed;
+}
+

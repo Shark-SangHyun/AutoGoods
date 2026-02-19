@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>KV 수집기</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <main class="wrap">
+      <div style="display:flex; justify-content:space-between; align-items:center; gap:12px; margin-bottom:8px;">
+        <a href="/static/register.html" class="btn" style="width:auto; font-size:18px; padding:12px 16px;">상품등록으로</a>
+        <a class="link" href="/static/index.html">← 처음으로</a>
+      </div>
+
+      <h1>KV 수집기</h1>
+      <p>
+        이 페이지는 <b>kv_mvp 수집 결과</b>(product.json/이미지 등)를 만들기 위한 안내용 화면입니다.
+        수집은 별도 프로세스(Playwright)로 실행되고, 생성된 결과를 상품등록 화면에서 불러옵니다.
+      </p>
+
+      <div class="panel">
+        <h2 style="margin:0 0 8px; font-size:18px;">권장 실행(별도 터미널)</h2>
+        <pre class="status">cd kv_mvp
+※ 별도 실행 필요 없음 (현재 서버에 통합됨)
+
+수집기 UI: /collector</pre>
+        <p style="margin:10px 0 0;">
+          실행 후 아래 버튼으로 수집기 UI를 엽니다.
+        </p>
+        <button id="openCollector" class="btn" type="button" style="width:auto; margin-top:10px;">
+          수집기 UI 열기 (/collector)
+        </button>
+        <pre id="hint" class="status" aria-live="polite" style="margin-top:12px;"></pre>
+      </div>
+
+      <div class="panel">
+        <h2 style="margin:0 0 8px; font-size:18px;">수집 후 다음 단계</h2>
+        <ol style="margin:0; padding-left:18px;">
+          <li>수집기에서 품번으로 수집 실행</li>
+          <li><code>kv_mvp/out</code> 아래에 폴더와 <code>product.json</code> 생성 확인</li>
+          <li><b>상품등록</b> 화면에서 동일 품번 입력 → <b>KV 데이터 불러오기</b></li>
+        </ol>
+      </div>
+
+      <script>
+        const btn = document.getElementById('openCollector');
+        const hint = document.getElementById('hint');
+        btn.addEventListener('click', () => {
+          hint.textContent = '새 탭에서 수집기 UI를 여는 중... (안 열리면 수집기 서버가 실행 중인지 확인하세요)';
+          window.open('/collector/', '_blank', 'noopener');
+        });
+      </script>
+    </main>
+  </body>
+</html>

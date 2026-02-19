@@ -1,0 +1,188 @@
+{
+  "mode": "requests",
+  "source_url": "https://www.k-village.co.kr/goods/DWW255185E",
+  "code": "DWW255185E",
+  "title": "CIRCULART (써큘라트) 여성 테크니컬 푸퍼 다운 자켓 (Copper Brown)",
+  "sale_price": 449000,
+  "list_price": 539000,
+  "pd_photo_image_urls": [
+    "https://contents.k-village.co.kr/Prod/2025/D/DWW255185E/DWW255185E_DF_01.jpg/k2dims/optimize",
+    "https://contents.k-village.co.kr/Prod/2025/D/DWW255185E/DWW255185E_DF_02.jpg/k2dims/optimize",
+    "https://contents.k-village.co.kr/Prod/2025/D/DWW255185E/DWW255185E_DF_04.jpg/k2dims/optimize",
+    "https://contents.k-village.co.kr/Prod/2025/D/DWW255185E/DWW255185E_DF_05.jpg/k2dims/optimize",
+    "https://contents.k-village.co.kr/Prod/2025/D/DWW255185E/DWW255185E_DF_06.jpg/k2dims/optimize",
+    "https://contents.k-village.co.kr/Prod/2025/D/DWW255185E/DWW255185E_DF_07.jpg/k2dims/optimize",
+    "https://contents.k-village.co.kr/Prod/2025/D/DWW255185E/DWW255185E_DF_08.jpg/k2dims/optimize",
+    "https://contents.k-village.co.kr/Prod/2025/D/DWW255185E/DWW255185E_DF_09.jpg/k2dims/optimize",
+    "https://contents.k-village.co.kr/Prod/2025/D/DWW255185E/DWW255185E_DF_10.jpg/k2dims/optimize",
+    "https://contents.k-village.co.kr/Prod/2025/D/DWW255185E/DWW255185E_DF_12.jpg/k2dims/optimize",
+    "https://contents.k-village.co.kr/Prod/2025/D/DWW255185E/DWW255185E_DF_13.jpg/k2dims/optimize",
+    "https://contents.k-village.co.kr/PUBL_con/etc/rfid/eider.jpg"
+  ],
+  "gvnt_info": {
+    "모델명": "CIRCULART (써큘라트) 여성 테크니컬 푸퍼 다운 자켓 (Copper Brown)"
+  },
+  "제조사": "(주)아이더",
+  "제조연월": null,
+  "제조연월(수입연월)": "2025년 08월",
+  "제조국": "베트남",
+  "mode_gvnt": "playwright_click",
+  "input_code": "DWW255185E",
+  "saved_images_each": [
+    "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DWW255185E\\images\\pd_001.jpg",
+    "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DWW255185E\\images\\pd_002.jpg",
+    "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DWW255185E\\images\\pd_003.jpg",
+    "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DWW255185E\\images\\pd_004.jpg",
+    "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DWW255185E\\images\\pd_005.jpg",
+    "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DWW255185E\\images\\pd_006.jpg",
+    "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DWW255185E\\images\\pd_007.jpg",
+    "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DWW255185E\\images\\pd_008.jpg",
+    "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DWW255185E\\images\\pd_009.jpg",
+    "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DWW255185E\\images\\pd_010.jpg",
+    "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DWW255185E\\images\\pd_011.jpg",
+    "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DWW255185E\\images\\pd_012.jpg"
+  ],
+  "saved_images_merged": "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DWW255185E\\images\\pd_photo_merged.jpg",
+  "saved_size_table_jpg": "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DWW255185E\\images\\size_table.jpg",
+  "saved_accordion_renders": [
+    {
+      "ok": true,
+      "title": "상품정보제공고시",
+      "mode": "replay",
+      "html": "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DWW255185E\\renders\\html\\상품정보제공고시.html",
+      "png": "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DWW255185E\\renders\\png\\상품정보제공고시.png",
+      "jpg": "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DWW255185E\\renders\\jpg\\상품정보제공고시.jpg"
+    },
+    {
+      "ok": true,
+      "title": "소재 및 관리방법",
+      "mode": "inline",
+      "html": "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DWW255185E\\renders\\html\\소재_및_관리방법.html",
+      "png": "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DWW255185E\\renders\\png\\소재_및_관리방법.png",
+      "jpg": "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DWW255185E\\renders\\jpg\\소재_및_관리방법.jpg"
+    },
+    {
+      "ok": true,
+      "title": "MD_COMMENT",
+      "mode": "inline",
+      "html": "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DWW255185E\\renders\\html\\MD_COMMENT.html",
+      "png": "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DWW255185E\\renders\\png\\MD_COMMENT.png",
+      "jpg": "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DWW255185E\\renders\\jpg\\MD_COMMENT.jpg"
+    }
+  ],
+  "size_options": [
+    {
+      "label": "COPPER BROWN / S",
+      "href": "javascript:addOrder('S', '539,000', 'COPPER BROWN', '1', '03','27','28', '10');",
+      "addOrder_args": [
+        "S",
+        "539,000",
+        "COPPER BROWN",
+        "1",
+        "03",
+        "27",
+        "28",
+        "10"
+      ]
+    },
+    {
+      "label": "COPPER BROWN / M",
+      "href": "javascript:addOrder('M', '539,000', 'COPPER BROWN', '1', '04','52','53', '10');",
+      "addOrder_args": [
+        "M",
+        "539,000",
+        "COPPER BROWN",
+        "1",
+        "04",
+        "52",
+        "53",
+        "10"
+      ]
+    },
+    {
+      "label": "COPPER BROWN / L",
+      "href": "javascript:addOrder('L', '539,000', 'COPPER BROWN', '0', '05','24','24', '10');",
+      "addOrder_args": [
+        "L",
+        "539,000",
+        "COPPER BROWN",
+        "0",
+        "05",
+        "24",
+        "24",
+        "10"
+      ]
+    },
+    {
+      "label": "COPPER BROWN / XL",
+      "href": "javascript:addOrder('XL', '539,000', 'COPPER BROWN', '0', '06','8','8', '10');",
+      "addOrder_args": [
+        "XL",
+        "539,000",
+        "COPPER BROWN",
+        "0",
+        "06",
+        "8",
+        "8",
+        "10"
+      ]
+    },
+    {
+      "label": "COPPER BROWN / S",
+      "href": "javascript:addOrder('S', '539,000', 'COPPER BROWN', '1', '03','27','28', '10');",
+      "addOrder_args": [
+        "S",
+        "539,000",
+        "COPPER BROWN",
+        "1",
+        "03",
+        "27",
+        "28",
+        "10"
+      ]
+    },
+    {
+      "label": "COPPER BROWN / M",
+      "href": "javascript:addOrder('M', '539,000', 'COPPER BROWN', '1', '04','52','53', '10');",
+      "addOrder_args": [
+        "M",
+        "539,000",
+        "COPPER BROWN",
+        "1",
+        "04",
+        "52",
+        "53",
+        "10"
+      ]
+    },
+    {
+      "label": "COPPER BROWN / L",
+      "href": "javascript:addOrder('L', '539,000', 'COPPER BROWN', '0', '05','24','24', '10');",
+      "addOrder_args": [
+        "L",
+        "539,000",
+        "COPPER BROWN",
+        "0",
+        "05",
+        "24",
+        "24",
+        "10"
+      ]
+    },
+    {
+      "label": "COPPER BROWN / XL",
+      "href": "javascript:addOrder('XL', '539,000', 'COPPER BROWN', '0', '06','8','8', '10');",
+      "addOrder_args": [
+        "XL",
+        "539,000",
+        "COPPER BROWN",
+        "0",
+        "06",
+        "8",
+        "8",
+        "10"
+      ]
+    }
+  ],
+  "saved_at": "2026-02-17T16:21:26"
+}

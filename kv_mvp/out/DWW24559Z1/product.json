@@ -1,0 +1,225 @@
+{
+  "mode": "requests",
+  "source_url": "https://www.k-village.co.kr/goods/DWW24559Z1",
+  "code": "DWW24559Z1",
+  "title": "캐시미어 코트 여성 W/S 롱 다운 자켓 (Black)",
+  "sale_price": 289000,
+  "list_price": 479000,
+  "pd_photo_image_urls": [
+    "https://contents.k-village.co.kr/Prod/2024/D/DWW24559Z1/DWW24559Z1_DF_01.jpg/k2dims/optimize?t=20250806143356",
+    "https://contents.k-village.co.kr/Prod/2024/D/DWW24559Z1/DWW24559Z1_DF_02.jpg/k2dims/optimize?t=20250806143356",
+    "https://contents.k-village.co.kr/Prod/2024/D/DWW24559Z1/DWW24559Z1_DF_03.jpg/k2dims/optimize?t=20250806143356",
+    "https://contents.k-village.co.kr/Prod/2024/D/DWW24559Z1/DWW24559Z1_DF_04.jpg/k2dims/optimize?t=20250806143356",
+    "https://contents.k-village.co.kr/Prod/2024/D/DWW24559Z1/DWW24559Z1_DF_05.jpg/k2dims/optimize?t=20250806143356",
+    "https://contents.k-village.co.kr/Prod/2024/D/DWW24559Z1/DWW24559Z1_DF_06.jpg/k2dims/optimize?t=20250806143356",
+    "https://contents.k-village.co.kr/Prod/2024/D/DWW24559Z1/DWW24559Z1_DF_07.jpg/k2dims/optimize?t=20250806143356",
+    "https://contents.k-village.co.kr/Prod/2024/D/DWW24559Z1/DWW24559Z1_DF_08.jpg/k2dims/optimize?t=20250806143356",
+    "https://contents.k-village.co.kr/Prod/2024/D/DWW24559Z1/DWW24559Z1_DF_09.jpg/k2dims/optimize?t=20250806143356",
+    "https://contents.k-village.co.kr/Prod/2024/D/DWW24559Z1/DWW24559Z1_DF_10.jpg/k2dims/optimize?t=20250806143356",
+    "https://contents.k-village.co.kr/Prod/2024/D/DWW24559Z1/DWW24559Z1_DF_11.jpg/k2dims/optimize?t=20250806143356",
+    "https://contents.k-village.co.kr/Prod/2024/D/DWW24559Z1/DWW24559Z1_DF_12.jpg/k2dims/optimize?t=20250806143356",
+    "https://contents.k-village.co.kr/PUBL_con/etc/rfid/eider.jpg"
+  ],
+  "gvnt_info": {
+    "모델명": "캐시미어 코트 여성 W/S 롱 다운 자켓 (Black)",
+    "제품소재": "겉감:폴리에스터 100% / 안감1:폴리에스터 100% / 안감2:나일론 100% / 안감3:폴리에스터 100% / 충전재1:우모(거위)솜털 80% 깃털 20% / 충전재2:폴리에스터 55% 캐시미어 41% 모 4% / 충전재3:폴리에스터 100%",
+    "색상": "Black",
+    "사이즈": "S,M,L,XL,XXL",
+    "제조사": "(주)아이더",
+    "제조국": "인도네시아",
+    "제조연월(수입연월)": "2024년 06월",
+    "품질보증기준": "관련법 및 소비자 분쟁 해결 규정에 따름",
+    "A/S 책임자와 전화번호": "본사 고객상담실 / 1533-1631"
+  },
+  "제조사": "(주)아이더",
+  "제조연월(수입연월)": "2024년 06월",
+  "제조국": "인도네시아",
+  "mode_gvnt": "playwright_click",
+  "input_code": "DWW24559Z1",
+  "saved_images_each": [
+    "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DWW24559Z1\\images\\pd_001.jpg",
+    "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DWW24559Z1\\images\\pd_002.jpg",
+    "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DWW24559Z1\\images\\pd_003.jpg",
+    "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DWW24559Z1\\images\\pd_004.jpg",
+    "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DWW24559Z1\\images\\pd_005.jpg",
+    "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DWW24559Z1\\images\\pd_006.jpg",
+    "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DWW24559Z1\\images\\pd_007.jpg",
+    "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DWW24559Z1\\images\\pd_008.jpg",
+    "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DWW24559Z1\\images\\pd_009.jpg",
+    "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DWW24559Z1\\images\\pd_010.jpg",
+    "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DWW24559Z1\\images\\pd_011.jpg",
+    "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DWW24559Z1\\images\\pd_012.jpg",
+    "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DWW24559Z1\\images\\pd_013.jpg"
+  ],
+  "saved_images_merged": "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DWW24559Z1\\images\\pd_photo_merged.jpg",
+  "saved_size_table_jpg": "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DWW24559Z1\\images\\size_table.jpg",
+  "saved_accordion_renders": [
+    {
+      "ok": true,
+      "title": "상품정보제공고시",
+      "mode": "replay",
+      "html": "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DWW24559Z1\\renders\\html\\상품정보제공고시.html",
+      "png": "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DWW24559Z1\\renders\\png\\상품정보제공고시.png",
+      "jpg": "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DWW24559Z1\\renders\\jpg\\상품정보제공고시.jpg"
+    },
+    {
+      "ok": true,
+      "title": "소재 및 관리방법",
+      "mode": "inline",
+      "html": "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DWW24559Z1\\renders\\html\\소재_및_관리방법.html",
+      "png": "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DWW24559Z1\\renders\\png\\소재_및_관리방법.png",
+      "jpg": "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DWW24559Z1\\renders\\jpg\\소재_및_관리방법.jpg"
+    },
+    {
+      "ok": true,
+      "title": "MD_COMMENT",
+      "mode": "inline",
+      "html": "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DWW24559Z1\\renders\\html\\MD_COMMENT.html",
+      "png": "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DWW24559Z1\\renders\\png\\MD_COMMENT.png",
+      "jpg": "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DWW24559Z1\\renders\\jpg\\MD_COMMENT.jpg"
+    }
+  ],
+  "size_options": [
+    {
+      "label": "Black / S",
+      "href": "javascript:addOrder('S', '289,000', 'Black', '0', '03','68','68', '10');",
+      "addOrder_args": [
+        "S",
+        "289,000",
+        "Black",
+        "0",
+        "03",
+        "68",
+        "68",
+        "10"
+      ]
+    },
+    {
+      "label": "Black / M",
+      "href": "javascript:addOrder('M', '289,000', 'Black', '0', '04','70','70', '10');",
+      "addOrder_args": [
+        "M",
+        "289,000",
+        "Black",
+        "0",
+        "04",
+        "70",
+        "70",
+        "10"
+      ]
+    },
+    {
+      "label": "Black / L",
+      "href": "javascript:addOrder('L', '289,000', 'Black', '0', '05','33','33', '10');",
+      "addOrder_args": [
+        "L",
+        "289,000",
+        "Black",
+        "0",
+        "05",
+        "33",
+        "33",
+        "10"
+      ]
+    },
+    {
+      "label": "Black / XL",
+      "href": "javascript:addOrder('XL', '289,000', 'Black', '0', '06','6','6', '10');",
+      "addOrder_args": [
+        "XL",
+        "289,000",
+        "Black",
+        "0",
+        "06",
+        "6",
+        "6",
+        "10"
+      ]
+    },
+    {
+      "label": "Black / XXL",
+      "href": "javascript:addOrder('XXL', '289,000', 'Black', '0', '07','4','4', '10');",
+      "addOrder_args": [
+        "XXL",
+        "289,000",
+        "Black",
+        "0",
+        "07",
+        "4",
+        "4",
+        "10"
+      ]
+    },
+    {
+      "label": "Black / S",
+      "href": "javascript:addOrder('S', '289,000', 'Black', '0', '03','68','68', '10');",
+      "addOrder_args": [
+        "S",
+        "289,000",
+        "Black",
+        "0",
+        "03",
+        "68",
+        "68",
+        "10"
+      ]
+    },
+    {
+      "label": "Black / M",
+      "href": "javascript:addOrder('M', '289,000', 'Black', '0', '04','70','70', '10');",
+      "addOrder_args": [
+        "M",
+        "289,000",
+        "Black",
+        "0",
+        "04",
+        "70",
+        "70",
+        "10"
+      ]
+    },
+    {
+      "label": "Black / L",
+      "href": "javascript:addOrder('L', '289,000', 'Black', '0', '05','33','33', '10');",
+      "addOrder_args": [
+        "L",
+        "289,000",
+        "Black",
+        "0",
+        "05",
+        "33",
+        "33",
+        "10"
+      ]
+    },
+    {
+      "label": "Black / XL",
+      "href": "javascript:addOrder('XL', '289,000', 'Black', '0', '06','6','6', '10');",
+      "addOrder_args": [
+        "XL",
+        "289,000",
+        "Black",
+        "0",
+        "06",
+        "6",
+        "6",
+        "10"
+      ]
+    },
+    {
+      "label": "Black / XXL",
+      "href": "javascript:addOrder('XXL', '289,000', 'Black', '0', '07','4','4', '10');",
+      "addOrder_args": [
+        "XXL",
+        "289,000",
+        "Black",
+        "0",
+        "07",
+        "4",
+        "4",
+        "10"
+      ]
+    }
+  ],
+  "saved_at": "2026-02-18T12:01:55"
+}
