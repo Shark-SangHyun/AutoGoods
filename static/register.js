@@ -430,7 +430,7 @@ document.addEventListener("DOMContentLoaded", () => {
     btnApplyCategory.addEventListener("click", async () => {
       const q = String(categoryQueryInput?.value || "").trim();
       const name = String(productNameInput?.value || "").trim();
-      const salePriceNum = Number(onlyNumberText(priceSaleInput?.value || ""));
+      const salePriceNum = Number(onlyNumberText(priceOriginalInput?.value || ""));
 
       const sale_price = Number.isFinite(salePriceNum) && salePriceNum > 0 ? salePriceNum : null;
 
