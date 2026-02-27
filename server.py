@@ -64,6 +64,9 @@ class ApplyReq(BaseModel):
     query: Optional[str] = None
     product_name: Optional[str] = None
     sale_price: Optional[int] = None  # ✅ 추가
+    color: Optional[str] = None  # ✅ 추가 (product.json 색상 → SmartStore 옵션명)
+    size: Optional[str] = None   # ✅ 추가
+    code: Optional[str] = None
 
 
 class KvProductReq(BaseModel):
@@ -155,22 +158,29 @@ def api_go_register():
 def api_set_category(req: ApplyReq):
     """
     버튼(상품입력하기)에서 호출:
-    - 카테고리(query), 상품명(product_name), 판매가(sale_price)를 "사람 입력 방식"으로 적용.
-    - 셋 중 하나만 보내도 동작.
+    - 카테고리(query), 상품명(product_name), 판매가(sale_price), 색상(color)을 "사람 입력 방식"으로 적용.
+    - 넷 중 하나만 보내도 동작.
     - go_register_and_apply 내부에서 '이미 상품등록 화면이면 이동 생략' 처리됨.
     """
     try:
         q = (req.query or "").strip()
         n = (req.product_name or "").strip()
         sp = req.sale_price
+        c = (req.color or "").strip()
+        s = (req.size or "").strip()
+        code = (req.code or "").strip()
 
-        if not q and not n and sp is None:
-            raise ValueError("query/product_name/sale_price are all empty")
+        if not q and not n and sp is None and not c:
+            raise ValueError("query/product_name/sale_price/color are all empty")
 
         go_register_and_apply(
             query=q or None,
             product_name=n or None,
             sale_price=sp,
+            color_value=c or None,
+            size_values=s or None,   # ✅ 추가
+            code=code or None,     # ✅ 추가
+
         )
 
         return {"ok": True}

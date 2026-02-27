@@ -128,6 +128,11 @@ document.addEventListener("DOMContentLoaded", () => {
     },
   };
 
+  // product.json에서 읽은 전체 색상명(예: "COPPER BROWN")
+  let productColorName = "";
+  let productSizeValues = "";
+  let selectedCode = ""; // ✅ 추가
+
   function lineToGroup(n) {
     if (n >= 1 && n <= 40) return "M";
     if (n >= 41 && n <= 80) return "C";
@@ -218,85 +223,36 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!result) return;
 
     if (!parsed.ok) {
-      result.textContent = `❌ 잘못 입력되었습니다.\n- ${parsed.error}\n\n예시: DMU26101`;
+      result.textContent = parsed.error;
       return;
     }
 
-    const lines = [`✅ 식별 완료: ${parsed.normalized}`, ""];
-    for (const [k, v] of Object.entries(parsed.parts)) lines.push(`${k}  ${v.code}  →  ${v.value}`);
+    const lines = [];
+    lines.push(`[OK] ${parsed.normalized}`);
+    Object.entries(parsed.parts).forEach(([k, v]) => {
+      lines.push(`${k}: ${v.value} (${v.code})`);
+    });
+
     result.textContent = lines.join("\n");
   }
 
-  function buildFinalProductNameFromState(jsonTitle) {
-    const sku8 = skuState.sku8;
-    const color2 = skuState.color2;
-    const title = String(jsonTitle ?? "").trim();
-
-    if (!sku8 || sku8.length !== 8) return title;
-
-    const pop = sku8[6] === "8" || sku8[6] === "9" ? "POP " : "";
-    const brand = MAP_BRAND_NAME[sku8[0]] || "";
-    const gender = MAP_GENDER_LABEL[sku8[1]] || "";
-    const itemText = MAP_ITEM[sku8[5]] || "";
-    const suffix = `${sku8} ${color2}`.trim();
-
-    return `${pop}${brand} ${gender} ${itemText} ${title} ${suffix}`.replace(/\s+/g, " ").trim();
-  }
-
-  function runDetect() {
-    if (!skuInput) return;
-
-    skuState.syncFromInputs();
-
-    const parsed = parseSku(skuInput.value);
-    renderResult(parsed);
-    if (!parsed.ok) return;
-
-    setProductNameValue(buildFinalProductNameFromState(""));
-
-    if (productGroupInput) productGroupInput.value = classifyProductGroup(parsed.meta.itemCode);
-
-    const isTee = String(parsed.meta.itemCode || "").toUpperCase() === "2";
-    if (teeTypeWrap) teeTypeWrap.style.display = isTee ? "" : "none";
-
-    const teeType = teeTypeSelect ? teeTypeSelect.value : "long";
-    const path = categoryPathByItemCode(parsed.meta.itemCode, teeType);
-    if (categoryQueryInput && path) categoryQueryInput.value = path;
-  }
-
-  function splitSkuAndColor(folderName) {
-    const s = String(folderName || "").trim().toUpperCase();
-    if (s.length >= 10) return { sku: s.slice(0, s.length - 2).slice(0, 8), color: s.slice(-2) };
-    if (s.length === 8) return { sku: s, color: "" };
-    if (s.length > 8) return { sku: s.slice(0, 8), color: s.slice(8, 10) || "" };
-    return { sku: s, color: "" };
-  }
-
-  function lockSkuFields(lock) {
-    if (skuInput) {
-      skuInput.readOnly = !!lock;
-      skuInput.classList.toggle("locked", !!lock);
-    }
-    if (skuColorInput) {
-      skuColorInput.readOnly = !!lock;
-      skuColorInput.classList.toggle("locked", !!lock);
-    }
-  }
-
   function onlyNumberText(s) {
-    return String(s || "").replace(/[^\d]/g, "");
+    return String(s ?? "").replace(/[^\d]/g, "");
   }
 
-  function formatKRW(n) {
-    if (!Number.isFinite(n)) return "";
-    return n.toLocaleString("ko-KR");
+  function formatKRW(num) {
+    try {
+      return Number(num).toLocaleString("ko-KR");
+    } catch {
+      return String(num);
+    }
   }
 
   function calcPriceDiff() {
     if (!priceOriginalInput || !priceSaleInput || !priceDiffInput) return;
 
-    const original = Number(onlyNumberText(priceOriginalInput.value));
-    const sale = Number(onlyNumberText(priceSaleInput.value));
+    const original = Number(onlyNumberText(priceOriginalInput.value || ""));
+    const sale = Number(onlyNumberText(priceSaleInput.value || ""));
 
     if (!original && !sale) {
       priceDiffInput.value = "";
@@ -318,6 +274,71 @@ document.addEventListener("DOMContentLoaded", () => {
     return `${year}.${month}.01`;
   }
 
+  // ===== 추가: 95[04] -> 95, 230[01] -> 230 =====
+  function stripBracketSuffix(s) {
+    // 끝의 [..] 제거 (예: "95[04]" "230[01]" "95 [04]" 모두 대응)
+    return String(s ?? "").replace(/\s*\[[^\]]*\]\s*$/, "").trim();
+  }
+
+  // ===== 추가: size_options 배열을 "95, 100" 형태로 만들기 =====
+  function formatSizeOptions(sizeOptions) {
+    if (!Array.isArray(sizeOptions)) return "";
+
+    const sizes = sizeOptions
+      .map((opt) => {
+        if (opt == null) return "";
+
+        let raw = "";
+
+        if (typeof opt === "string" || typeof opt === "number") {
+          raw = String(opt);
+        } else {
+          raw = String(opt.label ?? opt.text ?? opt.value ?? opt.size ?? opt.name ?? "");
+        }
+
+        raw = raw.trim();
+
+        // ❌ 품절 포함된 것은 제외
+        if (raw.includes("품절")) return "";
+
+        // "Black / S" → "S"
+        const parts = raw.split("/");
+        const last = parts[parts.length - 1];
+
+        // 95[04] → 95
+        return last.replace(/\s*\[[^\]]*\]\s*$/, "").trim();
+      })
+      .filter(Boolean);
+
+    // ✅ 중복 제거
+    const unique = [...new Set(sizes)];
+
+    return unique.join(", ");
+  }
+
+  function extractColorFromSizeOptions(sizeOptions) {
+    if (!Array.isArray(sizeOptions) || sizeOptions.length === 0) return "";
+
+    const first = sizeOptions[0];
+
+    let raw = "";
+
+    if (typeof first === "string" || typeof first === "number") {
+      raw = String(first);
+    } else {
+      raw = String(first.label ?? first.text ?? first.value ?? "");
+    }
+
+    raw = raw.trim();
+
+    // "Light Grey / S (품절)" → ["Light Grey ", " S (품절)"]
+    const parts = raw.split("/");
+    const colorPart = parts[0] ?? "";
+
+    // 괄호 제거
+    return colorPart.replace(/\s*\(.*?\)\s*/g, "").trim();
+  }
+
   async function readProductJsonFromFolder(fileList) {
     if (!fileList || fileList.length === 0) return null;
 
@@ -329,11 +350,24 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const text = await jsonFile.text();
     const data = JSON.parse(text);
+    const color =
+      String(data?.gvnt_info?.["색상"] ?? data?.["색상"] ?? "").trim() ||
+      extractColorFromSizeOptions(data?.size_options);
+    const sizeStr = formatSizeOptions(data?.size_options);
+
+    // ✅ SmartStore 옵션 그룹명(#choice_option_name0) 입력에 사용할 색상 값 저장
+    productColorName = color;
+    productSizeValues = sizeStr;
+
 
     uiLog("product.json parsed keys:", Object.keys(data || {}));
     uiLog("json.title:", data.title);
     uiLog("json.list_price:", data.list_price, "json.sale_price:", data.sale_price, "json.제조국:", data["제조국"]);
     uiLog("json.제조연월(수입연월):", data.gvnt_info?.["제조연월(수입연월)"]);
+
+    // ===== 추가 출력: 색상 / 사이즈 =====
+    uiLog("json.색상:", color);
+    uiLog("json.사이즈:", sizeStr);
 
     return data;
   }
@@ -358,12 +392,90 @@ document.addEventListener("DOMContentLoaded", () => {
     calcPriceDiff();
   }
 
+  function buildFinalProductNameFromState(jsonTitle) {
+    skuState.syncFromInputs();
+
+    const sku = skuState.sku8;
+    const color2 = skuState.color2;
+
+    if (!sku) return String(jsonTitle || "").trim();
+
+    const parsed = parseSku(sku);
+    if (!parsed.ok) return String(jsonTitle || "").trim();
+
+    const s = parsed.normalized;
+    const ageCode = s[0];
+    const genderCode = s[1];
+    const itemCode = s[5];
+
+    const line = Number(s.slice(6, 8));
+    const pop = line === 8 || line === 9 ? "POP" : "";
+
+    const brand = MAP_BRAND_NAME[ageCode] || "";
+    const genderLabel = MAP_GENDER_LABEL[genderCode] || "";
+    const itemName = MAP_ITEM[itemCode] || "";
+
+    const pieces = [];
+    if (pop) pieces.push(pop);
+    if (brand) pieces.push(brand);
+    if (genderLabel) pieces.push(genderLabel);
+    if (itemName) pieces.push(itemName);
+
+    const title = String(jsonTitle || "").trim();
+    if (title) pieces.push(title);
+
+    const tail = `${sku}${color2 ? " " + color2 : ""}`.trim();
+    if (tail) pieces.push(tail);
+
+    return pieces.join(" ").trim();
+  }
+
+  function lockSkuFields(locked) {
+    if (skuInput) skuInput.readOnly = !!locked;
+    if (skuColorInput) skuColorInput.readOnly = !!locked;
+  }
+
+  function splitSkuAndColor(folderName) {
+    const s = String(folderName || "").trim().toUpperCase();
+    const sku = s.slice(0, 8);
+    const color = s.slice(8, 10);
+    return { sku, color };
+  }
+
+  function runDetect() {
+    skuState.syncFromInputs();
+    const parsed = parseSku(skuState.sku8);
+
+    renderResult(parsed);
+
+    // 제품 분류
+    if (parsed.ok && productGroupInput) {
+      const grp = classifyProductGroup(parsed.meta.itemCode);
+      productGroupInput.value = grp;
+
+      // 티셔츠면 반팔/긴팔 옵션 표시
+      if (teeTypeWrap) {
+        teeTypeWrap.style.display = parsed.meta.itemCode === "2" ? "block" : "none";
+      }
+
+      // 카테고리 자동 세팅
+      const teeType = teeTypeSelect ? teeTypeSelect.value : "short";
+      const path = categoryPathByItemCode(parsed.meta.itemCode, teeType);
+      if (categoryQueryInput && path) categoryQueryInput.value = path;
+    } else {
+      if (productGroupInput) productGroupInput.value = "";
+      if (teeTypeWrap) teeTypeWrap.style.display = "none";
+    }
+  }
+
   async function handleFolderPicked(fileList) {
     if (!fileList || fileList.length === 0) return;
 
     const anyFile = fileList[0];
     const rel = anyFile.webkitRelativePath || "";
     const topFolder = rel ? rel.split("/")[0] : "";
+
+    selectedCode = topFolder; // ✅ 추가 (예: DMS25G21Z1)
 
     uiLog("folder picked top:", topFolder || "(unknown)");
     uiLog("first file relpath:", rel || "(no webkitRelativePath)");
@@ -425,7 +537,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (priceOriginalInput) priceOriginalInput.addEventListener("input", calcPriceDiff);
   if (priceSaleInput) priceSaleInput.addEventListener("input", calcPriceDiff);
 
-  // ✅ 상품입력하기: 카테고리 + 상품명 + 판매가 전송
+  // ✅ 상품입력하기: 카테고리 + 상품명 + 판매가 전송 (+ color 추가)
   if (btnApplyCategory) {
     btnApplyCategory.addEventListener("click", async () => {
       const q = String(categoryQueryInput?.value || "").trim();
@@ -449,6 +561,9 @@ document.addEventListener("DOMContentLoaded", () => {
             query: q || null,
             product_name: name || null,
             sale_price,
+            color: productColorName || null,
+            size: productSizeValues || null,   // ✅ 추가
+            code: selectedCode || null, // ✅ 추가
           }),
         });
 

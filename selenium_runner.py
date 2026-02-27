@@ -443,6 +443,336 @@ def set_option_config_true_and_direct_input() -> None:
 
     print("[DIRECT] done")
 
+
+# =========================================================
+# Option group name (e.g., 색상) input
+# =========================================================
+def set_option_group_name(color_value: str) -> None:
+    """
+    옵션 그룹명 input#choice_option_name0 에 색상 값 입력
+    - Angular 입력 안정화를 위해 JS로 value 설정 + input/change 이벤트 발생
+    """
+    v = (color_value or "").strip()
+    if not v:
+        return
+
+    d = get_driver()
+    wait = WebDriverWait(d, 15)
+
+    try:
+        inp = wait.until(EC.presence_of_element_located((By.ID, "choice_option_name0")))
+    except TimeoutException as e:
+        debug_snapshot("choice_option_name0_not_found")
+        raise RuntimeError("input#choice_option_name0 not found") from e
+
+    _scroll_center(d, inp)
+    time.sleep(0.05)
+
+    # 값 설정 + 이벤트
+    d.execute_script(
+        """
+        const el = arguments[0];
+        const val = arguments[1];
+        el.focus();
+        el.value = val;
+        el.dispatchEvent(new Event('input', { bubbles: true }));
+        el.dispatchEvent(new Event('change', { bubbles: true }));
+        """,
+        inp,
+        v,
+    )
+
+    # 확인(실패해도 치명적 오류로 만들지 않음)
+    try:
+        cur = (inp.get_attribute("value") or "").strip()
+        if cur != v:
+            print(f"[WARN] option group name not matched. expected='{v}', got='{cur}'")
+    except Exception:
+        pass
+
+def set_option_values(size_values: str) -> None:
+    """
+    옵션 값 input#choice_option_value0 에 사이즈 값 입력
+    예: "S, M, L, XL"
+    """
+    v = (size_values or "").strip()
+    if not v:
+        return
+
+    d = get_driver()
+    wait = WebDriverWait(d, 15)
+
+    try:
+        inp = wait.until(EC.presence_of_element_located((By.ID, "choice_option_value0")))
+    except TimeoutException as e:
+        debug_snapshot("choice_option_value0_not_found")
+        raise RuntimeError("input#choice_option_value0 not found") from e
+
+    _scroll_center(d, inp)
+    time.sleep(0.05)
+
+    # Angular 반영 안정화
+    d.execute_script(
+        """
+        const el = arguments[0];
+        const val = arguments[1];
+        el.focus();
+        el.value = val;
+        el.dispatchEvent(new Event('input', { bubbles: true }));
+        el.dispatchEvent(new Event('change', { bubbles: true }));
+        """,
+        inp,
+        v,
+    )
+
+    try:
+        cur = (inp.get_attribute("value") or "").strip()
+        if cur != v:
+            print(f"[WARN] option values not matched. expected='{v}', got='{cur}'")
+    except Exception:
+        pass
+def click_apply_option_list() -> None:
+    """
+    '옵션목록으로 적용' 버튼 클릭
+    """
+    d = get_driver()
+    wait = WebDriverWait(d, 15)
+
+    try:
+        # 1️⃣ 버튼 DOM 생성 대기
+        wait.until(
+            EC.presence_of_element_located(
+                (
+                    By.XPATH,
+                    "//a[contains(@class,'btn-primary') "
+                    "and contains(normalize-space(),'옵션목록으로 적용')]",
+                )
+            )
+        )
+
+        # 2️⃣ 클릭 가능 상태 대기
+        btn = wait.until(
+            EC.element_to_be_clickable(
+                (
+                    By.XPATH,
+                    "//a[contains(@class,'btn-primary') "
+                    "and contains(normalize-space(),'옵션목록으로 적용')]",
+                )
+            )
+        )
+
+    except TimeoutException as e:
+        debug_snapshot("apply_option_button_not_found")
+        raise RuntimeError("'옵션목록으로 적용' 버튼을 찾지 못함") from e
+
+    _scroll_center(d, btn)
+    time.sleep(0.15)
+
+    try:
+        btn.click()
+    except Exception:
+        d.execute_script("arguments[0].click();", btn)
+
+    print("[OK] 옵션목록으로 적용 버튼 클릭 완료")
+
+    # 3️⃣ 클릭 후 약간 대기 (Grid 생성 안정화)
+    time.sleep(0.5)
+def click_add_image_button() -> None:
+    """
+    '이미지 등록' 클릭 → 업로드 모달 열림 대기
+    (주의: '내 사진' 버튼은 클릭하지 않는다. OS 파일창 뜸)
+    """
+    d = get_driver()
+    wait = WebDriverWait(d, 15)
+
+    # 1) 이미지 등록 버튼 클릭
+    btn = wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, "a.btn-add-img")))
+    _scroll_center(d, btn)
+    d.execute_script("arguments[0].click();", btn)
+    print("[OK] 이미지 등록 버튼 클릭")
+
+    # 2) 모달 열림 확인: '내 사진' 버튼 또는 file input이 나타나면 OK
+    try:
+        wait.until(
+            lambda _d: (
+                len(_d.find_elements(By.XPATH, "//button[normalize-space()='내 사진']")) > 0
+                or len(_d.find_elements(By.CSS_SELECTOR, "input[type='file']")) > 0
+            )
+        )
+    except TimeoutException as e:
+        debug_snapshot("upload_modal_not_opened")
+        raise RuntimeError("업로드 모달이 열리지 않음") from e
+
+    print("[OK] 업로드 모달 열림 확인")
+
+def click_upload_from_device_button() -> None:
+    """
+    업로드 모달 내부 '내 사진' 버튼 클릭
+    """
+    d = get_driver()
+    wait = WebDriverWait(d, 15)
+
+    try:
+        # 모달 내부에서 버튼 찾기 (텍스트 기준이 가장 안전)
+        btn = wait.until(
+            EC.element_to_be_clickable(
+                (
+                    By.XPATH,
+                    "//button[contains(@class,'btn-default') "
+                    "and normalize-space()='내 사진']",
+                )
+            )
+        )
+    except TimeoutException as e:
+        debug_snapshot("upload_from_device_button_not_found")
+        raise RuntimeError("'내 사진' 버튼을 찾지 못함") from e
+
+    _scroll_center(d, btn)
+    time.sleep(0.1)
+
+    try:
+        btn.click()
+    except Exception:
+        d.execute_script("arguments[0].click();", btn)
+
+    print("[OK] '내 사진' 버튼 클릭 완료")
+
+    # 파일 input 생성 대기
+    wait.until(
+        EC.presence_of_element_located((By.CSS_SELECTOR, "input[type='file']"))
+    )
+
+    print("[OK] file input 생성 확인")
+
+def upload_representative_image_by_code(code: str) -> None:
+    """
+    kv_mvp/out/<code>/images/pd_001.jpg 자동 업로드
+    - OS 파일선택창(열기) 절대 사용 안함
+    - 업로드 모달이 열린 상태에서 input[type=file]에 send_keys로 주입
+    """
+    d = get_driver()
+    wait = WebDriverWait(d, 15)
+
+    c = (code or "").strip()
+    if not c:
+        raise ValueError("code is empty (품번이 비어있음)")
+
+    base_dir = Path(__file__).resolve().parent
+    image_path = base_dir / "kv_mvp" / "out" / c / "images" / "pd_001.jpg"
+    if not image_path.exists():
+        raise FileNotFoundError(f"이미지 파일 없음: {image_path}")
+
+    # 업로드 모달이 이미 열려있다는 전제(열려있지 않으면 찾기 실패할 수 있음)
+    # file input은 여러 개가 있을 수 있으니 '표시되는 것' 중 마지막을 우선 사용
+    try:
+        wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, "input[type='file']")))
+    except TimeoutException as e:
+        debug_snapshot("file_input_not_found_in_modal")
+        raise RuntimeError("업로드 모달에서 input[type=file]을 찾지 못함") from e
+
+    inputs = d.find_elements(By.CSS_SELECTOR, "input[type='file']")
+    vis = [x for x in inputs if x.is_displayed()]
+    file_input = vis[-1] if vis else inputs[-1]
+
+    file_input.send_keys(str(image_path))
+    print(f"[OK] 대표 이미지 업로드 send_keys 완료: {image_path}")
+
+    # 업로드 UI 반영 대기 (SmartStore UI가 비동기)
+    time.sleep(2.0)
+
+def click_additional_image_button() -> None:
+    """
+    추가이미지(image.add) 영역의 '이미지 등록' 버튼 클릭
+    """
+    d = get_driver()
+    wait = WebDriverWait(d, 15)
+
+    btn = wait.until(
+        EC.element_to_be_clickable(
+            (By.CSS_SELECTOR, "a.btn-add-img[data-nclicks-code='image.add']")
+        )
+    )
+
+    _scroll_center(d, btn)
+    d.execute_script("arguments[0].click();", btn)
+
+    print("[OK] 추가 이미지 등록 버튼 클릭")
+
+    # 모달 생성 대기
+    wait.until(
+        EC.presence_of_element_located((By.CSS_SELECTOR, "input[type='file']"))
+    )
+
+    print("[OK] 추가 이미지 업로드 모달 열림")
+
+def upload_additional_images_by_code(code: str) -> None:
+    """
+    kv_mvp/out/<code>/images/pd_002.jpg ~ pd_010.jpg 업로드
+    """
+    d = get_driver()
+    wait = WebDriverWait(d, 15)
+
+    c = (code or "").strip()
+    if not c:
+        raise ValueError("code is empty")
+
+    base_dir = Path(__file__).resolve().parent
+    img_dir = base_dir / "kv_mvp" / "out" / c / "images"
+
+    files = []
+    for i in range(2, 11):  # 002 ~ 010
+        p = img_dir / f"pd_{i:03d}.jpg"
+        if p.exists():
+            files.append(str(p))
+
+    if not files:
+        raise FileNotFoundError(f"추가 이미지 없음: {img_dir}")
+
+    # file input 찾기
+    wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, "input[type='file']")))
+    inputs = d.find_elements(By.CSS_SELECTOR, "input[type='file']")
+    vis = [x for x in inputs if x.is_displayed()]
+    file_input = vis[-1] if vis else inputs[-1]
+
+    # 여러 파일 업로드
+    file_input.send_keys("\n".join(files))
+
+    print(f"[OK] 추가 이미지 업로드 완료: {len(files)}장")
+
+    time.sleep(3)  # UI 반영 대기
+
+def click_html_editor_button() -> None:
+    """
+    'HTML 작성' 버튼 클릭
+    """
+    d = get_driver()
+    wait = WebDriverWait(d, 15)
+
+    try:
+        btn = wait.until(
+            EC.element_to_be_clickable(
+                (
+                    By.XPATH,
+                    "//a[.//span[normalize-space()='HTML 작성']]",
+                )
+            )
+        )
+    except TimeoutException as e:
+        debug_snapshot("html_editor_button_not_found")
+        raise RuntimeError("'HTML 작성' 버튼을 찾지 못함") from e
+
+    _scroll_center(d, btn)
+    time.sleep(0.1)
+
+    try:
+        btn.click()
+    except Exception:
+        d.execute_script("arguments[0].click();", btn)
+
+    print("[OK] HTML 작성 버튼 클릭 완료")
+
+    time.sleep(0.5)  # 에디터 전환 대기
+
 # =========================================================
 # Existing flows
 # =========================================================
@@ -660,6 +990,9 @@ def go_register_and_apply(
     query: Optional[str] = None,
     product_name: Optional[str] = None,
     sale_price: Optional[int] = None,
+    color_value: Optional[str] = None,
+    size_values: Optional[str] = None,   # ✅ 추가
+    code: Optional[str] = None,
 ) -> None:
     """
     - 이미 상품등록 화면이면 이동 생략
@@ -667,6 +1000,7 @@ def go_register_and_apply(
       1) 옵션 토글 열기
       2) 설정함 선택
       3) 직접 입력하기 선택 (+ 디버그)
+      4) (추가) 옵션 그룹명(#choice_option_name0)에 색상 값 입력
     """
     if not _is_on_product_register():
         go_product_register()
@@ -682,8 +1016,31 @@ def go_register_and_apply(
     if sp is not None:
         set_sale_price(sp)
 
+    # 옵션 섹션은 판매가 이후에도 쓰이지만,
+    # 색상(옵션명)만 입력하는 경우에도 필요할 수 있어 sp/color 중 하나라도 있으면 진행
+    cv = (color_value or "").strip()
+    sv = (size_values or "").strip()
+
+    if sp is not None or cv or sv:
         click_option_menu_toggle()
         set_option_config_true_and_direct_input()
 
-    if not q and not n and sp is None:
-        raise ValueError("query/product_name/sale_price are all empty")
+        if cv:
+            set_option_group_name(cv)
+        if sv:
+            set_option_values(sv)
+        # ✅ 옵션목록으로 적용 클릭
+        click_apply_option_list()
+
+        click_add_image_button()
+        upload_representative_image_by_code(code)
+
+        # 🔽 여기 추가
+        click_additional_image_button()
+        upload_additional_images_by_code(code)
+
+        click_html_editor_button()
+
+
+    if not q and not n and sp is None and not cv and not sv:
+        raise ValueError("query/product_name/sale_price/color/size are all empty")
