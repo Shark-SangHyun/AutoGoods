@@ -14,6 +14,7 @@ Selenium automation for Naver SmartStore.
 from typing import Optional
 from pathlib import Path
 import time
+import detail_editor
 
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
@@ -733,37 +734,43 @@ def upload_additional_images_by_code(code: str) -> None:
 
     time.sleep(3)  # UI 반영 대기
 
-def click_html_editor_button() -> None:
+def click_html_editor_button(code: Optional[str] = None) -> None:
     """
-    'HTML 작성' 버튼 클릭
+    ✅ 기존 호출부를 최대한 유지하면서도(code를 넘길 수 있게),
+    SmartEditor ONE 새창 열기 + (추후 업로드) 흐름으로 확장할 수 있게 만든다.
     """
+    c = (code or "").strip()
+    if not c:
+        raise ValueError("code is empty (품번이 비어있음)")
+
     d = get_driver()
-    wait = WebDriverWait(d, 15)
 
-    try:
-        btn = wait.until(
-            EC.element_to_be_clickable(
-                (
-                    By.XPATH,
-                    "//a[.//span[normalize-space()='HTML 작성']]",
-                )
-            )
-        )
-    except TimeoutException as e:
-        debug_snapshot("html_editor_button_not_found")
-        raise RuntimeError("'HTML 작성' 버튼을 찾지 못함") from e
+    # 1) SmartEditor ONE 새창 열기 + 전환
+    original, _new = detail_editor.open_editor_one_new_window(d, timeout=20)
 
-    _scroll_center(d, btn)
-    time.sleep(0.1)
+    # 2) 여기서 업로드 호출(예: MD_COMMENT 1장)
+    base = rf"C:\Users\me\Desktop\상현\AutoGoods\kv_mvp\out\{c}\renders\jpg"
+    image_paths = [rf"{base}\MD_COMMENT.jpg"]
+
+    detail_editor.upload_images_in_editor_one(d, image_paths, timeout=50)
+
+    # 3) 닫고 복귀
+    #print("[HOLD] editor window open for inspection")
+    #time.sleep(9999)
+
+def click_register_button():
+    d = get_driver()
+    wait = WebDriverWait(d, 20)
+
+    btn = wait.until(EC.element_to_be_clickable((
+        By.XPATH,
+        "//button[@progress-button='vm.func.save()']"
+    )))
 
     try:
         btn.click()
     except Exception:
         d.execute_script("arguments[0].click();", btn)
-
-    print("[OK] HTML 작성 버튼 클릭 완료")
-
-    time.sleep(0.5)  # 에디터 전환 대기
 
 # =========================================================
 # Existing flows
@@ -1031,8 +1038,8 @@ def go_register_and_apply(
         click_additional_image_button()
         upload_additional_images_by_code(code)
 
-        click_html_editor_button()
-
+        click_html_editor_button(code)
+        click_register_button()
 
     if not q and not n and sp is None and not cv and not sv:
         raise ValueError("query/product_name/sale_price/color/size are all empty")
