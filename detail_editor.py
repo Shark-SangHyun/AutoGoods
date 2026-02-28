@@ -418,4 +418,5 @@ def run_editor_upload_flow(driver, image_paths: List[str], timeout: int = 40) ->
     - 업로드
     - 닫고 복귀
     """
+    original, _new = open_editor_one_new_window(driver, timeout=timeout)
     upload_images_in_editor_one(driver, image_paths, timeout=timeout)
