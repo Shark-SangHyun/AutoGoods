@@ -546,6 +546,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
       const sale_price = Number.isFinite(salePriceNum) && salePriceNum > 0 ? salePriceNum : null;
 
+      const _color = String(productColorName || "").trim();
+      const _sizes = String(productSizeValues || "")
+      .split(",")
+      .map(s => s.trim())
+      .filter(Boolean);
+
+      const _combinedSize =
+      _color && _sizes.length ? _sizes.map(sz => `${_color} / ${sz}`).join(", ") : null;
+
       if (!q && !name && sale_price === null) {
         alert("카테고리/상품명/판매가 중 최소 1개는 있어야 합니다.");
         return;
@@ -562,7 +571,7 @@ document.addEventListener("DOMContentLoaded", () => {
             product_name: name || null,
             sale_price,
             color: productColorName || null,
-            size: productSizeValues || null,   // ✅ 추가
+            size: _combinedSize || null,           // ✅ 핵심 변경
             code: selectedCode || null, // ✅ 추가
           }),
         });

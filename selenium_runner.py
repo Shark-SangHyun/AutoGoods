@@ -448,17 +448,11 @@ def set_option_config_true_and_direct_input() -> None:
 # Option group name (e.g., 색상) input
 # =========================================================
 def set_option_group_name(color_value: str) -> None:
-    """
-    옵션 그룹명 input#choice_option_name0 에 색상 값 입력
-    - Angular 입력 안정화를 위해 JS로 value 설정 + input/change 이벤트 발생
-    """
-    v = (color_value or "").strip()
-    if not v:
-        return
+    # ✅ 옵션 그룹명은 항상 고정
+    v = "색상 / 사이즈"
 
     d = get_driver()
     wait = WebDriverWait(d, 15)
-
     try:
         inp = wait.until(EC.presence_of_element_located((By.ID, "choice_option_name0")))
     except TimeoutException as e:
@@ -468,7 +462,6 @@ def set_option_group_name(color_value: str) -> None:
     _scroll_center(d, inp)
     time.sleep(0.05)
 
-    # 값 설정 + 이벤트
     d.execute_script(
         """
         const el = arguments[0];
@@ -482,7 +475,6 @@ def set_option_group_name(color_value: str) -> None:
         v,
     )
 
-    # 확인(실패해도 치명적 오류로 만들지 않음)
     try:
         cur = (inp.get_attribute("value") or "").strip()
         if cur != v:
