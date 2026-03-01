@@ -8,6 +8,8 @@ from typing import List, Tuple
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from selenium.common.exceptions import NoSuchWindowException
+
 
 
 def _scroll_center(driver, el) -> None:
@@ -252,6 +254,8 @@ def open_editor_one_new_window(driver, timeout: int = 15) -> Tuple[str, str]:
     wait.until(lambda d: len(set(d.window_handles) - before) > 0)
     new_handle = list(set(driver.window_handles) - before)[0]
     driver.switch_to.window(new_handle)
+
+    
     return original, new_handle
 
 
@@ -339,6 +343,39 @@ return findFileInputDeep(document);
 def _find_file_input_deep_in_current_doc(driver):
     # Selenium이 JS에서 찾은 element를 WebElement로 반환받을 수 있음
     return driver.execute_script(_JS_FIND_FILE_INPUT_DEEP)
+
+def submit_editor_and_return(driver, original_handle: str, timeout: int = 30) -> None:
+    """
+    에디터 우측 상단 '등록' 클릭 후, 에디터가 즉시 닫히는 케이스 대응.
+    - 닫힘 감지(window_handles 읽기) 하지 않음
+    - original_handle로 switch를 재시도해서 복귀를 보장
+    """
+    wait = WebDriverWait(driver, timeout)
+
+    # 1) 에디터 '등록' 클릭 (여기까지만 에디터 DOM 만짐)
+    reg_btn = wait.until(EC.element_to_be_clickable((
+        By.XPATH, "//button[contains(normalize-space(.), '등록')]"
+    )))
+    try:
+        reg_btn.click()
+    except Exception:
+        driver.execute_script("arguments[0].click();", reg_btn)
+
+    # 2) 에디터는 바로 닫히므로, 이후엔 원래 창으로 전환만 재시도
+    end = time.time() + timeout
+    last_err = None
+
+    while time.time() < end:
+        try:
+            driver.switch_to.window(original_handle)
+            WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.TAG_NAME, "body")))
+            return
+        except NoSuchWindowException as e:
+            last_err = e
+            time.sleep(0.2)
+
+    # 여기까지 오면 original_handle 자체가 더 이상 없거나, 세션이 꼬인 것
+    raise NoSuchWindowException(f"original window로 복귀 실패: {original_handle}") from last_err
 
 def upload_images_in_editor_one(driver, paths, timeout=40):
     """

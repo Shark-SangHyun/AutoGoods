@@ -15,6 +15,8 @@ from typing import Optional
 from pathlib import Path
 import time
 import detail_editor
+import os
+
 
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
@@ -749,28 +751,77 @@ def click_html_editor_button(code: Optional[str] = None) -> None:
     original, _new = detail_editor.open_editor_one_new_window(d, timeout=20)
 
     # 2) 여기서 업로드 호출(예: MD_COMMENT 1장)
-    base = rf"C:\Users\me\Desktop\상현\AutoGoods\kv_mvp\out\{c}\renders\jpg"
-    image_paths = [rf"{base}\MD_COMMENT.jpg"]
+    image_paths = build_editor_image_paths(code)
 
-    detail_editor.upload_images_in_editor_one(d, image_paths, timeout=50)
+    detail_editor.upload_images_in_editor_one(
+    d,
+    image_paths,
+    timeout=50)
+    detail_editor.submit_editor_and_return(d, original, timeout=40)
+
+    print("[DBG] handles:", d.window_handles)
+    print("[DBG] current:", d.current_window_handle)
+    print("[DBG] url:", d.current_url)
 
     # 3) 닫고 복귀
     #print("[HOLD] editor window open for inspection")
     #time.sleep(9999)
 
+def build_editor_image_paths(code: str) -> list[str]:
+    """
+    SmartEditor 업로드 이미지 순서 고정
+    (AutoGoods 폴더 기준 kv_mvp 경로 자동 계산)
+    """
+
+    project_root = os.path.dirname(os.path.abspath(__file__))
+    base_dir = os.path.join(project_root, "kv_mvp")
+
+    paths = [
+        os.path.join(base_dir, "img", "nav1.jpg"),
+        os.path.join(base_dir, "img", "nav2.png"),
+        os.path.join(base_dir, "out", code, "renders", "jpg", "MD_COMMENT.jpg"),
+        os.path.join(base_dir, "out", code, "images", "pd_photo_merged.jpg"),
+        os.path.join(base_dir, "out", code, "renders", "jpg", "소재_및_관리방법.jpg"),
+        os.path.join(base_dir, "out", code, "renders", "jpg", "상품정보제공고시.jpg"),
+        os.path.join(base_dir, "img", "nav3.png"),
+    ]
+
+    for p in paths:
+        if not os.path.exists(p):
+            raise FileNotFoundError(f"[상세 업로드 파일 없음] {p}")
+
+    return paths
+
+
 def click_register_button():
     d = get_driver()
-    wait = WebDriverWait(d, 20)
+    wait = WebDriverWait(d, 30)
 
+    # 1️⃣ DOM 안정화
+    wait.until(EC.presence_of_element_located((By.TAG_NAME, "body")))
+
+    # 2️⃣ 버튼 활성화 대기
     btn = wait.until(EC.element_to_be_clickable((
         By.XPATH,
         "//button[@progress-button='vm.func.save()']"
     )))
 
+    # 3️⃣ 살짝 여유 딜레이 (Angular digest 안정화)
+    time.sleep(1.2)
+
     try:
         btn.click()
     except Exception:
         d.execute_script("arguments[0].click();", btn)
+
+    # 4️⃣ 저장 로딩(progress-button) 완료 대기
+    wait.until(
+        EC.invisibility_of_element_located((
+            By.CSS_SELECTOR,
+            "button[progress-button='vm.func.save()'] .progress-inner"
+        ))
+    )
+
 
 # =========================================================
 # Existing flows
