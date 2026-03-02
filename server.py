@@ -7,6 +7,7 @@ from fastapi.responses import RedirectResponse
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
 from pathlib import Path
+import traceback
 
 import json
 import os
@@ -178,14 +179,25 @@ def api_set_category(req: ApplyReq):
             product_name=n or None,
             sale_price=sp,
             color_value=c or None,
-            size_values=s or None,   # ✅ 추가
-            code=code or None,     # ✅ 추가
-
+            size_values=s or None,
+            code=code or None,
         )
 
         return {"ok": True}
+
     except Exception as e:
-        raise _err(e)
+        # ✅ 1) 콘솔에 전체 스택트레이스 출력(어느 함수/어느 wait인지 바로 보임)
+        traceback.print_exc()
+
+        # ✅ 2) _err가 detail을 깎아먹는 경우 대비해서,
+        #    에러 메시지를 확실히 담아보내도록 _err를 안 쓰고 직접 던져도 됨(선택)
+        # return/raise 방식은 프로젝트 _err 구현에 따라 택1
+
+        # (A) 기존 _err 유지 + 콘솔만 찍고 싶으면:
+        return _err(e)  # _err가 raise 하는 구조면 raise _err(e)로 유지
+
+        # (B) 프론트 alert에 디테일까지 그대로 주고 싶으면(권장):
+        # raise HTTPException(status_code=500, detail=f"{type(e).__name__}: {e}")
 
 
 @app.post("/api/go-register-and-set-category")

@@ -792,35 +792,31 @@ def build_editor_image_paths(code: str) -> list[str]:
 
     return paths
 
-
 def click_register_button():
     d = get_driver()
-    wait = WebDriverWait(d, 30)
 
-    # 1️⃣ DOM 안정화
-    wait.until(EC.presence_of_element_located((By.TAG_NAME, "body")))
+    # 페이지 로딩 안정화
+    WebDriverWait(d, 30).until(EC.presence_of_element_located((By.TAG_NAME, "body")))
+    time.sleep(0.8)
 
-    # 2️⃣ 버튼 활성화 대기
-    btn = wait.until(EC.element_to_be_clickable((
-        By.XPATH,
-        "//button[@progress-button='vm.func.save()']"
-    )))
+    # 저장 완료 대기 (기존 spinner 방식 + 보조)
+    end = time.time() + 40
+    while time.time() < end:
+        # spinner가 사라지면 종료 (있을 때만)
+        sp = d.find_elements(By.CSS_SELECTOR, "button .progress-inner")
+        if not sp or (sp and not sp[0].is_displayed()):
+            return
 
-    # 3️⃣ 살짝 여유 딜레이 (Angular digest 안정화)
-    time.sleep(1.2)
+        # URL이 create를 벗어나면 성공 가능성이 큼
+        try:
+            if "#/products/create" not in (d.current_url or ""):
+                return
+        except Exception:
+            pass
 
-    try:
-        btn.click()
-    except Exception:
-        d.execute_script("arguments[0].click();", btn)
+        time.sleep(0.25)
 
-    # 4️⃣ 저장 로딩(progress-button) 완료 대기
-    wait.until(
-        EC.invisibility_of_element_located((
-            By.CSS_SELECTOR,
-            "button[progress-button='vm.func.save()'] .progress-inner"
-        ))
-    )
+    raise TimeoutException("Save/Register click done but completion not detected (timeout).")
 
 
 # =========================================================

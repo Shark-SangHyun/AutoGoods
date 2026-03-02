@@ -344,38 +344,76 @@ def _find_file_input_deep_in_current_doc(driver):
     # Selenium이 JS에서 찾은 element를 WebElement로 반환받을 수 있음
     return driver.execute_script(_JS_FIND_FILE_INPUT_DEEP)
 
-def submit_editor_and_return(driver, original_handle: str, timeout: int = 30) -> None:
+def submit_editor_and_return(driver, original_handle: str, timeout: int = 40) -> None:
     """
-    에디터 우측 상단 '등록' 클릭 후, 에디터가 즉시 닫히는 케이스 대응.
-    - 닫힘 감지(window_handles 읽기) 하지 않음
-    - original_handle로 switch를 재시도해서 복귀를 보장
+    에디터에서:
+    1) 이미지 업로드 idle 대기
+    2) 등록 클릭
+    3) 저장 완료 감지
+    4) 원래 창 복귀
     """
+
+    from selenium.common.exceptions import TimeoutException
     wait = WebDriverWait(driver, timeout)
 
-    # 1) 에디터 '등록' 클릭 (여기까지만 에디터 DOM 만짐)
+    editor_handle = driver.current_window_handle
+
+    # ✅ 1️⃣ 이미지 완전 idle 대기
+    wait_editor_images_idle(driver, timeout=60, stable_sec=1.0)
+
+    # ✅ 2️⃣ 등록 버튼 클릭
     reg_btn = wait.until(EC.element_to_be_clickable((
-        By.XPATH, "//button[contains(normalize-space(.), '등록')]"
+        By.CSS_SELECTOR, "button[progress-button='vm.func.save()']"
     )))
+
     try:
         reg_btn.click()
     except Exception:
         driver.execute_script("arguments[0].click();", reg_btn)
 
-    # 2) 에디터는 바로 닫히므로, 이후엔 원래 창으로 전환만 재시도
+    # ✅ 3️⃣ 저장 완료 대기
     end = time.time() + timeout
-    last_err = None
+    saw_progress = False
 
     while time.time() < end:
-        try:
-            driver.switch_to.window(original_handle)
-            WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.TAG_NAME, "body")))
-            return
-        except NoSuchWindowException as e:
-            last_err = e
-            time.sleep(0.2)
 
-    # 여기까지 오면 original_handle 자체가 더 이상 없거나, 세션이 꼬인 것
-    raise NoSuchWindowException(f"original window로 복귀 실패: {original_handle}") from last_err
+        # 창 닫힘 감지
+        if editor_handle not in driver.window_handles:
+            break
+
+        # 진행바 감지
+        p = driver.find_elements(
+            By.CSS_SELECTOR,
+            "button[progress-button='vm.func.save()'] .progress-inner"
+        )
+
+        if p and p[0].is_displayed():
+            saw_progress = True
+
+        if saw_progress and (not p or not p[0].is_displayed()):
+            break
+
+        # alert 자동 처리
+        try:
+            alert = driver.switch_to.alert
+            alert.accept()
+        except Exception:
+            pass
+
+        time.sleep(0.25)
+
+    # 창 닫기
+    try:
+        if editor_handle in driver.window_handles:
+            driver.close()
+    except Exception:
+        pass
+
+    # 원래 창 복귀
+    driver.switch_to.window(original_handle)
+    WebDriverWait(driver, 10).until(
+        EC.presence_of_element_located((By.TAG_NAME, "body"))
+    )
 
 def upload_images_in_editor_one(driver, paths, timeout=40):
     """
@@ -447,6 +485,33 @@ def upload_images_in_editor_one(driver, paths, timeout=40):
             driver.switch_to.default_content()
 
     raise RuntimeError("SmartEditor 새창(top/iframe/shadow 포함)에서 input[type=file]를 찾지 못했습니다.")
+
+def wait_editor_images_idle(driver, timeout: int = 60, stable_sec: float = 1.0):
+    """
+    SmartEditor 이미지 업로드/렌더링이 완전히 끝날 때까지 대기.
+    - img 개수가 일정 시간(stable_sec) 동안 변하지 않으면 idle로 판단
+    """
+    import time
+    from selenium.common.exceptions import TimeoutException
+
+    end = time.time() + timeout
+    last_count = -1
+    stable_start = None
+
+    while time.time() < end:
+        imgs = driver.find_elements(By.CSS_SELECTOR, "img")
+        current_count = len(imgs)
+
+        if current_count != last_count:
+            last_count = current_count
+            stable_start = time.time()
+        else:
+            if stable_start and (time.time() - stable_start) >= stable_sec:
+                return
+
+        time.sleep(0.25)
+
+    raise TimeoutException("이미지 업로드/렌더링 idle 상태를 감지하지 못했습니다.")
 
 def run_editor_upload_flow(driver, image_paths: List[str], timeout: int = 40) -> None:
     """
