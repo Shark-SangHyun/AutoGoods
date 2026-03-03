@@ -1,0 +1,247 @@
+{
+  "mode": "requests",
+  "source_url": "https://www.k-village.co.kr/goods/DMM26291Z1",
+  "code": "DMM26291Z1",
+  "title": "POP 2PACK 남성 반팔 라운드 티셔츠 (Black)",
+  "sale_price": 39000,
+  "list_price": 65000,
+  "pd_photo_image_urls": [
+    "https://contents.k-village.co.kr/Prod/2026/D/DMM26291Z1/DMM26291Z1_DF_01.jpg/k2dims/optimize",
+    "https://contents.k-village.co.kr/Prod/2026/D/DMM26291Z1/DMM26291Z1_DF_02.jpg/k2dims/optimize",
+    "https://contents.k-village.co.kr/Prod/2026/D/DMM26291Z1/DMM26291Z1_DF_03.jpg/k2dims/optimize",
+    "https://contents.k-village.co.kr/Prod/2026/D/DMM26291Z1/DMM26291Z1_DF_04.jpg/k2dims/optimize",
+    "https://contents.k-village.co.kr/Prod/2026/D/DMM26291Z1/DMM26291Z1_DF_05.jpg/k2dims/optimize",
+    "https://contents.k-village.co.kr/Prod/2026/D/DMM26291Z1/DMM26291Z1_DF_06.jpg/k2dims/optimize",
+    "https://contents.k-village.co.kr/Prod/2026/D/DMM26291Z1/DMM26291Z1_DF_07.jpg/k2dims/optimize",
+    "https://contents.k-village.co.kr/Prod/2026/D/DMM26291Z1/DMM26291Z1_DF_08.jpg/k2dims/optimize",
+    "https://contents.k-village.co.kr/Prod/2026/D/DMM26291Z1/DMM26291Z1_DF_09.jpg/k2dims/optimize",
+    "https://contents.k-village.co.kr/PUBL_con/etc/rfid/eider.jpg"
+  ],
+  "gvnt_info": {
+    "모델명": "POP 2PACK 남성 반팔 라운드 티셔츠 (Black)",
+    "제품소재": "겉감:폴리에스터 88% 폴리우레탄 12%",
+    "색상": "Black",
+    "사이즈": "M,L,XL,XXL,3XL,4XL",
+    "제조사": "(주)아이더",
+    "제조국": "베트남",
+    "제조연월(수입연월)": "2025년 10월",
+    "품질보증기준": "관련법 및 소비자 분쟁 해결 규정에 따름",
+    "A/S 책임자와 전화번호": "본사 고객상담실 / 1533-1631"
+  },
+  "제조사": "(주)아이더",
+  "제조연월(수입연월)": "2025년 10월",
+  "제조국": "베트남",
+  "mode_gvnt": "playwright_click",
+  "input_code": "DMM26291Z1",
+  "saved_images_each": [
+    "C:\\Users\\user\\Desktop\\AutoGoods\\AutoGoods\\kv_mvp\\out\\DMM26291Z1\\images\\pd_001.jpg",
+    "C:\\Users\\user\\Desktop\\AutoGoods\\AutoGoods\\kv_mvp\\out\\DMM26291Z1\\images\\pd_002.jpg",
+    "C:\\Users\\user\\Desktop\\AutoGoods\\AutoGoods\\kv_mvp\\out\\DMM26291Z1\\images\\pd_003.jpg",
+    "C:\\Users\\user\\Desktop\\AutoGoods\\AutoGoods\\kv_mvp\\out\\DMM26291Z1\\images\\pd_004.jpg",
+    "C:\\Users\\user\\Desktop\\AutoGoods\\AutoGoods\\kv_mvp\\out\\DMM26291Z1\\images\\pd_005.jpg",
+    "C:\\Users\\user\\Desktop\\AutoGoods\\AutoGoods\\kv_mvp\\out\\DMM26291Z1\\images\\pd_006.jpg",
+    "C:\\Users\\user\\Desktop\\AutoGoods\\AutoGoods\\kv_mvp\\out\\DMM26291Z1\\images\\pd_007.jpg",
+    "C:\\Users\\user\\Desktop\\AutoGoods\\AutoGoods\\kv_mvp\\out\\DMM26291Z1\\images\\pd_008.jpg",
+    "C:\\Users\\user\\Desktop\\AutoGoods\\AutoGoods\\kv_mvp\\out\\DMM26291Z1\\images\\pd_009.jpg",
+    "C:\\Users\\user\\Desktop\\AutoGoods\\AutoGoods\\kv_mvp\\out\\DMM26291Z1\\images\\pd_010.jpg"
+  ],
+  "saved_images_merged": "C:\\Users\\user\\Desktop\\AutoGoods\\AutoGoods\\kv_mvp\\out\\DMM26291Z1\\images\\pd_photo_merged.jpg",
+  "saved_size_table_jpg": "C:\\Users\\user\\Desktop\\AutoGoods\\AutoGoods\\kv_mvp\\out\\DMM26291Z1\\images\\size_table.jpg",
+  "saved_accordion_renders": [
+    {
+      "ok": true,
+      "title": "상품정보제공고시",
+      "mode": "replay",
+      "html": "C:\\Users\\user\\Desktop\\AutoGoods\\AutoGoods\\kv_mvp\\out\\DMM26291Z1\\renders\\html\\상품정보제공고시.html",
+      "png": "C:\\Users\\user\\Desktop\\AutoGoods\\AutoGoods\\kv_mvp\\out\\DMM26291Z1\\renders\\png\\상품정보제공고시.png",
+      "jpg": "C:\\Users\\user\\Desktop\\AutoGoods\\AutoGoods\\kv_mvp\\out\\DMM26291Z1\\renders\\jpg\\상품정보제공고시.jpg"
+    },
+    {
+      "ok": true,
+      "title": "소재 및 관리방법",
+      "mode": "inline",
+      "html": "C:\\Users\\user\\Desktop\\AutoGoods\\AutoGoods\\kv_mvp\\out\\DMM26291Z1\\renders\\html\\소재_및_관리방법.html",
+      "png": "C:\\Users\\user\\Desktop\\AutoGoods\\AutoGoods\\kv_mvp\\out\\DMM26291Z1\\renders\\png\\소재_및_관리방법.png",
+      "jpg": "C:\\Users\\user\\Desktop\\AutoGoods\\AutoGoods\\kv_mvp\\out\\DMM26291Z1\\renders\\jpg\\소재_및_관리방법.jpg"
+    },
+    {
+      "ok": true,
+      "title": "MD_COMMENT",
+      "mode": "inline",
+      "html": "C:\\Users\\user\\Desktop\\AutoGoods\\AutoGoods\\kv_mvp\\out\\DMM26291Z1\\renders\\html\\MD_COMMENT.html",
+      "png": "C:\\Users\\user\\Desktop\\AutoGoods\\AutoGoods\\kv_mvp\\out\\DMM26291Z1\\renders\\png\\MD_COMMENT.png",
+      "jpg": "C:\\Users\\user\\Desktop\\AutoGoods\\AutoGoods\\kv_mvp\\out\\DMM26291Z1\\renders\\jpg\\MD_COMMENT.jpg"
+    }
+  ],
+  "size_options": [
+    {
+      "label": "Black / M",
+      "href": "javascript:addOrder('M', '39,000', 'Black', '10', '04','218','228', '10');",
+      "addOrder_args": [
+        "M",
+        "39,000",
+        "Black",
+        "10",
+        "04",
+        "218",
+        "228",
+        "10"
+      ]
+    },
+    {
+      "label": "Black / L",
+      "href": "javascript:addOrder('L', '39,000', 'Black', '8', '05','398','406', '10');",
+      "addOrder_args": [
+        "L",
+        "39,000",
+        "Black",
+        "8",
+        "05",
+        "398",
+        "406",
+        "10"
+      ]
+    },
+    {
+      "label": "Black / XL",
+      "href": "javascript:addOrder('XL', '39,000', 'Black', '9', '06','340','349', '10');",
+      "addOrder_args": [
+        "XL",
+        "39,000",
+        "Black",
+        "9",
+        "06",
+        "340",
+        "349",
+        "10"
+      ]
+    },
+    {
+      "label": "Black / XXL",
+      "href": "javascript:addOrder('XXL', '39,000', 'Black', '2', '07','124','126', '10');",
+      "addOrder_args": [
+        "XXL",
+        "39,000",
+        "Black",
+        "2",
+        "07",
+        "124",
+        "126",
+        "10"
+      ]
+    },
+    {
+      "label": "Black / 3XL",
+      "href": "javascript:addOrder('3XL', '39,000', 'Black', '2', '08','62','64', '10');",
+      "addOrder_args": [
+        "3XL",
+        "39,000",
+        "Black",
+        "2",
+        "08",
+        "62",
+        "64",
+        "10"
+      ]
+    },
+    {
+      "label": "Black / 4XL",
+      "href": "javascript:addOrder('4XL', '39,000', 'Black', '2', '09','52','54', '10');",
+      "addOrder_args": [
+        "4XL",
+        "39,000",
+        "Black",
+        "2",
+        "09",
+        "52",
+        "54",
+        "10"
+      ]
+    },
+    {
+      "label": "Black / M",
+      "href": "javascript:addOrder('M', '39,000', 'Black', '10', '04','218','228', '10');",
+      "addOrder_args": [
+        "M",
+        "39,000",
+        "Black",
+        "10",
+        "04",
+        "218",
+        "228",
+        "10"
+      ]
+    },
+    {
+      "label": "Black / L",
+      "href": "javascript:addOrder('L', '39,000', 'Black', '8', '05','398','406', '10');",
+      "addOrder_args": [
+        "L",
+        "39,000",
+        "Black",
+        "8",
+        "05",
+        "398",
+        "406",
+        "10"
+      ]
+    },
+    {
+      "label": "Black / XL",
+      "href": "javascript:addOrder('XL', '39,000', 'Black', '9', '06','340','349', '10');",
+      "addOrder_args": [
+        "XL",
+        "39,000",
+        "Black",
+        "9",
+        "06",
+        "340",
+        "349",
+        "10"
+      ]
+    },
+    {
+      "label": "Black / XXL",
+      "href": "javascript:addOrder('XXL', '39,000', 'Black', '2', '07','124','126', '10');",
+      "addOrder_args": [
+        "XXL",
+        "39,000",
+        "Black",
+        "2",
+        "07",
+        "124",
+        "126",
+        "10"
+      ]
+    },
+    {
+      "label": "Black / 3XL",
+      "href": "javascript:addOrder('3XL', '39,000', 'Black', '2', '08','62','64', '10');",
+      "addOrder_args": [
+        "3XL",
+        "39,000",
+        "Black",
+        "2",
+        "08",
+        "62",
+        "64",
+        "10"
+      ]
+    },
+    {
+      "label": "Black / 4XL",
+      "href": "javascript:addOrder('4XL', '39,000', 'Black', '2', '09','52','54', '10');",
+      "addOrder_args": [
+        "4XL",
+        "39,000",
+        "Black",
+        "2",
+        "09",
+        "52",
+        "54",
+        "10"
+      ]
+    }
+  ],
+  "saved_at": "2026-03-03T14:35:01"
+}

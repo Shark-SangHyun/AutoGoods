@@ -1,9 +1,18 @@
-// register.js
-// - 폴더 선택(webkitdirectory) → product.json 자동 읽기
-// - 폼 자동 채우기(title/list_price/sale_price/제조국/gvnt_info.제조연월(수입연월))
-// - 상품명: POP/브랜드/성별/아이템 + JSON title + "SKU COLOR" 규칙 반영
-// - sku/color는 상태 변수로 저장 후 재사용
-// - JSON/log는 콘솔 + result 영역에 같이 출력
+// static/register.js
+// 목적:
+// - 품번(폴더) 선택 → 폴더명에서 품번(8) + 색상(2) 추출 → product.json 읽어서 폼 자동 채움
+// - "상품정보제공고시(새창)" 버튼 클릭 시: kv_mvp/out/<폴더명>/renders/jpg/상품정보제공고시.jpg 를 새탭으로 오픈
+// - "상품입력하기" 클릭 시: /api/set-category 로 (카테고리/상품명/판매가/색상/사이즈/코드) 전송
+//
+// 전제:
+// - server.py에 GET /api/kv/image/gvnt/{code} 가 있어야 새창 열기가 동작함
+// - register.html에 아래 id들이 존재해야 함:
+//   sku, skuColor, btnPickSku, skuFolder, btnDetect, result,
+//   productName, productNameCounter(옵션), productNameWarning(옵션),
+//   productGroup, categoryQuery, teeTypeWrap(옵션), teeType(옵션),
+//   priceOriginal, priceSale, priceDiff, originCountry, manufactureDate,
+//   btnApplyCategory,
+//   btnOpenGvntJpg  (✅ 추가 버튼)
 
 document.addEventListener("DOMContentLoaded", () => {
   const $ = (id) => document.getElementById(id);
@@ -18,7 +27,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const productNameInput = $("productName");
   const productGroupInput = $("productGroup");
-
   const categoryQueryInput = $("categoryQuery");
   const teeTypeWrap = $("teeTypeWrap");
   const teeTypeSelect = $("teeType");
@@ -27,15 +35,16 @@ document.addEventListener("DOMContentLoaded", () => {
   const priceOriginalInput = $("priceOriginal");
   const priceSaleInput = $("priceSale");
   const priceDiffInput = $("priceDiff");
-
   const originCountryInput = $("originCountry");
   const manufactureDateInput = $("manufactureDate");
+
+  // ✅ 새창 버튼
+  const btnOpenGvntJpg = $("btnOpenGvntJpg");
 
   // ---- Logger (console + result append) ----
   function uiLog(...args) {
     console.log("[register]", ...args);
     if (!result) return;
-
     const msg = args
       .map((a) => {
         if (typeof a === "string") return a;
@@ -46,11 +55,8 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       })
       .join(" ");
-
     result.textContent = (result.textContent ? result.textContent + "\n" : "") + msg;
   }
-
-  uiLog("loaded");
 
   // =========================
   // 상품명 글자수 + 경고(50자)
@@ -59,15 +65,13 @@ document.addEventListener("DOMContentLoaded", () => {
   const PRODUCT_NAME_WARN = 50;
 
   function updateProductNameCounter() {
-    const input = document.getElementById("productName");
-    const counter = document.getElementById("productNameCounter");
-    const warning = document.getElementById("productNameWarning");
-
+    const input = $("productName");
+    const counter = $("productNameCounter");
+    const warning = $("productNameWarning");
     if (!input || !counter) return;
 
     const len = (input.value || "").length;
     counter.textContent = `${len}/${PRODUCT_NAME_MAX}`;
-
     if (warning) {
       warning.textContent = len > PRODUCT_NAME_WARN ? "⚠ 권장 길이(50자)를 초과했습니다." : "";
     }
@@ -88,7 +92,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const MAP_GENDER = { M: "남성", W: "여성", U: "공용" };
   const MAP_GENDER_NAME = { M: "남자", W: "여자", U: "남여공용" };
   const MAP_SEASON = { P: "봄", M: "여름", U: "가을", W: "겨울", S: "S/S", F: "F/W", A: "ALL" };
-
   const MAP_ITEM = {
     "1": "자켓",
     "2": "티셔츠",
@@ -109,7 +112,6 @@ document.addEventListener("DOMContentLoaded", () => {
     G: "고어택스신발",
     N: "일반신발",
   };
-
   const MAP_BRAND_NAME = { D: "아이더", J: "아이더 아동" };
   const MAP_GENDER_LABEL = { M: "남성", W: "여성", U: "남녀공용" };
 
@@ -131,8 +133,36 @@ document.addEventListener("DOMContentLoaded", () => {
   // product.json에서 읽은 전체 색상명(예: "COPPER BROWN")
   let productColorName = "";
   let productSizeValues = "";
-  let selectedCode = ""; // ✅ 추가
+  let selectedCode = ""; // 폴더명(예: DWF25N70Z1)
 
+  // =========================
+  // ✅ 새창: 상품정보제공고시.jpg 열기
+  // =========================
+  function openGvntJpgInNewTab(code) {
+    const c = String(code || "").trim();
+    if (!c) {
+      alert("먼저 품번(폴더)을 선택하세요.");
+      return;
+    }
+    const url = `/api/kv/image/gvnt/${encodeURIComponent(c)}?t=${Date.now()}`;
+    window.open(url, "_blank", "noopener,noreferrer");
+  }
+
+  function setOpenBtnEnabled(enabled) {
+    if (!btnOpenGvntJpg) return;
+    btnOpenGvntJpg.disabled = !enabled;
+  }
+
+  if (btnOpenGvntJpg) {
+    btnOpenGvntJpg.addEventListener("click", () => {
+      openGvntJpgInNewTab(selectedCode);
+    });
+    setOpenBtnEnabled(false);
+  }
+
+  // =========================
+  // Helpers
+  // =========================
   function lineToGroup(n) {
     if (n >= 1 && n <= 40) return "M";
     if (n >= 41 && n <= 80) return "C";
@@ -151,7 +181,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function categoryPathByItemCode(itemCode, teeType) {
     const code = String(itemCode || "").toUpperCase();
-
     const MAP = {
       "1": "스포츠/레저>등산>등산의류>재킷",
       "5": "스포츠/레저>등산>등산의류>점퍼",
@@ -166,13 +195,11 @@ document.addEventListener("DOMContentLoaded", () => {
       V: "스포츠/레저>등산>등산잡화>장갑",
       T: "스포츠/레저>등산>등산장비>스틱",
     };
-
     if (code === "2") {
       return teeType === "short"
         ? "스포츠/레저>등산>등산의류>반팔티셔츠"
         : "스포츠/레저>등산>등산의류>긴팔티셔츠";
     }
-
     return MAP[code] || "";
   }
 
@@ -189,7 +216,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (!/^\d{2}$/.test(yearCode)) return { ok: false, error: "연도 구분(4번)은 숫자 2자리여야 합니다. (예: 26)" };
     if (!/^\d{2}$/.test(lineCode)) return { ok: false, error: "라인 구분(6번)은 숫자 2자리여야 합니다. (예: 01~99)" };
-
     if (!MAP_AGE[ageCode]) return { ok: false, error: "연령 구분(1번)이 올바르지 않습니다. (D/J)" };
     if (!MAP_GENDER[genderCode]) return { ok: false, error: "성별 구분(2번)이 올바르지 않습니다. (M/W/U)" };
     if (!MAP_SEASON[seasonCode]) return { ok: false, error: "시즌 구분(3번)이 올바르지 않습니다. (P/M/U/W/S/F/A)" };
@@ -221,18 +247,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function renderResult(parsed) {
     if (!result) return;
-
     if (!parsed.ok) {
       result.textContent = parsed.error;
       return;
     }
-
     const lines = [];
     lines.push(`[OK] ${parsed.normalized}`);
-    Object.entries(parsed.parts).forEach(([k, v]) => {
-      lines.push(`${k}: ${v.value} (${v.code})`);
-    });
-
+    Object.entries(parsed.parts).forEach(([k, v]) => lines.push(`${k}: ${v.value} (${v.code})`));
     result.textContent = lines.join("\n");
   }
 
@@ -250,98 +271,58 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function calcPriceDiff() {
     if (!priceOriginalInput || !priceSaleInput || !priceDiffInput) return;
-
     const original = Number(onlyNumberText(priceOriginalInput.value || ""));
     const sale = Number(onlyNumberText(priceSaleInput.value || ""));
-
     if (!original && !sale) {
       priceDiffInput.value = "";
       return;
     }
-
     const diff = original - sale;
     priceDiffInput.value = `${formatKRW(diff)}원`;
   }
 
   function formatManufactureDate(raw) {
     if (!raw) return "";
-
     const match = String(raw).match(/(\d{4})\D*(\d{1,2})/);
     if (!match) return String(raw);
-
     const year = match[1];
     const month = match[2].padStart(2, "0");
     return `${year}.${month}.01`;
   }
 
-  // ===== 추가: 95[04] -> 95, 230[01] -> 230 =====
-  function stripBracketSuffix(s) {
-    // 끝의 [..] 제거 (예: "95[04]" "230[01]" "95 [04]" 모두 대응)
-    return String(s ?? "").replace(/\s*\[[^\]]*\]\s*$/, "").trim();
-  }
-
-  // ===== 추가: size_options 배열을 "95, 100" 형태로 만들기 =====
   function formatSizeOptions(sizeOptions) {
     if (!Array.isArray(sizeOptions)) return "";
-
     const sizes = sizeOptions
       .map((opt) => {
         if (opt == null) return "";
-
         let raw = "";
-
-        if (typeof opt === "string" || typeof opt === "number") {
-          raw = String(opt);
-        } else {
-          raw = String(opt.label ?? opt.text ?? opt.value ?? opt.size ?? opt.name ?? "");
-        }
-
+        if (typeof opt === "string" || typeof opt === "number") raw = String(opt);
+        else raw = String(opt.label ?? opt.text ?? opt.value ?? opt.size ?? opt.name ?? "");
         raw = raw.trim();
-
-        // ❌ 품절 포함된 것은 제외
         if (raw.includes("품절")) return "";
-
-        // "Black / S" → "S"
         const parts = raw.split("/");
         const last = parts[parts.length - 1];
-
-        // 95[04] → 95
         return last.replace(/\s*\[[^\]]*\]\s*$/, "").trim();
       })
       .filter(Boolean);
-
-    // ✅ 중복 제거
     const unique = [...new Set(sizes)];
-
     return unique.join(", ");
   }
 
   function extractColorFromSizeOptions(sizeOptions) {
     if (!Array.isArray(sizeOptions) || sizeOptions.length === 0) return "";
-
     const first = sizeOptions[0];
-
     let raw = "";
-
-    if (typeof first === "string" || typeof first === "number") {
-      raw = String(first);
-    } else {
-      raw = String(first.label ?? first.text ?? first.value ?? "");
-    }
-
+    if (typeof first === "string" || typeof first === "number") raw = String(first);
+    else raw = String(first.label ?? first.text ?? first.value ?? "");
     raw = raw.trim();
-
-    // "Light Grey / S (품절)" → ["Light Grey ", " S (품절)"]
     const parts = raw.split("/");
     const colorPart = parts[0] ?? "";
-
-    // 괄호 제거
     return colorPart.replace(/\s*\(.*?\)\s*/g, "").trim();
   }
 
   async function readProductJsonFromFolder(fileList) {
     if (!fileList || fileList.length === 0) return null;
-
     const files = Array.from(fileList);
     const jsonFile = files.find((f) => (f.name || "").toLowerCase() === "product.json");
     if (!jsonFile) return null;
@@ -350,22 +331,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const text = await jsonFile.text();
     const data = JSON.parse(text);
+
     const color =
       String(data?.gvnt_info?.["색상"] ?? data?.["색상"] ?? "").trim() ||
       extractColorFromSizeOptions(data?.size_options);
+
     const sizeStr = formatSizeOptions(data?.size_options);
 
-    // ✅ SmartStore 옵션 그룹명(#choice_option_name0) 입력에 사용할 색상 값 저장
     productColorName = color;
     productSizeValues = sizeStr;
 
-
-    uiLog("product.json parsed keys:", Object.keys(data || {}));
     uiLog("json.title:", data.title);
-    uiLog("json.list_price:", data.list_price, "json.sale_price:", data.sale_price, "json.제조국:", data["제조국"]);
+    uiLog("json.list_price:", data.list_price, "json.sale_price:", data.sale_price);
+    uiLog("json.제조국:", data["제조국"]);
     uiLog("json.제조연월(수입연월):", data.gvnt_info?.["제조연월(수입연월)"]);
-
-    // ===== 추가 출력: 색상 / 사이즈 =====
     uiLog("json.색상:", color);
     uiLog("json.사이즈:", sizeStr);
 
@@ -394,10 +373,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function buildFinalProductNameFromState(jsonTitle) {
     skuState.syncFromInputs();
-
     const sku = skuState.sku8;
     const color2 = skuState.color2;
-
     if (!sku) return String(jsonTitle || "").trim();
 
     const parsed = parseSku(sku);
@@ -407,10 +384,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const ageCode = s[0];
     const genderCode = s[1];
     const itemCode = s[5];
-
     const line = Number(s.slice(6, 8));
-    const pop = line === 8 || line === 9 ? "POP" : "";
 
+    const pop = line === 8 || line === 9 ? "POP" : "";
     const brand = MAP_BRAND_NAME[ageCode] || "";
     const genderLabel = MAP_GENDER_LABEL[genderCode] || "";
     const itemName = MAP_ITEM[itemCode] || "";
@@ -445,20 +421,14 @@ document.addEventListener("DOMContentLoaded", () => {
   function runDetect() {
     skuState.syncFromInputs();
     const parsed = parseSku(skuState.sku8);
-
     renderResult(parsed);
 
-    // 제품 분류
     if (parsed.ok && productGroupInput) {
       const grp = classifyProductGroup(parsed.meta.itemCode);
       productGroupInput.value = grp;
 
-      // 티셔츠면 반팔/긴팔 옵션 표시
-      if (teeTypeWrap) {
-        teeTypeWrap.style.display = parsed.meta.itemCode === "2" ? "block" : "none";
-      }
+      if (teeTypeWrap) teeTypeWrap.style.display = parsed.meta.itemCode === "2" ? "block" : "none";
 
-      // 카테고리 자동 세팅
       const teeType = teeTypeSelect ? teeTypeSelect.value : "short";
       const path = categoryPathByItemCode(parsed.meta.itemCode, teeType);
       if (categoryQueryInput && path) categoryQueryInput.value = path;
@@ -475,20 +445,20 @@ document.addEventListener("DOMContentLoaded", () => {
     const rel = anyFile.webkitRelativePath || "";
     const topFolder = rel ? rel.split("/")[0] : "";
 
-    selectedCode = topFolder; // ✅ 추가 (예: DMS25G21Z1)
-
+    selectedCode = topFolder; // 예: DWF25N70Z1
     uiLog("folder picked top:", topFolder || "(unknown)");
-    uiLog("first file relpath:", rel || "(no webkitRelativePath)");
+    setOpenBtnEnabled(!!selectedCode);
 
+    // 폴더명에서 sku8 + color2 추출해서 input에 채움
     const { sku, color } = splitSkuAndColor(topFolder);
-
     if (skuInput) skuInput.value = sku;
     if (skuColorInput) skuColorInput.value = color;
-    skuState.set(sku, color);
 
+    skuState.set(sku, color);
     lockSkuFields(true);
     runDetect();
 
+    // product.json 읽어서 폼 채움
     try {
       const data = await readProductJsonFromFolder(fileList);
       if (!data) {
@@ -502,6 +472,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
+  // ---- Events ----
   if (btnDetect) {
     btnDetect.addEventListener("click", (e) => {
       e.preventDefault();
@@ -518,7 +489,6 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   }
-
   if (skuColorInput) {
     skuColorInput.addEventListener("input", () => skuState.syncFromInputs());
   }
@@ -528,7 +498,6 @@ document.addEventListener("DOMContentLoaded", () => {
       if (!skuInput) return;
       const parsed = parseSku(skuInput.value);
       if (!parsed.ok) return;
-
       const path = categoryPathByItemCode(parsed.meta.itemCode, teeTypeSelect.value);
       if (categoryQueryInput && path) categoryQueryInput.value = path;
     });
@@ -537,23 +506,24 @@ document.addEventListener("DOMContentLoaded", () => {
   if (priceOriginalInput) priceOriginalInput.addEventListener("input", calcPriceDiff);
   if (priceSaleInput) priceSaleInput.addEventListener("input", calcPriceDiff);
 
-  // ✅ 상품입력하기: 카테고리 + 상품명 + 판매가 전송 (+ color 추가)
+  // ✅ 상품입력하기: 카테고리 + 상품명 + 판매가 전송 (+ color/size/code)
   if (btnApplyCategory) {
     btnApplyCategory.addEventListener("click", async () => {
       const q = String(categoryQueryInput?.value || "").trim();
       const name = String(productNameInput?.value || "").trim();
-      const salePriceNum = Number(onlyNumberText(priceOriginalInput?.value || ""));
 
+      // 판매가 = priceOriginal을 sale_price로 보냄 (기존 흐름 유지)
+      const salePriceNum = Number(onlyNumberText(priceOriginalInput?.value || ""));
       const sale_price = Number.isFinite(salePriceNum) && salePriceNum > 0 ? salePriceNum : null;
 
       const _color = String(productColorName || "").trim();
       const _sizes = String(productSizeValues || "")
-      .split(",")
-      .map(s => s.trim())
-      .filter(Boolean);
+        .split(",")
+        .map((s) => s.trim())
+        .filter(Boolean);
 
-      const _combinedSize =
-      _color && _sizes.length ? _sizes.map(sz => `${_color} / ${sz}`).join(", ") : null;
+      // 요청대로 "black / S, black / M" 형태
+      const _combinedSize = _color && _sizes.length ? _sizes.map((sz) => `${_color} / ${sz}`).join(", ") : null;
 
       if (!q && !name && sale_price === null) {
         alert("카테고리/상품명/판매가 중 최소 1개는 있어야 합니다.");
@@ -571,14 +541,13 @@ document.addEventListener("DOMContentLoaded", () => {
             product_name: name || null,
             sale_price,
             color: productColorName || null,
-            size: _combinedSize || null,           // ✅ 핵심 변경
-            code: selectedCode || null, // ✅ 추가
+            size: _combinedSize || null,
+            code: selectedCode || null,
           }),
         });
 
         const data = await res.json().catch(() => ({}));
         if (!res.ok) throw new Error(data?.detail || `HTTP ${res.status}`);
-
         alert("상품 입력 완료");
       } catch (e) {
         alert(`실패: ${e.message}`);
@@ -588,6 +557,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  // 폴더 선택
   if (btnPickSku && skuFolderInput) {
     btnPickSku.addEventListener("click", (e) => {
       e.preventDefault();
@@ -605,7 +575,9 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  // init
   lockSkuFields(false);
   skuState.syncFromInputs();
   updateProductNameCounter();
+  setOpenBtnEnabled(false);
 });

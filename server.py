@@ -1,14 +1,11 @@
-# server.py  (에러 메시지에 타입 + 내용 포함해서 내려주기 적용 버전)
-
+# server.py (에러 메시지에 타입 + 내용 포함해서 내려주기 적용 버전)
 from typing import Optional
-
 from fastapi import FastAPI, HTTPException
-from fastapi.responses import RedirectResponse
+from fastapi.responses import RedirectResponse, FileResponse
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
 from pathlib import Path
 import traceback
-
 import json
 import os
 import sys
@@ -45,16 +42,13 @@ app.mount("/collector", kv_collector.app)
 def _kv_run_async_redirect():
     return RedirectResponse(url="/collector/run_async", status_code=307)
 
-
 @app.get("/progress/{job_id}")
 def _kv_progress_redirect(job_id: str):
     return RedirectResponse(url=f"/collector/progress/{job_id}", status_code=307)
 
-
 @app.get("/status/{job_id}")
 def _kv_status_redirect(job_id: str):
     return RedirectResponse(url=f"/collector/status/{job_id}", status_code=307)
-
 
 @app.get("/result/{job_id}")
 def _kv_result_redirect(job_id: str):
@@ -64,9 +58,9 @@ def _kv_result_redirect(job_id: str):
 class ApplyReq(BaseModel):
     query: Optional[str] = None
     product_name: Optional[str] = None
-    sale_price: Optional[int] = None  # ✅ 추가
-    color: Optional[str] = None  # ✅ 추가 (product.json 색상 → SmartStore 옵션명)
-    size: Optional[str] = None   # ✅ 추가
+    sale_price: Optional[int] = None
+    color: Optional[str] = None
+    size: Optional[str] = None
     code: Optional[str] = None
 
 
@@ -103,7 +97,8 @@ def _resolve_kv_out_root() -> Path:
             continue
 
     raise FileNotFoundError(
-        "kv_mvp out 폴더를 찾지 못했습니다. 환경변수 KV_OUT_ROOT를 설정하거나, "
+        "kv_mvp out 폴더를 찾지 못했습니다. "
+        "환경변수 KV_OUT_ROOT를 설정하거나, "
         "프로젝트 폴더 기준으로 kv_mvp/out 경로에 kv_mvp 결과물이 있어야 합니다."
     )
 
@@ -129,6 +124,7 @@ def _err(e: Exception) -> HTTPException:
     return HTTPException(status_code=500, detail=f"{type(e).__name__}: {e}")
 
 
+# ---------------- SmartStore automation ----------------
 @app.post("/api/open-smartstore")
 def api_open_smartstore():
     try:
@@ -182,22 +178,10 @@ def api_set_category(req: ApplyReq):
             size_values=s or None,
             code=code or None,
         )
-
         return {"ok": True}
-
     except Exception as e:
-        # ✅ 1) 콘솔에 전체 스택트레이스 출력(어느 함수/어느 wait인지 바로 보임)
         traceback.print_exc()
-
-        # ✅ 2) _err가 detail을 깎아먹는 경우 대비해서,
-        #    에러 메시지를 확실히 담아보내도록 _err를 안 쓰고 직접 던져도 됨(선택)
-        # return/raise 방식은 프로젝트 _err 구현에 따라 택1
-
-        # (A) 기존 _err 유지 + 콘솔만 찍고 싶으면:
-        return _err(e)  # _err가 raise 하는 구조면 raise _err(e)로 유지
-
-        # (B) 프론트 alert에 디테일까지 그대로 주고 싶으면(권장):
-        # raise HTTPException(status_code=500, detail=f"{type(e).__name__}: {e}")
+        raise HTTPException(status_code=500, detail=f"{type(e).__name__}: {e}")
 
 
 @app.post("/api/go-register-and-set-category")
@@ -213,7 +197,6 @@ def api_go_register_and_set_category(req: ApplyReq):
 
 
 # ---------------- kv_mvp 연동 (읽기 전용) ----------------
-
 @app.get("/api/kv/health")
 def api_kv_health():
     try:
@@ -243,7 +226,6 @@ def api_kv_product(code: str):
         out_root = _resolve_kv_out_root()
         pj = _find_product_json(out_root, code)
         data = json.loads(pj.read_text(encoding="utf-8"))
-
         payload = {
             "ok": True,
             "code": data.get("code") or code,
@@ -265,3 +247,24 @@ def api_kv_product(code: str):
 @app.post("/api/kv/product")
 def api_kv_product_post(req: KvProductReq):
     return api_kv_product(req.code)
+
+
+# ---------------- ✅ 추가: 상품정보제공고시.jpg 제공 ----------------
+def _find_gvnt_jpg(out_root: Path, code: str) -> Path:
+    c = str(code).strip()
+    if not c:
+        raise FileNotFoundError("code is empty")
+    p = out_root / c / "renders" / "jpg" / "상품정보제공고시.jpg"
+    if not p.exists():
+        raise FileNotFoundError(f"gvnt jpg not found for code={c}")
+    return p
+
+
+@app.get("/api/kv/image/gvnt/{code}")
+def api_kv_image_gvnt(code: str):
+    try:
+        out_root = _resolve_kv_out_root()
+        p = _find_gvnt_jpg(out_root, code)
+        return FileResponse(str(p), media_type="image/jpeg")
+    except Exception as e:
+        raise HTTPException(status_code=404, detail=f"{type(e).__name__}: {e}")
