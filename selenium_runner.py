@@ -11,12 +11,13 @@ Selenium automation for Naver SmartStore.
   - set_option_config_true_and_direct_input() now prints debug before/after direct click failure
 """
 
-from typing import Optional
+from typing import Optional,Any
 from pathlib import Path
 import time
 import detail_editor
 import os
-
+import re
+import json
 
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
@@ -818,6 +819,414 @@ def click_register_button():
 
     raise TimeoutException("Save/Register click done but completion not detected (timeout).")
 
+def open_product_maininfo_menu():
+    d = get_driver()
+    wait = WebDriverWait(d, 20)
+
+    # 1) '상품 주요정보' 영역 찾기
+    title_xpath = "//div[contains(@class,'title-line') and .//label[contains(normalize-space(.),'상품 주요정보')]]"
+    title_line = wait.until(EC.presence_of_element_located((By.XPATH, title_xpath)))
+    _scroll_center(d, title_line)
+
+    # 영역 클릭 (접혀있을 가능성 대비)
+    try:
+        wait.until(EC.element_to_be_clickable((By.XPATH, title_xpath))).click()
+    except Exception:
+        d.execute_script("arguments[0].click();", title_line)
+
+    # 2) 메뉴토글 버튼 찾기
+    toggle_xpath = title_xpath + "//a[contains(@class,'btn-default')]"
+    toggle = wait.until(EC.presence_of_element_located((By.XPATH, toggle_xpath)))
+    _scroll_center(d, toggle)
+
+    # 이미 열려있지 않은 경우만 클릭
+    if "active" not in toggle.get_attribute("class"):
+        try:
+            wait.until(EC.element_to_be_clickable((By.XPATH, toggle_xpath))).click()
+        except Exception:
+            d.execute_script("arguments[0].click();", toggle)
+
+        # active class 반영될 때까지 대기
+        wait.until(
+            lambda drv: "active" in drv.find_element(By.XPATH, toggle_xpath).get_attribute("class")
+        )
+
+def set_manufacture_define_no(code: str):
+    """
+    상품 주요정보 영역이 열린 상태에서
+    품번(input#prd-mdn)에 값을 입력한다.
+    """
+    if not code:
+        raise ValueError("code is empty")
+
+    d = get_driver()
+    wait = WebDriverWait(d, 20)
+
+    input_xpath = "//input[@id='prd-mdn' and @name='product.detailAttribute.manufactureDefineNo']"
+
+    # 1) 입력창 활성화 대기
+    inp = wait.until(EC.presence_of_element_located((By.XPATH, input_xpath)))
+    wait.until(EC.element_to_be_clickable((By.XPATH, input_xpath)))
+
+    _scroll_center(d, inp)
+
+    # 2) 값 초기화
+    try:
+        inp.click()
+    except Exception:
+        d.execute_script("arguments[0].click();", inp)
+
+    inp.send_keys(Keys.CONTROL, "a")
+    inp.send_keys(Keys.BACKSPACE)
+
+    # 3) 값 입력
+    inp.send_keys(code)
+
+    # 4) Angular 반영 강제 트리거 (중요)
+    d.execute_script("""
+        arguments[0].dispatchEvent(new Event('input', { bubbles: true }));
+        arguments[0].dispatchEvent(new Event('change', { bubbles: true }));
+    """, inp)
+
+def set_brand_name_select_first(brand: str):
+    """
+    브랜드 입력(Selectize/자동완성) 후, 드롭다운에서 '첫 번째 추천 항목'을 클릭해 선택 확정.
+    - Enter만 치면 선택이 안 되거나 '직접입력'으로 남는 케이스를 방지
+    """
+    if not brand:
+        raise ValueError("brand is empty")
+
+    d = get_driver()
+    wait = WebDriverWait(d, 20)
+
+    # 브랜드 입력창 (placeholder는 그대로 두고, 여러개일 수 있으니 '보이는/클릭가능' 기준으로 잡음)
+    brand_inp_xpath = "//input[@placeholder='브랜드를 입력해주세요.']"
+    inp = wait.until(EC.element_to_be_clickable((By.XPATH, brand_inp_xpath)))
+    _scroll_center(d, inp)
+
+    # 1) 포커스 + 초기화
+    try:
+        inp.click()
+    except Exception:
+        d.execute_script("arguments[0].click();", inp)
+
+    inp.send_keys(Keys.CONTROL, "a")
+    inp.send_keys(Keys.BACKSPACE)
+
+    # 2) 브랜드 입력
+    inp.send_keys(brand)
+
+    # 3) 드롭다운(Selectize) 뜰 때까지 대기
+    #    - 보이는 dropdown 중 첫 번째 option을 고른다.
+    dropdown_xpath = (
+        "//div[contains(@class,'selectize-dropdown') and contains(@style,'display: block')]"
+        "//div[contains(@class,'selectize-dropdown-content')]"
+    )
+    wait.until(EC.presence_of_element_located((By.XPATH, dropdown_xpath)))
+
+    # 4) 첫 번째 selectable option 클릭
+    #    - '직접입력:아이더' 같은 줄도 option일 수 있으니, selectable 이면서 option 인 첫 항목을 잡는다.
+    first_option_xpath = (
+        dropdown_xpath
+        + "//div[contains(@class,'option') and @data-selectable][1]"
+    )
+
+    opt = wait.until(EC.element_to_be_clickable((By.XPATH, first_option_xpath)))
+    _scroll_center(d, opt)
+
+    try:
+        opt.click()
+    except Exception:
+        d.execute_script("arguments[0].click();", opt)
+
+    # 5) 선택 확정 확인(드롭다운이 닫히거나, input 값이 바뀌거나 둘 중 하나)
+    wait.until(
+        lambda drv: len(drv.find_elements(By.XPATH,
+            "//div[contains(@class,'selectize-dropdown') and contains(@style,'display: block')]"
+        )) == 0
+        or drv.find_element(By.XPATH, brand_inp_xpath).get_attribute("value").strip() != ""
+    )
+def _load_product_json_by_code(code: str) -> Optional[dict]:
+    """
+    kv_mvp/out/{code}/product.json 로드 (없으면 None)
+    """
+    if not code:
+        return None
+
+    path = os.path.join("kv_mvp", "out", code, "product.json")
+    if not os.path.exists(path):
+        return None
+
+    try:
+        with open(path, "r", encoding="utf-8") as f:
+            return json.load(f)
+    except Exception:
+        return None
+
+
+def _get_gvnt_manufacture_ym(product: Optional[dict]) -> Optional[str]:
+    """
+    product.json -> gvnt_info -> 제조연월(수입연월) 추출 (없으면 None)
+    """
+    if not product:
+        return None
+    gvnt = product.get("gvnt_info") or {}
+    v = gvnt.get("제조연월(수입연월)")
+    if v is None:
+        return None
+    s = str(v).strip()
+    return s if s else None
+
+
+def _normalize_manufacture_ym(s: Optional[str]) -> Optional[str]:
+    """
+    다양한 입력을 'YYYY.MM.01' 또는 'YYYY.MM.DD'로 정규화.
+    예:
+      - '2024년 08' -> '2024.08.01'
+      - '2025년10월' -> '2025.10.01'
+      - '2025.10' -> '2025.10.01'
+      - '2025.10.15' -> '2025.10.15'
+      - '2025-10-15' -> '2025.10.15'
+    """
+    if not s:
+        return None
+    t = str(s).strip()
+
+    # YYYY.MM.DD / YYYY-MM-DD / YYYY/MM/DD
+    m = re.search(r"(\d{4})[.\-\/](\d{1,2})[.\-\/](\d{1,2})", t)
+    if m:
+        y, mo, d = int(m.group(1)), int(m.group(2)), int(m.group(3))
+        if 1 <= mo <= 12 and 1 <= d <= 31:
+            return f"{y:04d}.{mo:02d}.{d:02d}"
+        return None
+
+    # YYYY년 MM(월)
+    m = re.search(r"(\d{4})\s*년\s*(\d{1,2})\s*(?:월)?", t)
+    if m:
+        y, mo = int(m.group(1)), int(m.group(2))
+        if 1 <= mo <= 12:
+            return f"{y:04d}.{mo:02d}.01"
+        return None
+
+    # YYYY.MM / YYYY-MM / YYYY/MM
+    m = re.search(r"(\d{4})[.\-\/](\d{1,2})", t)
+    if m:
+        y, mo = int(m.group(1)), int(m.group(2))
+        if 1 <= mo <= 12:
+            return f"{y:04d}.{mo:02d}.01"
+        return None
+
+    return None
+
+
+def set_manufacture_date_optional(raw_value: Optional[str]) -> bool:
+    """
+    제조연월(수입연월)이 있으면 제조일자(manufactureDate) 입력.
+    - raw_value -> _normalize_manufacture_ym() -> 'YYYY.MM.DD' (보통 DD=01)
+    - SmartStore 제조일자는 AngularJS ngModel 기반이라, 달력 클릭이 안 먹는 케이스가 있어
+      1) 달력 클릭 시도
+      2) 안 바뀌면 Angular ngModel($setViewValue)로 강제 반영 (최종 확정)
+    - 값이 없으면 스킵(True)
+    - 성공/스킵 True, 실패 False
+    """
+    norm = _normalize_manufacture_ym(raw_value)
+    if not norm:
+        return True
+
+    ty, tm, td = map(int, norm.split("."))
+    expected_clean = f"{ty:04d}.{tm:02d}.{td:02d}"
+
+    print("[DBG] manufacture raw:", raw_value)
+    print("[DBG] manufacture norm:", norm)
+
+    dvr = get_driver()
+    wait = WebDriverWait(dvr, 20)
+
+    def clean(v: str) -> str:
+        return (v or "").strip().rstrip(".")
+
+    # 0) manufactureDate input (페이지에 1개라는 로그 확인됨. 그래도 안전하게 "보이는 것" 우선)
+    def pick_input():
+        els = dvr.find_elements(By.NAME, "product.detailAttribute.manufactureDate")
+        if not els:
+            return None
+        visible = [e for e in els if e.is_displayed()]
+        cand = visible if visible else els
+        cand.sort(key=lambda e: (e.rect.get("y", 0), e.rect.get("x", 0)))
+        return cand[-1]
+
+    inp = wait.until(lambda drv: pick_input())
+    _scroll_center(dvr, inp)
+
+    # 1) 다른 달력 닫기(토글/오염 방지)
+    try:
+        dvr.find_element(By.TAG_NAME, "body").send_keys(Keys.ESCAPE)
+    except Exception:
+        pass
+
+    # 2) input 클릭(달력 열기 시도)
+    try:
+        inp.click()
+    except Exception:
+        dvr.execute_script("arguments[0].click();", inp)
+
+    # 3) (선택) 달력 클릭으로 반영 시도
+    #    - 달력이 떠있다면 nearest picker를 잡아 목표 월/일 클릭
+    try:
+        def get_nearest_picker():
+            return dvr.execute_script(
+                """
+                const inp = arguments[0];
+                const ir = inp.getBoundingClientRect();
+                const pickers = Array.from(document.querySelectorAll('div.datetimepicker'))
+                  .filter(p => p.offsetParent !== null && !p.classList.contains('ng-hide'));
+                if (!pickers.length) return null;
+
+                let best = null;
+                let bestScore = Infinity;
+                for (const p of pickers) {
+                  const r = p.getBoundingClientRect();
+                  const dy = Math.abs(r.top - ir.bottom);
+                  const dx = Math.abs((r.left+r.right)/2 - (ir.left+ir.right)/2);
+                  const score = dy*10 + dx;
+                  if (score < bestScore) { bestScore = score; best = p; }
+                }
+                return best;
+                """,
+                inp,
+            )
+
+        picker = WebDriverWait(dvr, 3).until(lambda drv: get_nearest_picker())
+
+        def read_ym_from(pk) -> tuple[int, int]:
+            title = pk.find_element(By.CSS_SELECTOR, "button.title")
+            txt = (title.text or "").strip()  # 예: 2026.03
+            m = re.search(r"(\d{4})\.(\d{1,2})", txt)
+            if not m:
+                raise ValueError(f"cannot read title: {txt!r}")
+            return int(m.group(1)), int(m.group(2))
+
+        def click_prev_month(pk):
+            btns = pk.find_elements(By.CSS_SELECTOR, "span.prev button.left")
+            for b in btns:
+                ng = (b.get_attribute("data-ng-click") or "") + (b.get_attribute("ng-click") or "")
+                if "data.leftDate" in ng:
+                    dvr.execute_script("arguments[0].click();", b)
+                    return
+            raise ValueError("prev month not found")
+
+        def click_next_month(pk):
+            btns = pk.find_elements(By.CSS_SELECTOR, "span.next button.right")
+            for b in btns:
+                ng = (b.get_attribute("data-ng-click") or "") + (b.get_attribute("ng-click") or "")
+                if "data.rightDate" in ng:
+                    dvr.execute_script("arguments[0].click();", b)
+                    return
+            raise ValueError("next month not found")
+
+        cy, cm = read_ym_from(picker)
+        diff = (ty - cy) * 12 + (tm - cm)
+        if abs(diff) <= 600:
+            for _ in range(abs(diff)):
+                before = read_ym_from(picker)
+                if diff > 0:
+                    click_next_month(picker)
+                else:
+                    click_prev_month(picker)
+                WebDriverWait(dvr, 5).until(lambda drv: read_ym_from(picker) != before)
+
+            # 날짜 클릭 (현재월만: past/future 제외)
+            day_xpath = (
+                f".//td[contains(@class,'day') and not(contains(@class,'disabled')) "
+                f"and not(contains(@class,'past')) and not(contains(@class,'future'))]"
+                f"//span[normalize-space(text())='{td}']"
+            )
+            day = picker.find_element(By.XPATH, day_xpath)
+            dvr.execute_script("arguments[0].click();", day)
+    except Exception:
+        # 달력 클릭 시도는 best-effort, 실패해도 아래 Angular 강제 반영으로 진행
+        pass
+
+    # 4) 값이 이미 반영됐으면 종료
+    if clean(inp.get_attribute("value")) == expected_clean:
+        print("[DBG] manufacture applied (by picker):", clean(inp.get_attribute("value")))
+        return True
+
+    # 5) 최종 해결: AngularJS ngModel로 강제 반영 (너 케이스의 핵심)
+    try:
+        dvr.execute_script(
+            """
+            const el = arguments[0];
+            const y = arguments[1], m = arguments[2], d = arguments[3];
+
+            function fire(el){
+              el.dispatchEvent(new Event('input', {bubbles:true}));
+              el.dispatchEvent(new Event('change', {bubbles:true}));
+              el.dispatchEvent(new Event('blur', {bubbles:true}));
+            }
+
+            // 값 표시 포맷은 시스템이 맡기되, 모델은 Date로 넣는게 가장 안전
+            const dt = new Date(Date.UTC(y, m-1, d, 0, 0, 0));
+
+            if (window.angular) {
+              const ngEl = angular.element(el);
+              const scope = ngEl.scope() || ngEl.isolateScope();
+              const ngModel = ngEl.controller('ngModel');
+
+              if (scope && scope.$apply && ngModel && ngModel.$setViewValue) {
+                scope.$apply(function(){
+                  ngModel.$setViewValue(dt);
+                  if (ngModel.$render) ngModel.$render();
+                });
+                fire(el);
+                return;
+              }
+
+              // fallback: scope에 vm/dateModel이 있으면 직접 세팅
+              if (scope && scope.$apply) {
+                scope.$apply(function(){
+                  if (scope.vm && typeof scope.vm === "object" && "dateModel" in scope.vm) {
+                    scope.vm.dateModel = dt;
+                  } else if ("vm" in scope && scope.vm && "dateModel" in scope.vm) {
+                    scope.vm.dateModel = dt;
+                  }
+                });
+                fire(el);
+                return;
+              }
+            }
+
+            // angular 접근이 안 되면(드뭄) value만이라도 세팅 (하지만 Invalid date 가능)
+            el.value = `${String(y).padStart(4,'0')}.${String(m).padStart(2,'0')}.${String(d).padStart(2,'0')}.`;
+            fire(el);
+            """,
+            inp, ty, tm, td
+        )
+    except Exception:
+        return False
+
+    # 6) 최종 검증 (끝점 제거 비교)
+    try:
+        wait.until(lambda drv: clean(inp.get_attribute("value")) == expected_clean)
+        print("[DBG] manufacture applied (by ngModel):", clean(inp.get_attribute("value")))
+        return True
+    except Exception:
+        print("[DBG] manufacture FAILED. current:", clean(inp.get_attribute("value")))
+        return False
+    
+
+def apply_manufacture_date_from_product_json(code: str) -> bool:
+    """
+    code로 product.json 읽어서 제조연월(수입연월) 있으면 세팅, 없으면 스킵.
+    반환:
+      - True: 스킵(없음) 또는 세팅 성공
+      - False: 값은 있었는데 세팅 실패
+    """
+    product = _load_product_json_by_code(code)
+    raw = _get_gvnt_manufacture_ym(product)
+    return set_manufacture_date_optional(raw)
+
+
 
 # =========================================================
 # Existing flows
@@ -1087,6 +1496,11 @@ def go_register_and_apply(
 
         click_html_editor_button(code)
         click_register_button()
+
+        open_product_maininfo_menu()
+        set_manufacture_define_no(code)
+        set_brand_name_select_first("아이더")
+        apply_manufacture_date_from_product_json(code)
 
     if not q and not n and sp is None and not cv and not sv:
         raise ValueError("query/product_name/sale_price/color/size are all empty")
