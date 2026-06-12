@@ -1,0 +1,275 @@
+{
+  "mode": "requests",
+  "source_url": "https://www.k-village.co.kr/goods/DMS25G12C6",
+  "code": "DMS25G12C6",
+  "title": "디아망 (C6) (D/Grey)",
+  "sale_price": 139000,
+  "list_price": 259000,
+  "pd_photo_image_urls": [
+    "https://contents.k-village.co.kr/Prod/2025/D/DMS25G12C6/DMS25G12C6_DF_01.jpg/k2dims/optimize?t=20250806142648",
+    "https://contents.k-village.co.kr/Prod/2025/D/DMS25G12C6/DMS25G12C6_DF_02.jpg/k2dims/optimize?t=20250806142648",
+    "https://contents.k-village.co.kr/Prod/2025/D/DMS25G12C6/DMS25G12C6_DF_03.jpg/k2dims/optimize?t=20250806142648",
+    "https://contents.k-village.co.kr/Prod/2025/D/DMS25G12C6/DMS25G12C6_DF_04.jpg/k2dims/optimize?t=20250806142648",
+    "https://contents.k-village.co.kr/Prod/2025/D/DMS25G12C6/DMS25G12C6_DF_05.jpg/k2dims/optimize?t=20250806142648",
+    "https://contents.k-village.co.kr/Prod/2025/D/DMS25G12C6/DMS25G12C6_DF_06.jpg/k2dims/optimize?t=20250806142648",
+    "https://contents.k-village.co.kr/Prod/2025/D/DMS25G12C6/DMS25G12C6_DF_07.jpg/k2dims/optimize?t=20250806142648",
+    "https://contents.k-village.co.kr/Prod/2025/D/DMS25G12C6/DMS25G12C6_DF_08.jpg/k2dims/optimize?t=20250806142648",
+    "https://contents.k-village.co.kr/Prod/2025/D/DMS25G12C6/DMS25G12C6_DF_09.jpg/k2dims/optimize?t=20250806142648",
+    "https://contents.k-village.co.kr/PUBL_con/etc/rfid/eider.jpg"
+  ],
+  "gvnt_info": {
+    "모델명": "디아망 (C6) (D/Grey)",
+    "제품 주소재": "갑피:겉감-스프리트(천연가죽)+누벅(천연가죽)+합성피혁+폴리에스터100%, 안감1-GORE-TEX(나일론 100%), 안감2-폴리에스터 100% / 창소재:X-GRIP(부틸 30%) + PHYLON",
+    "색상": "Dark Grey",
+    "사이즈": "250,255,260,265,270,275,280",
+    "크기, 중량": "중량:385g (260mm)",
+    "제조사": "(주)아이더",
+    "제조국": "한국",
+    "품질보증기준": "관련법 및 소비자 분쟁 해결 규정에 따름",
+    "A/S 책임자와 전화번호": "본사 고객상담실 / 1533-1631"
+  },
+  "제조사": "(주)아이더",
+  "제조연월(수입연월)": null,
+  "제조국": "한국",
+  "mode_gvnt": "playwright_click",
+  "input_code": "DMS25G12C6",
+  "saved_images_each": [
+    "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DMS25G12C6\\images\\pd_001.jpg",
+    "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DMS25G12C6\\images\\pd_002.jpg",
+    "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DMS25G12C6\\images\\pd_003.jpg",
+    "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DMS25G12C6\\images\\pd_004.jpg",
+    "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DMS25G12C6\\images\\pd_005.jpg",
+    "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DMS25G12C6\\images\\pd_006.jpg",
+    "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DMS25G12C6\\images\\pd_007.jpg",
+    "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DMS25G12C6\\images\\pd_008.jpg",
+    "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DMS25G12C6\\images\\pd_009.jpg",
+    "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DMS25G12C6\\images\\pd_010.jpg"
+  ],
+  "saved_images_merged": "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DMS25G12C6\\images\\pd_photo_merged.jpg",
+  "saved_size_table_jpg": "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DMS25G12C6\\images\\size_table.jpg",
+  "saved_accordion_renders": [
+    {
+      "ok": true,
+      "title": "상품정보제공고시",
+      "mode": "replay",
+      "html": "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DMS25G12C6\\renders\\html\\상품정보제공고시.html",
+      "png": "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DMS25G12C6\\renders\\png\\상품정보제공고시.png",
+      "jpg": "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DMS25G12C6\\renders\\jpg\\상품정보제공고시.jpg"
+    },
+    {
+      "ok": true,
+      "title": "소재 및 관리방법",
+      "mode": "inline",
+      "html": "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DMS25G12C6\\renders\\html\\소재_및_관리방법.html",
+      "png": "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DMS25G12C6\\renders\\png\\소재_및_관리방법.png",
+      "jpg": "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DMS25G12C6\\renders\\jpg\\소재_및_관리방법.jpg"
+    },
+    {
+      "ok": true,
+      "title": "MD_COMMENT",
+      "mode": "inline",
+      "html": "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DMS25G12C6\\renders\\html\\MD_COMMENT.html",
+      "png": "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DMS25G12C6\\renders\\png\\MD_COMMENT.png",
+      "jpg": "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DMS25G12C6\\renders\\jpg\\MD_COMMENT.jpg"
+    }
+  ],
+  "size_options": [
+    {
+      "label": "Dark Grey / 250",
+      "href": "javascript:addOrder('250', '139,000', 'Dark Grey', '3', '05','30','33', '10');",
+      "addOrder_args": [
+        "250",
+        "139,000",
+        "Dark Grey",
+        "3",
+        "05",
+        "30",
+        "33",
+        "10"
+      ]
+    },
+    {
+      "label": "Dark Grey / 255",
+      "href": "javascript:addOrder('255', '139,000', 'Dark Grey', '2', '06','39','41', '10');",
+      "addOrder_args": [
+        "255",
+        "139,000",
+        "Dark Grey",
+        "2",
+        "06",
+        "39",
+        "41",
+        "10"
+      ]
+    },
+    {
+      "label": "Dark Grey / 260",
+      "href": "javascript:addOrder('260', '139,000', 'Dark Grey', '1', '07','41','42', '10');",
+      "addOrder_args": [
+        "260",
+        "139,000",
+        "Dark Grey",
+        "1",
+        "07",
+        "41",
+        "42",
+        "10"
+      ]
+    },
+    {
+      "label": "Dark Grey / 265",
+      "href": "javascript:addOrder('265', '139,000', 'Dark Grey', '4', '08','40','44', '10');",
+      "addOrder_args": [
+        "265",
+        "139,000",
+        "Dark Grey",
+        "4",
+        "08",
+        "40",
+        "44",
+        "10"
+      ]
+    },
+    {
+      "label": "Dark Grey / 270",
+      "href": "javascript:addOrder('270', '139,000', 'Dark Grey', '4', '09','40','44', '10');",
+      "addOrder_args": [
+        "270",
+        "139,000",
+        "Dark Grey",
+        "4",
+        "09",
+        "40",
+        "44",
+        "10"
+      ]
+    },
+    {
+      "label": "Dark Grey / 275",
+      "href": "javascript:addOrder('275', '139,000', 'Dark Grey', '1', '10','26','27', '10');",
+      "addOrder_args": [
+        "275",
+        "139,000",
+        "Dark Grey",
+        "1",
+        "10",
+        "26",
+        "27",
+        "10"
+      ]
+    },
+    {
+      "label": "Dark Grey / 280",
+      "href": "javascript:addOrder('280', '139,000', 'Dark Grey', '2', '11','26','28', '10');",
+      "addOrder_args": [
+        "280",
+        "139,000",
+        "Dark Grey",
+        "2",
+        "11",
+        "26",
+        "28",
+        "10"
+      ]
+    },
+    {
+      "label": "Dark Grey / 250",
+      "href": "javascript:addOrder('250', '139,000', 'Dark Grey', '3', '05','30','33', '10');",
+      "addOrder_args": [
+        "250",
+        "139,000",
+        "Dark Grey",
+        "3",
+        "05",
+        "30",
+        "33",
+        "10"
+      ]
+    },
+    {
+      "label": "Dark Grey / 255",
+      "href": "javascript:addOrder('255', '139,000', 'Dark Grey', '2', '06','39','41', '10');",
+      "addOrder_args": [
+        "255",
+        "139,000",
+        "Dark Grey",
+        "2",
+        "06",
+        "39",
+        "41",
+        "10"
+      ]
+    },
+    {
+      "label": "Dark Grey / 260",
+      "href": "javascript:addOrder('260', '139,000', 'Dark Grey', '1', '07','41','42', '10');",
+      "addOrder_args": [
+        "260",
+        "139,000",
+        "Dark Grey",
+        "1",
+        "07",
+        "41",
+        "42",
+        "10"
+      ]
+    },
+    {
+      "label": "Dark Grey / 265",
+      "href": "javascript:addOrder('265', '139,000', 'Dark Grey', '4', '08','40','44', '10');",
+      "addOrder_args": [
+        "265",
+        "139,000",
+        "Dark Grey",
+        "4",
+        "08",
+        "40",
+        "44",
+        "10"
+      ]
+    },
+    {
+      "label": "Dark Grey / 270",
+      "href": "javascript:addOrder('270', '139,000', 'Dark Grey', '4', '09','40','44', '10');",
+      "addOrder_args": [
+        "270",
+        "139,000",
+        "Dark Grey",
+        "4",
+        "09",
+        "40",
+        "44",
+        "10"
+      ]
+    },
+    {
+      "label": "Dark Grey / 275",
+      "href": "javascript:addOrder('275', '139,000', 'Dark Grey', '1', '10','26','27', '10');",
+      "addOrder_args": [
+        "275",
+        "139,000",
+        "Dark Grey",
+        "1",
+        "10",
+        "26",
+        "27",
+        "10"
+      ]
+    },
+    {
+      "label": "Dark Grey / 280",
+      "href": "javascript:addOrder('280', '139,000', 'Dark Grey', '2', '11','26','28', '10');",
+      "addOrder_args": [
+        "280",
+        "139,000",
+        "Dark Grey",
+        "2",
+        "11",
+        "26",
+        "28",
+        "10"
+      ]
+    }
+  ],
+  "saved_at": "2026-05-20T18:14:45"
+}

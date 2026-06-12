@@ -785,6 +785,7 @@ def build_editor_image_paths(code: str) -> list[str]:
         os.path.join(base_dir, "out", code, "renders", "jpg", "소재_및_관리방법.jpg"),
         os.path.join(base_dir, "out", code, "renders", "jpg", "상품정보제공고시.jpg"),
         os.path.join(base_dir, "img", "nav3.png"),
+        os.path.join(base_dir, "img", "nav4.png"),
     ]
 
     for p in paths:

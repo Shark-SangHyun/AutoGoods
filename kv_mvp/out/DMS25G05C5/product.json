@@ -1,0 +1,277 @@
+{
+  "mode": "requests",
+  "source_url": "https://www.k-village.co.kr/goods/DMS25G05C5",
+  "code": "DMS25G05C5",
+  "title": "랩터 와이드 (C5) (Grey)",
+  "sale_price": 149000,
+  "list_price": 239000,
+  "pd_photo_image_urls": [
+    "https://contents.k-village.co.kr/Prod/2025/D/DMS25G05C5/DMS25G05C5_DM_02.jpg/k2dims/optimize?t=20250806144258",
+    "https://contents.k-village.co.kr/Prod/2025/D/DMS25G05C5/DMS25G05C5_DF_01.jpg/k2dims/optimize?t=20250806144258",
+    "https://contents.k-village.co.kr/Prod/2025/D/DMS25G05C5/DMS25G05C5_DF_02.jpg/k2dims/optimize?t=20250806144258",
+    "https://contents.k-village.co.kr/Prod/2025/D/DMS25G05C5/DMS25G05C5_DF_03.jpg/k2dims/optimize?t=20250806144258",
+    "https://contents.k-village.co.kr/Prod/2025/D/DMS25G05C5/DMS25G05C5_DF_04.jpg/k2dims/optimize?t=20250806144258",
+    "https://contents.k-village.co.kr/Prod/2025/D/DMS25G05C5/DMS25G05C5_DF_05.jpg/k2dims/optimize?t=20250806144258",
+    "https://contents.k-village.co.kr/Prod/2025/D/DMS25G05C5/DMS25G05C5_DF_06.jpg/k2dims/optimize?t=20250806144258",
+    "https://contents.k-village.co.kr/Prod/2025/D/DMS25G05C5/DMS25G05C5_DF_07.jpg/k2dims/optimize?t=20250806144258",
+    "https://contents.k-village.co.kr/Prod/2025/D/DMS25G05C5/DMS25G05C5_DF_08.jpg/k2dims/optimize?t=20250806144258",
+    "https://contents.k-village.co.kr/Prod/2025/D/DMS25G05C5/DMS25G05C5_DF_09.jpg/k2dims/optimize?t=20250806144258",
+    "https://contents.k-village.co.kr/PUBL_con/etc/rfid/eider.jpg"
+  ],
+  "gvnt_info": {
+    "모델명": "랩터 와이드 (C5) (Grey)",
+    "제품 주소재": "갑피:겉감1-스프리트(천연가죽), 겉감2-합성가죽, 겉감3-폴리에스터 100%, 안감1-폴리에스터 100%, 안감2-GORE-TEX(나일론 70%+폴리 30%)/ / 창소재:X-GRIP(부틸 80%) + PHYLON",
+    "색상": "Grey",
+    "사이즈": "250,255,260,265,270,275,280",
+    "크기, 중량": "중량:442g (260mm)",
+    "제조사": "(주)아이더",
+    "제조국": "베트남",
+    "품질보증기준": "관련법 및 소비자 분쟁 해결 규정에 따름",
+    "A/S 책임자와 전화번호": "본사 고객상담실 / 1533-1631"
+  },
+  "제조사": "(주)아이더",
+  "제조연월(수입연월)": null,
+  "제조국": "베트남",
+  "mode_gvnt": "playwright_click",
+  "input_code": "DMS25G05C5",
+  "saved_images_each": [
+    "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DMS25G05C5\\images\\pd_001.jpg",
+    "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DMS25G05C5\\images\\pd_002.jpg",
+    "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DMS25G05C5\\images\\pd_003.jpg",
+    "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DMS25G05C5\\images\\pd_004.jpg",
+    "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DMS25G05C5\\images\\pd_005.jpg",
+    "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DMS25G05C5\\images\\pd_006.jpg",
+    "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DMS25G05C5\\images\\pd_007.jpg",
+    "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DMS25G05C5\\images\\pd_008.jpg",
+    "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DMS25G05C5\\images\\pd_009.jpg",
+    "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DMS25G05C5\\images\\pd_010.jpg",
+    "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DMS25G05C5\\images\\pd_011.jpg"
+  ],
+  "saved_images_merged": "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DMS25G05C5\\images\\pd_photo_merged.jpg",
+  "saved_size_table_jpg": "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DMS25G05C5\\images\\size_table.jpg",
+  "saved_accordion_renders": [
+    {
+      "ok": true,
+      "title": "상품정보제공고시",
+      "mode": "replay",
+      "html": "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DMS25G05C5\\renders\\html\\상품정보제공고시.html",
+      "png": "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DMS25G05C5\\renders\\png\\상품정보제공고시.png",
+      "jpg": "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DMS25G05C5\\renders\\jpg\\상품정보제공고시.jpg"
+    },
+    {
+      "ok": true,
+      "title": "소재 및 관리방법",
+      "mode": "inline",
+      "html": "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DMS25G05C5\\renders\\html\\소재_및_관리방법.html",
+      "png": "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DMS25G05C5\\renders\\png\\소재_및_관리방법.png",
+      "jpg": "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DMS25G05C5\\renders\\jpg\\소재_및_관리방법.jpg"
+    },
+    {
+      "ok": true,
+      "title": "MD_COMMENT",
+      "mode": "inline",
+      "html": "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DMS25G05C5\\renders\\html\\MD_COMMENT.html",
+      "png": "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DMS25G05C5\\renders\\png\\MD_COMMENT.png",
+      "jpg": "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DMS25G05C5\\renders\\jpg\\MD_COMMENT.jpg"
+    }
+  ],
+  "size_options": [
+    {
+      "label": "Grey / 250",
+      "href": "javascript:addOrder('250', '149,000', 'Grey', '2', '05','30','32', '10');",
+      "addOrder_args": [
+        "250",
+        "149,000",
+        "Grey",
+        "2",
+        "05",
+        "30",
+        "32",
+        "10"
+      ]
+    },
+    {
+      "label": "Grey / 255",
+      "href": "javascript:addOrder('255', '149,000', 'Grey', '3', '06','33','36', '10');",
+      "addOrder_args": [
+        "255",
+        "149,000",
+        "Grey",
+        "3",
+        "06",
+        "33",
+        "36",
+        "10"
+      ]
+    },
+    {
+      "label": "Grey / 260",
+      "href": "javascript:addOrder('260', '149,000', 'Grey', '3', '07','40','43', '10');",
+      "addOrder_args": [
+        "260",
+        "149,000",
+        "Grey",
+        "3",
+        "07",
+        "40",
+        "43",
+        "10"
+      ]
+    },
+    {
+      "label": "Grey / 265",
+      "href": "javascript:addOrder('265', '149,000', 'Grey', '3', '08','78','81', '10');",
+      "addOrder_args": [
+        "265",
+        "149,000",
+        "Grey",
+        "3",
+        "08",
+        "78",
+        "81",
+        "10"
+      ]
+    },
+    {
+      "label": "Grey / 270",
+      "href": "javascript:addOrder('270', '149,000', 'Grey', '3', '09','45','48', '10');",
+      "addOrder_args": [
+        "270",
+        "149,000",
+        "Grey",
+        "3",
+        "09",
+        "45",
+        "48",
+        "10"
+      ]
+    },
+    {
+      "label": "Grey / 275",
+      "href": "javascript:addOrder('275', '149,000', 'Grey', '3', '10','31','34', '10');",
+      "addOrder_args": [
+        "275",
+        "149,000",
+        "Grey",
+        "3",
+        "10",
+        "31",
+        "34",
+        "10"
+      ]
+    },
+    {
+      "label": "Grey / 280",
+      "href": "javascript:addOrder('280', '149,000', 'Grey', '3', '11','26','29', '10');",
+      "addOrder_args": [
+        "280",
+        "149,000",
+        "Grey",
+        "3",
+        "11",
+        "26",
+        "29",
+        "10"
+      ]
+    },
+    {
+      "label": "Grey / 250",
+      "href": "javascript:addOrder('250', '149,000', 'Grey', '2', '05','30','32', '10');",
+      "addOrder_args": [
+        "250",
+        "149,000",
+        "Grey",
+        "2",
+        "05",
+        "30",
+        "32",
+        "10"
+      ]
+    },
+    {
+      "label": "Grey / 255",
+      "href": "javascript:addOrder('255', '149,000', 'Grey', '3', '06','33','36', '10');",
+      "addOrder_args": [
+        "255",
+        "149,000",
+        "Grey",
+        "3",
+        "06",
+        "33",
+        "36",
+        "10"
+      ]
+    },
+    {
+      "label": "Grey / 260",
+      "href": "javascript:addOrder('260', '149,000', 'Grey', '3', '07','40','43', '10');",
+      "addOrder_args": [
+        "260",
+        "149,000",
+        "Grey",
+        "3",
+        "07",
+        "40",
+        "43",
+        "10"
+      ]
+    },
+    {
+      "label": "Grey / 265",
+      "href": "javascript:addOrder('265', '149,000', 'Grey', '3', '08','78','81', '10');",
+      "addOrder_args": [
+        "265",
+        "149,000",
+        "Grey",
+        "3",
+        "08",
+        "78",
+        "81",
+        "10"
+      ]
+    },
+    {
+      "label": "Grey / 270",
+      "href": "javascript:addOrder('270', '149,000', 'Grey', '3', '09','45','48', '10');",
+      "addOrder_args": [
+        "270",
+        "149,000",
+        "Grey",
+        "3",
+        "09",
+        "45",
+        "48",
+        "10"
+      ]
+    },
+    {
+      "label": "Grey / 275",
+      "href": "javascript:addOrder('275', '149,000', 'Grey', '3', '10','31','34', '10');",
+      "addOrder_args": [
+        "275",
+        "149,000",
+        "Grey",
+        "3",
+        "10",
+        "31",
+        "34",
+        "10"
+      ]
+    },
+    {
+      "label": "Grey / 280",
+      "href": "javascript:addOrder('280', '149,000', 'Grey', '3', '11','26','29', '10');",
+      "addOrder_args": [
+        "280",
+        "149,000",
+        "Grey",
+        "3",
+        "11",
+        "26",
+        "29",
+        "10"
+      ]
+    }
+  ],
+  "saved_at": "2026-06-12T13:36:07"
+}

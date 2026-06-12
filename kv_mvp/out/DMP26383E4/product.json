@@ -1,0 +1,193 @@
+{
+  "mode": "requests",
+  "source_url": "https://www.k-village.co.kr/goods/DMP26383E4",
+  "code": "DMP26383E4",
+  "title": "POP 우븐 남성 스트레치 카고 팬츠 (D/Beige)",
+  "sale_price": 79000,
+  "list_price": 129000,
+  "pd_photo_image_urls": [
+    "https://contents.k-village.co.kr/Prod/2026/D/DMP26383E4/DMP26383E4_DF_01.jpg/k2dims/optimize",
+    "https://contents.k-village.co.kr/Prod/2026/D/DMP26383E4/DMP26383E4_DF_02.jpg/k2dims/optimize",
+    "https://contents.k-village.co.kr/Prod/2026/D/DMP26383E4/DMP26383E4_DF_03.jpg/k2dims/optimize",
+    "https://contents.k-village.co.kr/Prod/2026/D/DMP26383E4/DMP26383E4_DF_04.jpg/k2dims/optimize",
+    "https://contents.k-village.co.kr/Prod/2026/D/DMP26383E4/DMP26383E4_DF_05.jpg/k2dims/optimize",
+    "https://contents.k-village.co.kr/Prod/2026/D/DMP26383E4/DMP26383E4_DF_06.jpg/k2dims/optimize",
+    "https://contents.k-village.co.kr/Prod/2026/D/DMP26383E4/DMP26383E4_DF_07.jpg/k2dims/optimize",
+    "https://contents.k-village.co.kr/Prod/2026/D/DMP26383E4/DMP26383E4_DF_08.jpg/k2dims/optimize",
+    "https://contents.k-village.co.kr/Prod/2026/D/DMP26383E4/DMP26383E4_DF_09.jpg/k2dims/optimize",
+    "https://contents.k-village.co.kr/Prod/2026/D/DMP26383E4/DMP26383E4_DF_10.jpg/k2dims/optimize",
+    "https://contents.k-village.co.kr/PUBL_con/etc/rfid/eider.jpg"
+  ],
+  "gvnt_info": {
+    "모델명": "POP 우븐 남성 스트레치 카고 팬츠 (D/Beige)",
+    "제품소재": "겉감:나일론 95% 폴리우레탄 5% / 안감:폴리에스터 100%",
+    "색상": "Dark Beige",
+    "사이즈": "M,L,XL,XXL",
+    "제조사": "(주)아이더",
+    "제조국": "미얀마",
+    "제조연월(수입연월)": "2025년 12월",
+    "품질보증기준": "관련법 및 소비자 분쟁 해결 규정에 따름",
+    "A/S 책임자와 전화번호": "본사 고객상담실 / 1533-1631"
+  },
+  "제조사": "(주)아이더",
+  "제조연월(수입연월)": "2025년 12월",
+  "제조국": "미얀마",
+  "mode_gvnt": "playwright_click",
+  "input_code": "DMP26383E4",
+  "saved_images_each": [
+    "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DMP26383E4\\images\\pd_001.jpg",
+    "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DMP26383E4\\images\\pd_002.jpg",
+    "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DMP26383E4\\images\\pd_003.jpg",
+    "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DMP26383E4\\images\\pd_004.jpg",
+    "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DMP26383E4\\images\\pd_005.jpg",
+    "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DMP26383E4\\images\\pd_006.jpg",
+    "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DMP26383E4\\images\\pd_007.jpg",
+    "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DMP26383E4\\images\\pd_008.jpg",
+    "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DMP26383E4\\images\\pd_009.jpg",
+    "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DMP26383E4\\images\\pd_010.jpg",
+    "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DMP26383E4\\images\\pd_011.jpg"
+  ],
+  "saved_images_merged": "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DMP26383E4\\images\\pd_photo_merged.jpg",
+  "saved_size_table_jpg": "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DMP26383E4\\images\\size_table.jpg",
+  "saved_accordion_renders": [
+    {
+      "ok": true,
+      "title": "상품정보제공고시",
+      "mode": "replay",
+      "html": "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DMP26383E4\\renders\\html\\상품정보제공고시.html",
+      "png": "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DMP26383E4\\renders\\png\\상품정보제공고시.png",
+      "jpg": "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DMP26383E4\\renders\\jpg\\상품정보제공고시.jpg"
+    },
+    {
+      "ok": true,
+      "title": "소재 및 관리방법",
+      "mode": "inline",
+      "html": "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DMP26383E4\\renders\\html\\소재_및_관리방법.html",
+      "png": "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DMP26383E4\\renders\\png\\소재_및_관리방법.png",
+      "jpg": "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DMP26383E4\\renders\\jpg\\소재_및_관리방법.jpg"
+    },
+    {
+      "ok": true,
+      "title": "MD_COMMENT",
+      "mode": "inline",
+      "html": "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DMP26383E4\\renders\\html\\MD_COMMENT.html",
+      "png": "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DMP26383E4\\renders\\png\\MD_COMMENT.png",
+      "jpg": "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DMP26383E4\\renders\\jpg\\MD_COMMENT.jpg"
+    }
+  ],
+  "size_options": [
+    {
+      "label": "Dark Beige / M",
+      "href": "javascript:addOrder('M', '79,000', 'Dark Beige', '0', '04','20','20', '10');",
+      "addOrder_args": [
+        "M",
+        "79,000",
+        "Dark Beige",
+        "0",
+        "04",
+        "20",
+        "20",
+        "10"
+      ]
+    },
+    {
+      "label": "Dark Beige / L",
+      "href": "javascript:addOrder('L', '79,000', 'Dark Beige', '1', '05','42','43', '10');",
+      "addOrder_args": [
+        "L",
+        "79,000",
+        "Dark Beige",
+        "1",
+        "05",
+        "42",
+        "43",
+        "10"
+      ]
+    },
+    {
+      "label": "Dark Beige / XL",
+      "href": "javascript:addOrder('XL', '79,000', 'Dark Beige', '1', '06','50','51', '10');",
+      "addOrder_args": [
+        "XL",
+        "79,000",
+        "Dark Beige",
+        "1",
+        "06",
+        "50",
+        "51",
+        "10"
+      ]
+    },
+    {
+      "label": "Dark Beige / XXL",
+      "href": "javascript:addOrder('XXL', '79,000', 'Dark Beige', '2', '07','16','18', '10');",
+      "addOrder_args": [
+        "XXL",
+        "79,000",
+        "Dark Beige",
+        "2",
+        "07",
+        "16",
+        "18",
+        "10"
+      ]
+    },
+    {
+      "label": "Dark Beige / M",
+      "href": "javascript:addOrder('M', '79,000', 'Dark Beige', '0', '04','20','20', '10');",
+      "addOrder_args": [
+        "M",
+        "79,000",
+        "Dark Beige",
+        "0",
+        "04",
+        "20",
+        "20",
+        "10"
+      ]
+    },
+    {
+      "label": "Dark Beige / L",
+      "href": "javascript:addOrder('L', '79,000', 'Dark Beige', '1', '05','42','43', '10');",
+      "addOrder_args": [
+        "L",
+        "79,000",
+        "Dark Beige",
+        "1",
+        "05",
+        "42",
+        "43",
+        "10"
+      ]
+    },
+    {
+      "label": "Dark Beige / XL",
+      "href": "javascript:addOrder('XL', '79,000', 'Dark Beige', '1', '06','50','51', '10');",
+      "addOrder_args": [
+        "XL",
+        "79,000",
+        "Dark Beige",
+        "1",
+        "06",
+        "50",
+        "51",
+        "10"
+      ]
+    },
+    {
+      "label": "Dark Beige / XXL",
+      "href": "javascript:addOrder('XXL', '79,000', 'Dark Beige', '2', '07','16','18', '10');",
+      "addOrder_args": [
+        "XXL",
+        "79,000",
+        "Dark Beige",
+        "2",
+        "07",
+        "16",
+        "18",
+        "10"
+      ]
+    }
+  ],
+  "saved_at": "2026-03-25T18:45:30"
+}

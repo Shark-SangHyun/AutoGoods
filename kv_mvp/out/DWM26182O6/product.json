@@ -1,0 +1,223 @@
+{
+  "mode": "requests",
+  "source_url": "https://www.k-village.co.kr/goods/DWM26182O6",
+  "code": "DWM26182O6",
+  "title": "POP 윈디 여성 경량 자켓 (Salsa)",
+  "sale_price": 129000,
+  "list_price": 210000,
+  "pd_photo_image_urls": [
+    "https://contents.k-village.co.kr/Prod/2026/D/DWM26182O6/DWM26182O6_DF_01.jpg/k2dims/optimize",
+    "https://contents.k-village.co.kr/Prod/2026/D/DWM26182O6/DWM26182O6_DF_02.jpg/k2dims/optimize",
+    "https://contents.k-village.co.kr/Prod/2026/D/DWM26182O6/DWM26182O6_DF_03.jpg/k2dims/optimize",
+    "https://contents.k-village.co.kr/Prod/2026/D/DWM26182O6/DWM26182O6_DF_04.jpg/k2dims/optimize",
+    "https://contents.k-village.co.kr/Prod/2026/D/DWM26182O6/DWM26182O6_DF_05.jpg/k2dims/optimize",
+    "https://contents.k-village.co.kr/Prod/2026/D/DWM26182O6/DWM26182O6_DF_06.jpg/k2dims/optimize",
+    "https://contents.k-village.co.kr/Prod/2026/D/DWM26182O6/DWM26182O6_DF_07.jpg/k2dims/optimize",
+    "https://contents.k-village.co.kr/Prod/2026/D/DWM26182O6/DWM26182O6_DF_08.jpg/k2dims/optimize",
+    "https://contents.k-village.co.kr/Prod/2026/D/DWM26182O6/DWM26182O6_DF_09.jpg/k2dims/optimize",
+    "https://contents.k-village.co.kr/Prod/2026/D/DWM26182O6/DWM26182O6_DF_10.jpg/k2dims/optimize",
+    "https://contents.k-village.co.kr/Prod/2026/D/DWM26182O6/DWM26182O6_DF_11.jpg/k2dims/optimize",
+    "https://contents.k-village.co.kr/PUBL_con/etc/rfid/eider.jpg"
+  ],
+  "gvnt_info": {
+    "모델명": "POP 윈디 여성 경량 자켓 (Salsa)",
+    "제품소재": "겉감1:나일론 88% 폴리우레탄 12% / 겉감2:나일론 88% 폴리우레탄 12% / 안감: 폴리에스터100%",
+    "색상": "Salsa",
+    "사이즈": "S,M,L,XL,XXL",
+    "제조사": "(주)아이더",
+    "제조국": "미얀마",
+    "제조연월(수입연월)": "2025년 10월",
+    "품질보증기준": "관련법 및 소비자 분쟁 해결 규정에 따름",
+    "A/S 책임자와 전화번호": "본사 고객상담실 / 1533-1631"
+  },
+  "제조사": "(주)아이더",
+  "제조연월(수입연월)": "2025년 10월",
+  "제조국": "미얀마",
+  "mode_gvnt": "playwright_click",
+  "input_code": "DWM26182O6",
+  "saved_images_each": [
+    "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DWM26182O6\\images\\pd_001.jpg",
+    "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DWM26182O6\\images\\pd_002.jpg",
+    "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DWM26182O6\\images\\pd_003.jpg",
+    "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DWM26182O6\\images\\pd_004.jpg",
+    "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DWM26182O6\\images\\pd_005.jpg",
+    "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DWM26182O6\\images\\pd_006.jpg",
+    "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DWM26182O6\\images\\pd_007.jpg",
+    "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DWM26182O6\\images\\pd_008.jpg",
+    "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DWM26182O6\\images\\pd_009.jpg",
+    "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DWM26182O6\\images\\pd_010.jpg",
+    "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DWM26182O6\\images\\pd_011.jpg",
+    "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DWM26182O6\\images\\pd_012.jpg"
+  ],
+  "saved_images_merged": "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DWM26182O6\\images\\pd_photo_merged.jpg",
+  "saved_size_table_jpg": "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DWM26182O6\\images\\size_table.jpg",
+  "saved_accordion_renders": [
+    {
+      "ok": true,
+      "title": "상품정보제공고시",
+      "mode": "replay",
+      "html": "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DWM26182O6\\renders\\html\\상품정보제공고시.html",
+      "png": "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DWM26182O6\\renders\\png\\상품정보제공고시.png",
+      "jpg": "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DWM26182O6\\renders\\jpg\\상품정보제공고시.jpg"
+    },
+    {
+      "ok": true,
+      "title": "소재 및 관리방법",
+      "mode": "inline",
+      "html": "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DWM26182O6\\renders\\html\\소재_및_관리방법.html",
+      "png": "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DWM26182O6\\renders\\png\\소재_및_관리방법.png",
+      "jpg": "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DWM26182O6\\renders\\jpg\\소재_및_관리방법.jpg"
+    },
+    {
+      "ok": true,
+      "title": "MD_COMMENT",
+      "mode": "inline",
+      "html": "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DWM26182O6\\renders\\html\\MD_COMMENT.html",
+      "png": "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DWM26182O6\\renders\\png\\MD_COMMENT.png",
+      "jpg": "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DWM26182O6\\renders\\jpg\\MD_COMMENT.jpg"
+    }
+  ],
+  "size_options": [
+    {
+      "label": "Salsa / S",
+      "href": "javascript:addOrder('S', '129,000', 'Salsa', '4', '03','51','55', '10');",
+      "addOrder_args": [
+        "S",
+        "129,000",
+        "Salsa",
+        "4",
+        "03",
+        "51",
+        "55",
+        "10"
+      ]
+    },
+    {
+      "label": "Salsa / M",
+      "href": "javascript:addOrder('M', '129,000', 'Salsa', '3', '04','100','103', '10');",
+      "addOrder_args": [
+        "M",
+        "129,000",
+        "Salsa",
+        "3",
+        "04",
+        "100",
+        "103",
+        "10"
+      ]
+    },
+    {
+      "label": "Salsa / L",
+      "href": "javascript:addOrder('L', '129,000', 'Salsa', '4', '05','104','108', '10');",
+      "addOrder_args": [
+        "L",
+        "129,000",
+        "Salsa",
+        "4",
+        "05",
+        "104",
+        "108",
+        "10"
+      ]
+    },
+    {
+      "label": "Salsa / XL",
+      "href": "javascript:addOrder('XL', '129,000', 'Salsa', '2', '06','60','62', '10');",
+      "addOrder_args": [
+        "XL",
+        "129,000",
+        "Salsa",
+        "2",
+        "06",
+        "60",
+        "62",
+        "10"
+      ]
+    },
+    {
+      "label": "Salsa / XXL",
+      "href": "javascript:addOrder('XXL', '129,000', 'Salsa', '2', '07','32','34', '10');",
+      "addOrder_args": [
+        "XXL",
+        "129,000",
+        "Salsa",
+        "2",
+        "07",
+        "32",
+        "34",
+        "10"
+      ]
+    },
+    {
+      "label": "Salsa / S",
+      "href": "javascript:addOrder('S', '129,000', 'Salsa', '4', '03','51','55', '10');",
+      "addOrder_args": [
+        "S",
+        "129,000",
+        "Salsa",
+        "4",
+        "03",
+        "51",
+        "55",
+        "10"
+      ]
+    },
+    {
+      "label": "Salsa / M",
+      "href": "javascript:addOrder('M', '129,000', 'Salsa', '3', '04','100','103', '10');",
+      "addOrder_args": [
+        "M",
+        "129,000",
+        "Salsa",
+        "3",
+        "04",
+        "100",
+        "103",
+        "10"
+      ]
+    },
+    {
+      "label": "Salsa / L",
+      "href": "javascript:addOrder('L', '129,000', 'Salsa', '4', '05','104','108', '10');",
+      "addOrder_args": [
+        "L",
+        "129,000",
+        "Salsa",
+        "4",
+        "05",
+        "104",
+        "108",
+        "10"
+      ]
+    },
+    {
+      "label": "Salsa / XL",
+      "href": "javascript:addOrder('XL', '129,000', 'Salsa', '2', '06','60','62', '10');",
+      "addOrder_args": [
+        "XL",
+        "129,000",
+        "Salsa",
+        "2",
+        "06",
+        "60",
+        "62",
+        "10"
+      ]
+    },
+    {
+      "label": "Salsa / XXL",
+      "href": "javascript:addOrder('XXL', '129,000', 'Salsa', '2', '07','32','34', '10');",
+      "addOrder_args": [
+        "XXL",
+        "129,000",
+        "Salsa",
+        "2",
+        "07",
+        "32",
+        "34",
+        "10"
+      ]
+    }
+  ],
+  "saved_at": "2026-04-27T19:35:46"
+}

@@ -1,0 +1,225 @@
+{
+  "mode": "requests",
+  "source_url": "https://www.k-village.co.kr/goods/DMM251011A",
+  "code": "DMM251011A",
+  "title": "FLEUR (플레르) 남성 하이브리드 자켓 (Carbon Blue)",
+  "sale_price": 99000,
+  "list_price": 189000,
+  "pd_photo_image_urls": [
+    "https://contents.k-village.co.kr/Prod/2025/D/DMM251011A/DMM251011A_DM_02.jpg/k2dims/optimize?t=20250806142031",
+    "https://contents.k-village.co.kr/Prod/2025/D/DMM251011A/DMM251011A_DF_01.jpg/k2dims/optimize?t=20250806142031",
+    "https://contents.k-village.co.kr/Prod/2025/D/DMM251011A/DMM251011A_DF_02.jpg/k2dims/optimize?t=20250806142031",
+    "https://contents.k-village.co.kr/Prod/2025/D/DMM251011A/DMM251011A_DF_03.jpg/k2dims/optimize?t=20250806142031",
+    "https://contents.k-village.co.kr/Prod/2025/D/DMM251011A/DMM251011A_DF_04.jpg/k2dims/optimize?t=20250806142031",
+    "https://contents.k-village.co.kr/Prod/2025/D/DMM251011A/DMM251011A_DF_05.jpg/k2dims/optimize?t=20250806142031",
+    "https://contents.k-village.co.kr/Prod/2025/D/DMM251011A/DMM251011A_DF_06.jpg/k2dims/optimize?t=20250806142031",
+    "https://contents.k-village.co.kr/Prod/2025/D/DMM251011A/DMM251011A_DF_07.jpg/k2dims/optimize?t=20250806142031",
+    "https://contents.k-village.co.kr/Prod/2025/D/DMM251011A/DMM251011A_DF_08.jpg/k2dims/optimize?t=20250806142031",
+    "https://contents.k-village.co.kr/Prod/2025/D/DMM251011A/DMM251011A_DF_09.jpg/k2dims/optimize?t=20250806142031",
+    "https://contents.k-village.co.kr/Prod/2025/D/DMM251011A/DMM251011A_DF_10.jpg/k2dims/optimize?t=20250806142031",
+    "https://contents.k-village.co.kr/Prod/2025/D/DMM251011A/DMM251011A_DF_11.jpg/k2dims/optimize?t=20250806142031",
+    "https://contents.k-village.co.kr/PUBL_con/etc/rfid/eider.jpg"
+  ],
+  "gvnt_info": {
+    "모델명": "FLEUR (플레르) 남성 하이브리드 자켓 (Carbon Blue)",
+    "제품소재": "겉감1:나일론 90% 폴리우레탄 10% / 겉감2:폴리에스터 96% 폴리우레탄 4% / 안감:폴리에스터 100%",
+    "색상": "Carbon Blue",
+    "사이즈": "M,L,XL,XXL,3XL",
+    "제조사": "(주)아이더",
+    "제조국": "미얀마",
+    "제조연월(수입연월)": "2025년 02월",
+    "품질보증기준": "관련법 및 소비자 분쟁 해결 규정에 따름",
+    "A/S 책임자와 전화번호": "본사 고객상담실 / 1533-1631"
+  },
+  "제조사": "(주)아이더",
+  "제조연월(수입연월)": "2025년 02월",
+  "제조국": "미얀마",
+  "mode_gvnt": "playwright_click",
+  "input_code": "DMM251011A",
+  "saved_images_each": [
+    "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DMM251011A\\images\\pd_001.jpg",
+    "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DMM251011A\\images\\pd_002.jpg",
+    "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DMM251011A\\images\\pd_003.jpg",
+    "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DMM251011A\\images\\pd_004.jpg",
+    "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DMM251011A\\images\\pd_005.jpg",
+    "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DMM251011A\\images\\pd_006.jpg",
+    "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DMM251011A\\images\\pd_007.jpg",
+    "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DMM251011A\\images\\pd_008.jpg",
+    "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DMM251011A\\images\\pd_009.jpg",
+    "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DMM251011A\\images\\pd_010.jpg",
+    "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DMM251011A\\images\\pd_011.jpg",
+    "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DMM251011A\\images\\pd_012.jpg",
+    "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DMM251011A\\images\\pd_013.jpg"
+  ],
+  "saved_images_merged": "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DMM251011A\\images\\pd_photo_merged.jpg",
+  "saved_size_table_jpg": "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DMM251011A\\images\\size_table.jpg",
+  "saved_accordion_renders": [
+    {
+      "ok": true,
+      "title": "상품정보제공고시",
+      "mode": "replay",
+      "html": "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DMM251011A\\renders\\html\\상품정보제공고시.html",
+      "png": "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DMM251011A\\renders\\png\\상품정보제공고시.png",
+      "jpg": "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DMM251011A\\renders\\jpg\\상품정보제공고시.jpg"
+    },
+    {
+      "ok": true,
+      "title": "소재 및 관리방법",
+      "mode": "inline",
+      "html": "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DMM251011A\\renders\\html\\소재_및_관리방법.html",
+      "png": "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DMM251011A\\renders\\png\\소재_및_관리방법.png",
+      "jpg": "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DMM251011A\\renders\\jpg\\소재_및_관리방법.jpg"
+    },
+    {
+      "ok": true,
+      "title": "MD_COMMENT",
+      "mode": "inline",
+      "html": "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DMM251011A\\renders\\html\\MD_COMMENT.html",
+      "png": "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DMM251011A\\renders\\png\\MD_COMMENT.png",
+      "jpg": "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DMM251011A\\renders\\jpg\\MD_COMMENT.jpg"
+    }
+  ],
+  "size_options": [
+    {
+      "label": "Carbon Blue / M",
+      "href": "javascript:addOrder('M', '99,000', 'Carbon Blue', '0', '04','50','50', '10');",
+      "addOrder_args": [
+        "M",
+        "99,000",
+        "Carbon Blue",
+        "0",
+        "04",
+        "50",
+        "50",
+        "10"
+      ]
+    },
+    {
+      "label": "Carbon Blue / L",
+      "href": "javascript:addOrder('L', '99,000', 'Carbon Blue', '0', '05','94','94', '10');",
+      "addOrder_args": [
+        "L",
+        "99,000",
+        "Carbon Blue",
+        "0",
+        "05",
+        "94",
+        "94",
+        "10"
+      ]
+    },
+    {
+      "label": "Carbon Blue / XL",
+      "href": "javascript:addOrder('XL', '99,000', 'Carbon Blue', '0', '06','61','61', '10');",
+      "addOrder_args": [
+        "XL",
+        "99,000",
+        "Carbon Blue",
+        "0",
+        "06",
+        "61",
+        "61",
+        "10"
+      ]
+    },
+    {
+      "label": "Carbon Blue / XXL",
+      "href": "javascript:addOrder('XXL', '99,000', 'Carbon Blue', '0', '07','30','30', '10');",
+      "addOrder_args": [
+        "XXL",
+        "99,000",
+        "Carbon Blue",
+        "0",
+        "07",
+        "30",
+        "30",
+        "10"
+      ]
+    },
+    {
+      "label": "Carbon Blue / 3XL",
+      "href": "javascript:addOrder('3XL', '99,000', 'Carbon Blue', '0', '08','1','1', '10');",
+      "addOrder_args": [
+        "3XL",
+        "99,000",
+        "Carbon Blue",
+        "0",
+        "08",
+        "1",
+        "1",
+        "10"
+      ]
+    },
+    {
+      "label": "Carbon Blue / M",
+      "href": "javascript:addOrder('M', '99,000', 'Carbon Blue', '0', '04','50','50', '10');",
+      "addOrder_args": [
+        "M",
+        "99,000",
+        "Carbon Blue",
+        "0",
+        "04",
+        "50",
+        "50",
+        "10"
+      ]
+    },
+    {
+      "label": "Carbon Blue / L",
+      "href": "javascript:addOrder('L', '99,000', 'Carbon Blue', '0', '05','94','94', '10');",
+      "addOrder_args": [
+        "L",
+        "99,000",
+        "Carbon Blue",
+        "0",
+        "05",
+        "94",
+        "94",
+        "10"
+      ]
+    },
+    {
+      "label": "Carbon Blue / XL",
+      "href": "javascript:addOrder('XL', '99,000', 'Carbon Blue', '0', '06','61','61', '10');",
+      "addOrder_args": [
+        "XL",
+        "99,000",
+        "Carbon Blue",
+        "0",
+        "06",
+        "61",
+        "61",
+        "10"
+      ]
+    },
+    {
+      "label": "Carbon Blue / XXL",
+      "href": "javascript:addOrder('XXL', '99,000', 'Carbon Blue', '0', '07','30','30', '10');",
+      "addOrder_args": [
+        "XXL",
+        "99,000",
+        "Carbon Blue",
+        "0",
+        "07",
+        "30",
+        "30",
+        "10"
+      ]
+    },
+    {
+      "label": "Carbon Blue / 3XL",
+      "href": "javascript:addOrder('3XL', '99,000', 'Carbon Blue', '0', '08','1','1', '10');",
+      "addOrder_args": [
+        "3XL",
+        "99,000",
+        "Carbon Blue",
+        "0",
+        "08",
+        "1",
+        "1",
+        "10"
+      ]
+    }
+  ],
+  "saved_at": "2026-03-13T19:11:21"
+}

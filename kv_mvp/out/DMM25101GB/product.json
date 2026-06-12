@@ -1,0 +1,205 @@
+{
+  "mode": "requests",
+  "source_url": "https://www.k-village.co.kr/goods/DMM25101GB",
+  "code": "DMM25101GB",
+  "title": "FLEUR (플레르) 남성 하이브리드 자켓 (Grayish BLUE)",
+  "sale_price": 99000,
+  "list_price": 189000,
+  "pd_photo_image_urls": [
+    "https://contents.k-village.co.kr/Prod/2025/D/DMM25101GB/DMM25101GB_DF_01.jpg/k2dims/optimize?t=20250806142101",
+    "https://contents.k-village.co.kr/Prod/2025/D/DMM25101GB/DMM25101GB_DF_02.jpg/k2dims/optimize?t=20250806142101",
+    "https://contents.k-village.co.kr/Prod/2025/D/DMM25101GB/DMM25101GB_DF_03.jpg/k2dims/optimize?t=20250806142101",
+    "https://contents.k-village.co.kr/Prod/2025/D/DMM25101GB/DMM25101GB_DF_04.jpg/k2dims/optimize?t=20250806142101",
+    "https://contents.k-village.co.kr/Prod/2025/D/DMM25101GB/DMM25101GB_DF_05.jpg/k2dims/optimize?t=20250806142101",
+    "https://contents.k-village.co.kr/Prod/2025/D/DMM25101GB/DMM25101GB_DF_06.jpg/k2dims/optimize?t=20250806142101",
+    "https://contents.k-village.co.kr/Prod/2025/D/DMM25101GB/DMM25101GB_DF_07.jpg/k2dims/optimize?t=20250806142101",
+    "https://contents.k-village.co.kr/Prod/2025/D/DMM25101GB/DMM25101GB_DF_08.jpg/k2dims/optimize?t=20250806142101",
+    "https://contents.k-village.co.kr/Prod/2025/D/DMM25101GB/DMM25101GB_DF_09.jpg/k2dims/optimize?t=20250806142101",
+    "https://contents.k-village.co.kr/Prod/2025/D/DMM25101GB/DMM25101GB_DF_10.jpg/k2dims/optimize?t=20250806142101",
+    "https://contents.k-village.co.kr/Prod/2025/D/DMM25101GB/DMM25101GB_DF_11.jpg/k2dims/optimize?t=20250806142101",
+    "https://contents.k-village.co.kr/PUBL_con/etc/rfid/eider.jpg"
+  ],
+  "gvnt_info": {
+    "모델명": "FLEUR (플레르) 남성 하이브리드 자켓 (Grayish BLUE)",
+    "제품소재": "겉감1:나일론 90% 폴리우레탄 10% / 겉감2:폴리에스터 96% 폴리우레탄 4% / 안감:폴리에스터 100%",
+    "색상": "Grayish BLUE",
+    "사이즈": "M,L,XL,XXL,3XL",
+    "제조사": "(주)아이더",
+    "제조국": "미얀마",
+    "제조연월(수입연월)": "2025년 02월",
+    "품질보증기준": "관련법 및 소비자 분쟁 해결 규정에 따름",
+    "A/S 책임자와 전화번호": "본사 고객상담실 / 1533-1631"
+  },
+  "제조사": "(주)아이더",
+  "제조연월(수입연월)": "2025년 02월",
+  "제조국": "미얀마",
+  "mode_gvnt": "playwright_click",
+  "input_code": "DMM25101GB",
+  "saved_images_each": [
+    "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DMM25101GB\\images\\pd_001.jpg",
+    "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DMM25101GB\\images\\pd_002.jpg",
+    "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DMM25101GB\\images\\pd_003.jpg",
+    "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DMM25101GB\\images\\pd_004.jpg",
+    "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DMM25101GB\\images\\pd_005.jpg",
+    "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DMM25101GB\\images\\pd_006.jpg",
+    "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DMM25101GB\\images\\pd_007.jpg",
+    "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DMM25101GB\\images\\pd_008.jpg",
+    "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DMM25101GB\\images\\pd_009.jpg",
+    "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DMM25101GB\\images\\pd_010.jpg",
+    "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DMM25101GB\\images\\pd_011.jpg",
+    "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DMM25101GB\\images\\pd_012.jpg"
+  ],
+  "saved_images_merged": "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DMM25101GB\\images\\pd_photo_merged.jpg",
+  "saved_size_table_jpg": "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DMM25101GB\\images\\size_table.jpg",
+  "saved_accordion_renders": [
+    {
+      "ok": true,
+      "title": "상품정보제공고시",
+      "mode": "replay",
+      "html": "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DMM25101GB\\renders\\html\\상품정보제공고시.html",
+      "png": "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DMM25101GB\\renders\\png\\상품정보제공고시.png",
+      "jpg": "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DMM25101GB\\renders\\jpg\\상품정보제공고시.jpg"
+    },
+    {
+      "ok": true,
+      "title": "소재 및 관리방법",
+      "mode": "inline",
+      "html": "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DMM25101GB\\renders\\html\\소재_및_관리방법.html",
+      "png": "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DMM25101GB\\renders\\png\\소재_및_관리방법.png",
+      "jpg": "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DMM25101GB\\renders\\jpg\\소재_및_관리방법.jpg"
+    },
+    {
+      "ok": true,
+      "title": "MD_COMMENT",
+      "mode": "inline",
+      "html": "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DMM25101GB\\renders\\html\\MD_COMMENT.html",
+      "png": "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DMM25101GB\\renders\\png\\MD_COMMENT.png",
+      "jpg": "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DMM25101GB\\renders\\jpg\\MD_COMMENT.jpg"
+    }
+  ],
+  "size_options": [
+    {
+      "label": "Grayish BLUE / M",
+      "href": "javascript:addOrder('M', '99,000', 'Grayish BLUE', '0', '04','36','36', '10');",
+      "addOrder_args": [
+        "M",
+        "99,000",
+        "Grayish BLUE",
+        "0",
+        "04",
+        "36",
+        "36",
+        "10"
+      ]
+    },
+    {
+      "label": "Grayish BLUE / L",
+      "href": "javascript:addOrder('L', '99,000', 'Grayish BLUE', '0', '05','46','46', '10');",
+      "addOrder_args": [
+        "L",
+        "99,000",
+        "Grayish BLUE",
+        "0",
+        "05",
+        "46",
+        "46",
+        "10"
+      ]
+    },
+    {
+      "label": "Grayish BLUE / XL",
+      "href": "javascript:addOrder('XL', '99,000', 'Grayish BLUE', '0', '06','43','43', '10');",
+      "addOrder_args": [
+        "XL",
+        "99,000",
+        "Grayish BLUE",
+        "0",
+        "06",
+        "43",
+        "43",
+        "10"
+      ]
+    },
+    {
+      "label": "Grayish BLUE / XXL",
+      "href": "javascript:addOrder('XXL', '99,000', 'Grayish BLUE', '0', '07','7','7', '10');",
+      "addOrder_args": [
+        "XXL",
+        "99,000",
+        "Grayish BLUE",
+        "0",
+        "07",
+        "7",
+        "7",
+        "10"
+      ]
+    },
+    {
+      "label": "Grayish BLUE / 3XL (품절)",
+      "href": "javascript:;",
+      "addOrder_args": []
+    },
+    {
+      "label": "Grayish BLUE / M",
+      "href": "javascript:addOrder('M', '99,000', 'Grayish BLUE', '0', '04','36','36', '10');",
+      "addOrder_args": [
+        "M",
+        "99,000",
+        "Grayish BLUE",
+        "0",
+        "04",
+        "36",
+        "36",
+        "10"
+      ]
+    },
+    {
+      "label": "Grayish BLUE / L",
+      "href": "javascript:addOrder('L', '99,000', 'Grayish BLUE', '0', '05','46','46', '10');",
+      "addOrder_args": [
+        "L",
+        "99,000",
+        "Grayish BLUE",
+        "0",
+        "05",
+        "46",
+        "46",
+        "10"
+      ]
+    },
+    {
+      "label": "Grayish BLUE / XL",
+      "href": "javascript:addOrder('XL', '99,000', 'Grayish BLUE', '0', '06','43','43', '10');",
+      "addOrder_args": [
+        "XL",
+        "99,000",
+        "Grayish BLUE",
+        "0",
+        "06",
+        "43",
+        "43",
+        "10"
+      ]
+    },
+    {
+      "label": "Grayish BLUE / XXL",
+      "href": "javascript:addOrder('XXL', '99,000', 'Grayish BLUE', '0', '07','7','7', '10');",
+      "addOrder_args": [
+        "XXL",
+        "99,000",
+        "Grayish BLUE",
+        "0",
+        "07",
+        "7",
+        "7",
+        "10"
+      ]
+    },
+    {
+      "label": "Grayish BLUE / 3XL (품절)",
+      "href": "javascript:;",
+      "addOrder_args": []
+    }
+  ],
+  "saved_at": "2026-03-13T19:10:18"
+}
