@@ -110,7 +110,7 @@ document.addEventListener("DOMContentLoaded", () => {
     V: "장갑",
     M: "SET(티/바지)",
     G: "고어택스신발",
-    N: "일반신발",
+    N: "신발",
   };
   const MAP_BRAND_NAME = { D: "아이더", J: "아이더 아동" };
   const MAP_GENDER_LABEL = { M: "남성", W: "여성", U: "남녀공용" };

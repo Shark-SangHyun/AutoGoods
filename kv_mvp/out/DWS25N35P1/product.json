@@ -1,0 +1,247 @@
+{
+  "mode": "requests",
+  "source_url": "https://www.k-village.co.kr/goods/DWS25N35P1",
+  "code": "DWS25N35P1",
+  "title": "퀀텀 나노 (P1) (L/Pink)",
+  "sale_price": 129000,
+  "list_price": 199000,
+  "pd_photo_image_urls": [
+    "https://contents.k-village.co.kr/Prod/2025/D/DWS25N35P1/DWS25N35P1_DF_01.jpg/k2dims/optimize?t=20250806143115",
+    "https://contents.k-village.co.kr/Prod/2025/D/DWS25N35P1/DWS25N35P1_DF_02.jpg/k2dims/optimize?t=20250806143115",
+    "https://contents.k-village.co.kr/Prod/2025/D/DWS25N35P1/DWS25N35P1_DF_03.jpg/k2dims/optimize?t=20250806143115",
+    "https://contents.k-village.co.kr/Prod/2025/D/DWS25N35P1/DWS25N35P1_DF_04.jpg/k2dims/optimize?t=20250806143115",
+    "https://contents.k-village.co.kr/Prod/2025/D/DWS25N35P1/DWS25N35P1_DF_05.jpg/k2dims/optimize?t=20250806143115",
+    "https://contents.k-village.co.kr/Prod/2025/D/DWS25N35P1/DWS25N35P1_DF_06.jpg/k2dims/optimize?t=20250806143115",
+    "https://contents.k-village.co.kr/Prod/2025/D/DWS25N35P1/DWS25N35P1_DF_07.jpg/k2dims/optimize?t=20250806143115",
+    "https://contents.k-village.co.kr/Prod/2025/D/DWS25N35P1/DWS25N35P1_DF_08.jpg/k2dims/optimize?t=20250806143115",
+    "https://contents.k-village.co.kr/Prod/2025/D/DWS25N35P1/DWS25N35P1_DF_09.jpg/k2dims/optimize?t=20250806143115",
+    "https://contents.k-village.co.kr/PUBL_con/etc/rfid/eider.jpg"
+  ],
+  "gvnt_info": {
+    "모델명": "퀀텀 나노 (P1) (L/Pink)",
+    "제품 주소재": "갑피:겉감-합성피혁 + 폴리에스터 100%, 안감-폴리에스터 100% / 창소재:X-GRIP(부틸 30%) + PHYLON + TPU",
+    "색상": "Light Pink",
+    "사이즈": "230,235,240,245,250,255",
+    "크기, 중량": "중량:298g(260mm)",
+    "제조사": "(주)아이더",
+    "제조국": "베트남",
+    "품질보증기준": "관련법 및 소비자 분쟁 해결 규정에 따름",
+    "A/S 책임자와 전화번호": "본사 고객상담실 / 1533-1631"
+  },
+  "제조사": "(주)아이더",
+  "제조연월(수입연월)": null,
+  "제조국": "베트남",
+  "mode_gvnt": "playwright_click",
+  "input_code": "DWS25N35P1",
+  "saved_images_each": [
+    "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DWS25N35P1\\images\\pd_001.jpg",
+    "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DWS25N35P1\\images\\pd_002.jpg",
+    "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DWS25N35P1\\images\\pd_003.jpg",
+    "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DWS25N35P1\\images\\pd_004.jpg",
+    "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DWS25N35P1\\images\\pd_005.jpg",
+    "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DWS25N35P1\\images\\pd_006.jpg",
+    "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DWS25N35P1\\images\\pd_007.jpg",
+    "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DWS25N35P1\\images\\pd_008.jpg",
+    "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DWS25N35P1\\images\\pd_009.jpg",
+    "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DWS25N35P1\\images\\pd_010.jpg"
+  ],
+  "saved_images_merged": "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DWS25N35P1\\images\\pd_photo_merged.jpg",
+  "saved_size_table_jpg": "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DWS25N35P1\\images\\size_table.jpg",
+  "saved_accordion_renders": [
+    {
+      "ok": true,
+      "title": "상품정보제공고시",
+      "mode": "replay",
+      "html": "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DWS25N35P1\\renders\\html\\상품정보제공고시.html",
+      "png": "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DWS25N35P1\\renders\\png\\상품정보제공고시.png",
+      "jpg": "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DWS25N35P1\\renders\\jpg\\상품정보제공고시.jpg"
+    },
+    {
+      "ok": true,
+      "title": "소재 및 관리방법",
+      "mode": "inline",
+      "html": "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DWS25N35P1\\renders\\html\\소재_및_관리방법.html",
+      "png": "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DWS25N35P1\\renders\\png\\소재_및_관리방법.png",
+      "jpg": "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DWS25N35P1\\renders\\jpg\\소재_및_관리방법.jpg"
+    },
+    {
+      "ok": true,
+      "title": "MD_COMMENT",
+      "mode": "inline",
+      "html": "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DWS25N35P1\\renders\\html\\MD_COMMENT.html",
+      "png": "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DWS25N35P1\\renders\\png\\MD_COMMENT.png",
+      "jpg": "C:\\Users\\me\\Desktop\\상현\\AutoGoods\\kv_mvp\\out\\DWS25N35P1\\renders\\jpg\\MD_COMMENT.jpg"
+    }
+  ],
+  "size_options": [
+    {
+      "label": "Light Pink / 230",
+      "href": "javascript:addOrder('230', '129,000', 'Light Pink', '2', '01','16','18', '10');",
+      "addOrder_args": [
+        "230",
+        "129,000",
+        "Light Pink",
+        "2",
+        "01",
+        "16",
+        "18",
+        "10"
+      ]
+    },
+    {
+      "label": "Light Pink / 235",
+      "href": "javascript:addOrder('235', '129,000', 'Light Pink', '1', '02','29','30', '10');",
+      "addOrder_args": [
+        "235",
+        "129,000",
+        "Light Pink",
+        "1",
+        "02",
+        "29",
+        "30",
+        "10"
+      ]
+    },
+    {
+      "label": "Light Pink / 240",
+      "href": "javascript:addOrder('240', '129,000', 'Light Pink', '3', '03','51','54', '10');",
+      "addOrder_args": [
+        "240",
+        "129,000",
+        "Light Pink",
+        "3",
+        "03",
+        "51",
+        "54",
+        "10"
+      ]
+    },
+    {
+      "label": "Light Pink / 245",
+      "href": "javascript:addOrder('245', '129,000', 'Light Pink', '0', '04','32','32', '10');",
+      "addOrder_args": [
+        "245",
+        "129,000",
+        "Light Pink",
+        "0",
+        "04",
+        "32",
+        "32",
+        "10"
+      ]
+    },
+    {
+      "label": "Light Pink / 250",
+      "href": "javascript:addOrder('250', '129,000', 'Light Pink', '1', '05','21','22', '10');",
+      "addOrder_args": [
+        "250",
+        "129,000",
+        "Light Pink",
+        "1",
+        "05",
+        "21",
+        "22",
+        "10"
+      ]
+    },
+    {
+      "label": "Light Pink / 255",
+      "href": "javascript:addOrder('255', '129,000', 'Light Pink', '1', '06','9','10', '10');",
+      "addOrder_args": [
+        "255",
+        "129,000",
+        "Light Pink",
+        "1",
+        "06",
+        "9",
+        "10",
+        "10"
+      ]
+    },
+    {
+      "label": "Light Pink / 230",
+      "href": "javascript:addOrder('230', '129,000', 'Light Pink', '2', '01','16','18', '10');",
+      "addOrder_args": [
+        "230",
+        "129,000",
+        "Light Pink",
+        "2",
+        "01",
+        "16",
+        "18",
+        "10"
+      ]
+    },
+    {
+      "label": "Light Pink / 235",
+      "href": "javascript:addOrder('235', '129,000', 'Light Pink', '1', '02','29','30', '10');",
+      "addOrder_args": [
+        "235",
+        "129,000",
+        "Light Pink",
+        "1",
+        "02",
+        "29",
+        "30",
+        "10"
+      ]
+    },
+    {
+      "label": "Light Pink / 240",
+      "href": "javascript:addOrder('240', '129,000', 'Light Pink', '3', '03','51','54', '10');",
+      "addOrder_args": [
+        "240",
+        "129,000",
+        "Light Pink",
+        "3",
+        "03",
+        "51",
+        "54",
+        "10"
+      ]
+    },
+    {
+      "label": "Light Pink / 245",
+      "href": "javascript:addOrder('245', '129,000', 'Light Pink', '0', '04','32','32', '10');",
+      "addOrder_args": [
+        "245",
+        "129,000",
+        "Light Pink",
+        "0",
+        "04",
+        "32",
+        "32",
+        "10"
+      ]
+    },
+    {
+      "label": "Light Pink / 250",
+      "href": "javascript:addOrder('250', '129,000', 'Light Pink', '1', '05','21','22', '10');",
+      "addOrder_args": [
+        "250",
+        "129,000",
+        "Light Pink",
+        "1",
+        "05",
+        "21",
+        "22",
+        "10"
+      ]
+    },
+    {
+      "label": "Light Pink / 255",
+      "href": "javascript:addOrder('255', '129,000', 'Light Pink', '1', '06','9','10', '10');",
+      "addOrder_args": [
+        "255",
+        "129,000",
+        "Light Pink",
+        "1",
+        "06",
+        "9",
+        "10",
+        "10"
+      ]
+    }
+  ],
+  "saved_at": "2026-06-14T18:07:07"
+}
